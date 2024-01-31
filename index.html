@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>R2BTV 2024</title>
+<script src="https://content.jwplatform.com/libraries/whqXCOFb.js"></script>
+<script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    background: #01000c;
+      background: #0c111b;
+}
+
+/*.container {
+    width: 97vw;
+    margin: 0 auto;
+    background: #dedfe1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}*/
+.container {
+    margin: 0 auto;
+    width: 96vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.fixed-controls{
+    position: fixed;
+    width: 96vw;
+    height: calc(100vw * 0.75); /*fit-content;*/
+    border-top: 2vw solid #01000c00;
+    background: #0c111b;
+}
+
+.video-container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Proporción 16:9 para reproductor de video */
+}
+
+.playlist {
+    padding-top: 78vw;
+    margin: 0 1px;
+}
+
+#myElement {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    display: flex; /* Utilizamos flexbox para alinear los controles en una fila */
+    justify-content: space-between; /* Distribuye los elem. manera unif en la fila */
+/*    gap: 7px;*/
+    padding: 8px 5px;
+}
+
+/* button {
+    font-size: 16px;
+    font-stretch: condensed;
+    width: 18%;
+    border-radius: 25px;
+}*/
+
+.controls button {
+  color: #fff;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: #3b73c8;
+}
+
+#nombreCanal {
+    font-size: 1.1em; /*16px; */
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    padding: 8px 0;
+    opacity: 1;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    justify-content: center;
+    width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Crea una grilla con columnas autoajustables */
+  gap: 10px; /* Espacio entre elementos */
+  list-style: none; /* Elimina los puntos de lista */
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+#listaVideos li {
+    display: inline-block;
+    background-color: #0a0e23;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.7em;
+}
+
+
+
+.jw-controlbar {
+    background-image: cover !important;
+    background-size: cover !important;
+    opacity: 0.20;
+}
+
+#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement .jw-settings-topbar {background-image: none !important;}
+
+.jw-error-msg, .jw-info-overlay{
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
+/*
+https://i.blogs.es/fb226b/bateria/450_1000.jpeg
+https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wallpaper-preview.jpg
+*/
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.jw-error-text, .jw-reset-text {
+  opacity: 0;
+}
+
+
+/*(min-aspect-ratio: 16/9) */
+/*@media screen and (orientation: landscape) {*/
+
+/*PARA SMARTPHONE*/
+@media (min-aspect-ratio: 2.16) and (orientation: landscape) {
+.controls,  .playlist {display: none;}
+
+#nombreCanal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+}
+.fixed-controls {border-top: 0; height: fit-content;}
+.jwplayer, .jw-flag-aspect-mode {height: 100vh !important;}
+#myElement {position: relative; width:auto !important; height: 100vh !important;margin: 0 auto;}
+}
+
+/*PARA tv*/
+@media (max-aspect-ratio: 2.26) and (orientation: landscape) {
+.controls, .playlist {display: block;}
+
+#nombreCanal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+}
+.fixed-controls { 
+    position: relative;
+    width: 95%;
+    height: fit-content;
+    margin: 0 auto;
+    border-top: 2vw solid #01000c00;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.video-container {
+    padding-bottom: 0;
+    height: calc(100vh * 0.85);
+    width: calc(100% - 5vw);
+}
+.jwplayer, .jw-flag-aspect-mode {height: 100vh !important;}
+#myElement {
+    position: relative; 
+    width:auto !important; 
+    height: auto !important;
+    margin: 0 auto;
+    border-radius: 7px;
+}
+.container {
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 80% 19%;
+    grid-template-rows: 92vh;
+    align-items: stretch;
+    height: 90vh;}
+
+.playlist {
+    display: flex;
+    grid-gap: 1vw;
+    align-items: stretch;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    padding: 0 0vw;
+    margin-top: 2vw;
+}
+
+/*
+#listaVideos li {padding: 1vh 0; font-size: 12px;}
+.grid-container { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));}*/
+
+*::-webkit-scrollbar-thumb {
+    background-color: #065fd442;
+    border-radius: 20px;
+    border: 2px solid #065fd49e;
+    height: 15%;
+}
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Añadir esta regla para que la animación no afecte otras propiedades */
+#nombreCanal {
+  animation: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<!--code player-->
+<div class="fixed-controls">
+        <!-- Botones de control aquí -->
+
+<div class="video-container">
+  <div id="myElement"></div>
+</div>
+
+<div class="controls">
+  <button id="mute">Mute</button>
+  <button id="anterior">Prev</button>
+  <button id="playPause">Play</button>
+  <button id="siguiente">Next</button>
+  <button id="fullScreen">Full</button>
+</div>
+<div id="nombreCanal">Bienvenido a R2B TV, estás viendo Canal 26</div>
+</div>
+
+<div class="playlist">
+<ul id="listaVideos" class="grid-container">
+
+<li data-src="https://g1.vxral-hor.transport.edge-access.net/b16/ngrp:c7_vivo01_dai_source-20001_all/c7_vivo01_dai_source-20001.m3u8">TV Publica</li>
+<li data-src="https://prepublish.f.qaotic.net/a07/americahls-100056/playlist_720p.m3u8">América TV</li>
+<li data-src="https://live-01-01-tn.vodgc.net/TN24/index.m3u8">Todo Noticias</li>
+<li data-src="https://live-edge01.telecentro.net.ar/live/tlxhd-720/playlist.m3u8">Telemax</li>
+<li data-src="https://wowza.telpin.com.ar:1935/canal3/canal3.stream/playlist.m3u8">CN 3 pinamar</li>
+<li data-src="http://190.52.32.13:1935/canal4/smil:manifest.smil/playlist.m3u8">Canal 4</li>
+<li data-src="https://stream.arcast.live/canal7jujuy/ngrp:canal7jujuy_all/playlist.m3u8?PlaylistM3UCL">Canal 7 Jujuy</li>
+<li data-src="https://stream.arcast.live/ahora/ahora/playlist.m3u8?PlaylistM3UCL">Canal 9 Litoral</li>
+<li data-src="https://stream.arcast.live/canal10/ngrp:canal10_all/playlist.m3u8?PlaylistM3UCL">Canal 10</li>
+<li data-src="https://g3.mc-hor.transport.edge-access.net/a05/ngrp:c12_live01-100129_all/Playlist.m3u8?sense=true">Canal 12 Misiones</li>
+<li data-src="http://coninfo.net:1935/13maxhd/live13maxtvnuevo_720p/playlist.m3u8">13 Max</li>
+<li data-src="https://5fb24b460df87.streamlock.net/live-cont.ar/encuentro/chunklist_w1733579940.m3u8">Encuentro</li>
+<li data-src="https://wowza.telpin.com.ar:1935/telpintv/smil:ttv.stream.smil/playlist.m3u8">Telpin Canal</li>
+<li data-src="https://video.streamtvradio.com:8443/uv096/uv096/playlist.m3u8?PlaylistM3UCL">PANC TV</li>
+<li data-src="https://videostream.shockmedia.com.ar:19360/neotvdigital/neotvdigital.m3u8">Neo TV</li>
+<li data-src="https://unlimited1-us.dps.live/nettv/nettv.smil/nettv/livestream2/chunks.m3u8">Net TV</li>
+<li data-src="https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8?PlaylistM3UCL">Canal Provincial</li>
+<li data-src="https://cda2.alsolnet.com/elrural/live/playlist.m3u8">Canal Rural</li>
+<li data-src="https://stream.arcast.live/canalu/canalu/playlist.m3u8">Canal U</li>
+<li data-src="https://video.alfasocialmedia.com.ar:3396/live/milleniumtvlive.m3u8">Milenium TV</li>
+<li data-src="https://panel.dattalive.com/8250/8250/.m3u8">Multivisión</li>
+<li data-src="https://cnnsanjuan.com:9999/live/telesol/playlist.m3u8?PlaylistM3UCL">Telesol</li>
+<li data-src="https://videohd.live:19360/8020/8020.m3u8?PlaylistM3UCL">Telediez</li>
+<li data-src="https://live-edge01.telecentro.net.ar/live/smil:c26.smil/playlist.m3u8">Canal 26</li>
+<li data-src="https://d1nmqgphjn0y4.cloudfront.net/live/ip/live.isml/5ee6e167-1167-4a85-9d8d-e08a3f55cff3.m3u8?caster">IP TV</li>
+<li data-src="https://siloh.pluto.tv/lilo/production/BEIN/ES/master.m3u8">Bein Sport XTRA ñ</li>
+<li data-src="https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index.m3u8">TyC Sports</li>
+<li data-src="https://d3awnlgqz0szay.cloudfront.net/out/v1/09e35529553d472b8f14e437af642e2f/index_13.m3u8">TyC PLAY</li>
+<li data-src="https://d3awnlgqz0szay.cloudfront.net/out/v1/19321d887c274b58a4f62fe0f6e2151b/index_9.m3u8">TyC</li>
+<li data-src="https://dpyzprfzko681.cloudfront.net/out/v1/366fc52554ae42c58465ea4b278eac0c/index_15.m3u8">TyC Eventos</li>
+<li data-src="https://5fb24b460df87.streamlock.net/live-cont.ar/deportv/chunklist_w442563431.m3u8">DeporTV</li>
+<li data-src="https://claro-jw.cdn.vustreams.com/live/channel07/live.isml/live-audio_0=64000-video=6499968.m3u8">Claro Sports</li>
+<li data-src="http://digicom.hls.iptvdc.com/canalmotor/index.m3u8">Canal Motor</li>
+<li data-src="https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/playlist.m3u8">All Sports BR</li>
+<li data-src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8">RedBull TV</li>
+<li data-src="https://live.atresmediainternacional.com/ATRESMEDIA/a3cine-1080.m3u8">A3cine</li>
+<li data-src="http://cartv.streaming.aranova.es/hls/live/aragontv_canal1.m3u8?PlaylistM3UCL">Aragon TV</li>
+<li data-src="https://rtvelivestream.akamaized.net/rtvesec/la2/la2_main_dvr.m3u8">La 2</li>
+<li data-src="https://directes-tv-int.ccma.cat/live-origin/tvi-hls/master.m3u8">TV3 Catalunya</li>
+<li data-src="https://ondacadiztv.es:30443/octv/directo_multi/playlist.m3u8">Onda Cadiz</li>
+<li data-src="https://multimedia.eitb.eus/live-content/etb1hd-hls/master.m3u8">ETB</li>
+<li data-src="https://multimedia.eitb.eus/live-content/etb2hd-hls/master.m3u8">ETB</li>
+<li data-src="http://america-crtvg.flumotion.com/playlist.m3u8">TV Galicia America</li>
+<li data-src="https://latv-rcn-xtra-1-mx.tcl.wurl.tv/playlist.m3u8">RCN Xtra</li>
+<li data-src="https://rcntv-rcnmas-1-us.plex.wurl.tv/playlist.m3u8">RCN Mas</li>
+<li data-src="https://tastemadees16intl-brightcove.amagi.tv/playlist.m3u8">Tastemade</li>
+<li data-src="https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8">My Zen TV Fit</li>
+<li data-src="https://linear-46.frequency.stream/46/hls/master/playlist.m3u8">AFV</li>
+<li data-src="https://mdstrm.com/live-stream-playlist/60b578b060947317de7b57ac.m3u8">ADN 40</li>
+<li data-src="https://vivo.canaloncelive.tv/alivepkgr3/ngrp:cepro_all/playlist.m3u8">Canal Once</li>
+<li data-src="https://canal10.mediaflix.istream.mx/wza_live/live/movil/playlist.m3u8">Canal 10 Cancun</li>
+<li data-src="https://streamconex.com:1936/canalxfn/canalxfn/playlist.m3u8">Canal XFN</li>
+<li data-src="http://boliviatv1.srfms.com:5735/live/livestream/playlist.m3u8">Bolivia TV 7.1</li>
+<li data-src="https://master.tucableip.com/live/tvlatinamontero/playlist.m3u8">TV Latina</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/lared/lared.smil/playlist.m3u8">La Red Chile</li>
+<li data-src="https://unlimited2-cl-isp.dps.live/ucvtv2/ucvtv2.smil/playlist.m3u8?PlaylistM3UCL">UCV  Chile</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/uchiletv/uchiletv.smil/playlist.m3u8">U Chile TV</li>
+<li data-src="https://unlimited10-cl.dps.live/ucvtveventos/ucvtveventos.smil/playlist.m3u8">UCV 2  Chile</li>
+<li data-src="https://stv.janus.cl/playlist/stream.m3u8">STGO.TV</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/campustv/campustv.smil/playlist.m3u8">Campus TV</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/t13/t13.smil/playlist.m3u8?PlaylistM3UCL">T13  Chile</li>
+<li data-src="https://v4.tustreaming.cl/poptv/index.m3u8">TV Pop</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/atv/atv.smil/playlist.m3u8">Antofagasta TV</li>
+<li data-src="https://v2.tustreaming.cl/chilechannel/index.m3u8">Chile Channel</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/tvr/tvr.smil/playlist.m3u8">TVR</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/tcsc/tcsc.smil/playlist.m3u8">Telecanal Santa Cruz</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/tctc/tctc.smil/playlist.m3u8">Telecanal Talca</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/c9/c9.smil/playlist.m3u8">Canal 9 Bío Bío</li>
+<li data-src="https://mediacpstreamchile.com:1936/clubtv/clubtv/playlist.m3u8">Club TV</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/pucontv/pucontv.smil/playlist.m3u8">Pucon TV</li>
+<li data-src="https://paneltv.online:1936/8034/8034/playlist.m3u8">SurTV</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/itv/itv.smil/playlist.m3u8">ITV Patagonia</li>
+<li data-src="https://unlimited1-cl-isp.dps.live/bbtv/bbtv.smil/playlist.m3u8">Bio Bio TV</li>
+<li data-src="http://38.75.136.76:1935/cncmedellin720/canalcncmedellin.stream_720p/playlist.m3u8">Canal CNC Peru</li>
+<li data-src="https://stream.logicideas.media/canaltrece-live/smil:live.smil/playlist.m3u8">Canal Trece Colombia</li>
+<li data-src="https://streaming.rtvc.gov.co/TV_Senal_Colombia_live/smil:live.smil/playlist.m3u8">Señal Colombia</li>
+<li data-src="https://play.amelbasoluciones.co:3971/live/tdicolombiatvlive.m3u8?PlaylistM3UCL">TDI Colombia</li>
+<li data-src="https://stream.logicideas.media/telepacifico-live/live.smil/.m3u8">Telepacífico</li>
+<li data-src="https://cloudvideo.servers10.com:8081/8030/index.m3u8">CB TV Costa Rica</li>
+<li data-src="http://tiquiciatv.com:1935/stv/envivo/playlist.m3u8">Sarapiqui TV</li>
+<li data-src="http://k4.usastreams.com/limontv1/limontv1/playlist.m3u8">Limon TV</li>
+<li data-src="http://tv.ticosmedia.com:1935/TVSUR/TVSUR/playlist.m3u8">TV Sur Canal 9</li>
+<li data-src="https://vcp.myplaytv.com/promar/promar/playlist.m3u8?PlaylistM3UCL">Promar TV Venezuela</li>
+<li data-src="https://vcp.myplaytv.com/canali/canali/playlist.m3u8">Canal i Venezuela</li>
+<li data-src="https://rds3.desdeparaguay.net/mitv/mitv/playlist.m3u8">Mi TV</li>
+<li data-src="https://stream.plixitv.live/oktv/oktv/playlist.m3u8?PlaylistM3UCL">OK TeVe</li>
+<li data-src="https://streaming.trece.com.py/live/trece.m3u8">Trece PY</li>
+<li data-src="https://live.obslivestream.com/telecolormux/index.m3u8?PlaylistM3UCL">Telecolor TV</li>
+<li data-src="https://cdn4.hostlagarto.com:8081/static/puntacanatv/playlist.m3u8?PlaylistM3UCL">Punta Cana TV</li>
+<li data-src="https://livees.cgtn.com/1000e/prog_index.m3u8">CGTN China</li>
+<li data-src="https://euronews-euronews-spanish-2-mx.samsung.wurl.com/manifest/playlist.m3u8">EuroNews - Esp</li>
+<li data-src="https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8">DW - Esp</li>
+<li data-src="https://rt-esp.rttv.com/live/rtesp/playlist.m3u8">RT - Esp</li>
+<li data-src="https://cdnesmain.telesur.ultrabase.net/mbliveMain/480p/chunklist.m3u8">TeleSur</li>
+<li data-src="https://estrellanews-plex.amagi.tv/playlist.m3u8">Estrella News</li>
+<li data-src="https://www.bloomberg.com/media-manifest/streams/us.m3u8">Bloomberg - Ing</li>
+<li data-src="https://reuters-reutersnow-1-us.plex.wurl.tv/playlist.m3u8">Reuters - Ing</li>
+<li data-src="http://g5.mc-hor.transport.edge-access.net/a09/ngrp:CM_CanaldelaMusica-100044_all/Playlist.m3u8?sense=true">CM</li>
+<li data-src="https://vcp.myplaytv.com/oxigenotv/oxigenotv/chunklist_w34527763.m3u8">Oxigeno TV</li>
+<li data-src="https://zmlive.zappingtv.com/zm-free/zm.smil/playlist.m3u8?PlaylistM3UCL">Zapping music</li>
+<li data-src="http://149.56.17.92:1935/portalfoxmix/_definst_/portalfoxmix/playlist.m3u8?PlaylistM3UCL">Portal Fox Mix</li>
+<li data-src="https://vdo1.streamgato.us:3359/live/tvexitoslive.m3u8">TV Exitos</li>
+<li data-src="https://livelist01.yowi.tv/lista/dc1b71c6fda2e687050facaa7242062cbf5a7f2a/master.m3u8">HGM música relax</li>
+<li data-src="http://k4.usastreams.com/videotour/videotour/playlist.m3u8?PlaylistM3UCL">Video tour</li>
+<li data-src="https://59f1cbe63db89.streamlock.net:1443/retroplussenal2/_definst_/retroplussenal2/playlist.m3u8?PlaylistM3UCL">Retro Plus music</li>
+<li data-src="https://sabermas-plex.amagi.tv/SaberMas-xumo/master.m3u8">SABER MÁS</li>
+<li data-src="https://live.atresmediainternacional.com/ATRESMEDIA/holatv-1080.m3u8">¡Hola!TV</li>
+<li data-src="http://154.62.74.12:1935/live/smil:cosmoHD/.m3u8">COSMO</li>
+<li data-src="https://estrellatv-roku.amagi.tv/playlist.m3u8">Estrellas</li>
+<li data-src="https://edge2.prepro.cvattv.com.ar/live/live/AnimalPlanet/SA_Live_WebVTT_FTA/AnimalPlanet-spa=20001-AVC1=10000.m3u8">Animal Planet</li>
+<li data-src="https://bamus-spa-roku.amagi.tv/playlist.m3u8">Love Nature 4K</li>
+<li data-src="https://livestream.lamusica.com/megatvP320/ngrp:megatvP320_all/.m3u8">Mega TV</li>
+<li data-src="https://failarmy-linear-us.sinclair.wurl.tv/playlist.m3u8">Failarmy</li>
+<li data-src="https://tls-cl.cdnz.cl/planetatvkids/live/playlist.m3u8">PlanetaTV Kids</li>
+<li data-src="https://srv5.zcast.com.br/simpsons/simpsons/playlist.m3u8">Los Simpsons D</li>
+<li data-src="https://vivo.solumedia.com:19360/retromagico/retromagico.m3u8">Retro Mágico</li>
+<li data-src="https://tucine-plex.amagi.tv/TuCine-xumo/master_6.m3u8">TU CINE</li>
+<li data-src="https://cinereal-plex.amagi.tv/CineReal/master_6.m3u8">CINE REAL</li>
+<li data-src="https://chiquilines-plex.amagi.tv/Chiquilines-plex/master_6.m3u8">CHIQUILINES</li>
+<li data-src="https://spt-comedias-1-us.lg.wurl.tv/playlist.m3u8">SONY Comedia</li>
+<li data-src="https://spt-novelas-1-us.lg.wurl.tv/playlist.m3u8">SONY Novelas</li>
+<li data-src="https://olympusamagi.pc.cdn.bitgravity.com/Juntos-roku/master_6.m3u8">JUNTOS</li>
+<li data-src="https://stormcast-novelas-2-es.samsung.wurl.tv/playlist.m3u8">Novelas en español</li>
+<li data-src="https://rakuten-hola-2-es.samsung.wurl.tv/playlist.m3u8">Hola Play</li>
+<li data-src="https://linear-194.frequency.stream/194/hls/master/playlist.m3u8">ViX Romance</li>
+<li data-src="https://linear-195.frequency.stream/195/hls/master/playlist.m3u8">ViX Familia</li>
+<li data-src="https://spt-competencias-1-us.samsung.wurl.tv/playlist.m3u8">Sony Competencias</li>
+
+
+</ul>
+</div>
+
+</div>
+
+<!--code full tv-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const player = jwplayer("myElement").setup({
+related: { displayMode: "shelfWidget", },
+// ... Otras configuraciones ...
+//    preload: 'auto',
+//    skin: {
+    preload: 'auto',
+    skin: {
+        name: "six",
+        active: "#FF4500",
+        inactive: "#FFFFFF",
+        background: "url('https://raw.githubusercontent.com/Marvel999/Android-Loading-Animation/master/LoadingAnimation/src/main/res/drawable/black_four_dot.gif') center center repeat", // Especifica la URL de tu imagen como fondo.
+    },
+
+    // ... Resto de tu configuración ...
+playlist: [{
+image: "https://pbs.twimg.com/profile_images/1242114940/LogoCanal26_200x200.jpg",
+file: "https://live-edge01.telecentro.net.ar/live/smil:c26.smil/playlist.m3u8",
+description: "información general de Argentina y el mundo",
+title: "Canal 26"
+}]
+});
+
+const listaVideos = document.getElementById("listaVideos");
+const elementos = listaVideos.getElementsByTagName("li");
+
+let currentVideoIndex = 0;
+
+function loadVideo(index) {
+const src = elementos[index].getAttribute("data-src");
+player.load([{ file: src }]);
+currentVideoIndex = index;
+player.play(); // Inicia la reproducción automáticamente
+}
+
+function playPause() {
+if (player.getState() === "playing") {
+player.pause();
+} else {
+player.play();
+}
+}
+
+function toggleMute() {
+player.setMute(!player.getMute());
+}
+
+function toggleFullScreen() {
+player.setFullscreen(!player.getFullscreen());
+}
+
+document.getElementById("anterior").addEventListener("click", function () {
+if (currentVideoIndex > 0) {
+loadVideo(currentVideoIndex - 1);
+}
+});
+
+document.getElementById("siguiente").addEventListener("click", function () {
+if (currentVideoIndex < elementos.length - 1) {
+loadVideo(currentVideoIndex + 1);
+}
+});
+
+for (let i = 0; i < elementos.length; i++) {
+elementos[i].addEventListener("click", function () {
+loadVideo(i);
+});
+}
+
+document.getElementById("playPause").addEventListener("click", playPause);
+document.getElementById("mute").addEventListener("click", toggleMute);
+document.getElementById("fullScreen").addEventListener("click", toggleFullScreen);
+
+function loadVideo(index) {
+const src = elementos[index].getAttribute("data-src");
+player.load([{ file: src }]);
+currentVideoIndex = index;
+player.play(); // Inicia la reproducción automáticamente
+
+// Actualiza el nombre del canal
+const nombreCanalElement = document.getElementById("nombreCanal");
+nombreCanalElement.textContent = elementos[index].textContent;
+};
+
+
+//cuando hay un error y debe pasaral siguiente canal de forma automática
+// Evento cuando hay un error
+player.on('error', function(event) {
+  console.log("Error reproduciendo el video");
+  
+  const nombreCanal = document.getElementById('nombreCanal');
+  nombreCanal.textContent = 'No hay señal cambiando al siguiente canal...';
+
+  setTimeout(function() {
+    loadNextVideo();
+  }, 2000); // Cambia de canal después de 3 segundos (ajusta el tiempo según tus preferencias)
+});
+
+function loadNextVideo() {
+  if (currentVideoIndex < elementos.length - 1) {
+    loadVideo(currentVideoIndex + 1);
+    const nombreCanal = document.getElementById('nombreCanal');
+    nombreCanal.textContent = 'Estás viendo ' + elementos[currentVideoIndex].textContent;
+  }
+};
+
+player.on('complete', function() {
+        console.log("Video completado");
+        // Pasar al siguiente video
+        if (currentVideoIndex < elementos.length - 1) {
+            loadVideo(currentVideoIndex + 1);
+        }
+    });
+
+});
+
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+  var nombreCanal = document.getElementById('nombreCanal');
+  var inactividadTimer;
+
+  window.onmousemove = function () {
+    clearTimeout(inactividadTimer);
+    nombreCanal.style.animation = 'fadeInOut 1s forwards'; // Inicia la animación fadeInOut
+    inactividadTimer = setTimeout(function () {
+      nombreCanal.style.animation = 'fadeOutIn 1s forwards'; // Inicia la animación fadeOutIn después de 5 segundos de inactividad
+    }, 5000);
+  };
+});
+
+</script>
+
+</body>
+
+</html>
+
