@@ -15,23 +15,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0 auto;
     padding: 0;
-    background: #01000c;
-      background: #0c111b;
+/*    background: #01000c;*/
+    background: #0c111b;
 }
 
-/*.container {
-    width: 97vw;
-    margin: 0 auto;
-    background: #dedfe1;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}*/
 .container {
     margin: 0 auto;
     width: 96vw;
@@ -60,29 +47,6 @@ body {
     margin: 0 1px;
 }
 
-#myElement {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-/*
-.controls button {
-  color: #fff;
-  background-color: #4285f4;
-  border: none;
-  border-radius: 25px;
-  padding: 5px 20px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.controls button:hover {
-  background-color: #3b73c8;
-}
-*/
-
 .controls {
   display: flex;
   justify-content: space-between; /* Distribuye los elementos uniformemente */
@@ -107,13 +71,11 @@ button:hover {
   background: linear-gradient(to bottom, #2c3e50, #1f2b38); /* Cambio de color en el fondo al pasar el mouse */
 }
 
-
-
 #nombreCanal {
     font-size: 1.1em; /*16px; */
     text-align: center;
     color: rgba(255,255,255,.8);
-      color: #dde0e2;
+    color: #dde0e2;
     padding: 8px 0;
     opacity: 1;
     display: flex;
@@ -129,26 +91,36 @@ button:hover {
   gap: 10px; /* Espacio entre elementos */
   list-style: none; /* Elimina los puntos de lista */
   padding: 0;
-  margin: 0;
-/*  cursor: pointer;*/
+  margin: 0 2px;
 }
 
 #listaVideos li {
     display: inline-block;
-    background-color: #0a0e23;
-    color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 8px 0;
+    padding: 12px 0;
     text-align: center;
     text-overflow: ellipsis;
-    overflow: hidden;
     white-space: nowrap;
     font-size: 0.7em;
+    border: 1px solid rgb(72 97 135);
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #053f89, #08153f);
+    color: #dae6ec;
     cursor: pointer;
+    transition: background 1.3s, color 1.3s;
+    border-style: inset;
 }
 
+listaVideos:hover {
+  background: linear-gradient(to bottom, #2c3e50, #1f2b38); /* Cambio de color en el fondo al pasar el mouse */
+}
 
+#myElement {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 5px;
+}
 
 .jw-controlbar {
     background-image: cover !important;
@@ -156,14 +128,19 @@ button:hover {
     opacity: 0.20;
 }
 
-#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement .jw-settings-topbar {background-image: none !important;}
+#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement, .jw-settings-topbar {
+    background-image: none !important;
+}
 
-.jw-error-msg, .jw-info-overlay{
-    background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
 /*
-https://i.blogs.es/fb226b/bateria/450_1000.jpeg
-https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wallpaper-preview.jpg
+jwplayer jw-reset jw-state-buffering jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint-3 jw-flag-touch jw-floating-dismissible jw-flag-live
+
+jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint--1 jw-flag-touch jw-floating-dismissible jw-flag-live jw-flag-small-player
+
 */
+
+.jw-error-msg, .jw-info-overlay, .jw-state-error, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player  {
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -173,27 +150,64 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
   opacity: 0;
 }
 
-
-/*(min-aspect-ratio: 16/9) */
-/*@media screen and (orientation: landscape) {*/
+/*######################################*/
+/*PARA SMARTPHONE*/
+@media (min-aspect-ratio: 1){
+.controls{
+    padding: 5px 2.5vw;
+        padding-bottom: 0;
+}
+.video-container {
+    height: calc(52vw * 0.75);}
+}
 
 /*PARA SMARTPHONE*/
 @media (min-aspect-ratio: 2.16) and (orientation: landscape) {
-/*.controls,  .playlist {display: none;}*/
 
 #nombreCanal {
     display: flex;
     position: fixed;
     z-index: 1;
 }
-.fixed-controls {border-top: 0; height: fit-content;}
-.jwplayer, .jw-flag-aspect-mode {height: 100vh !important;}
-#myElement {position: relative; width:auto !important; height: 100vh !important;margin: 0 auto;}
+.fixed-controls {
+    border-top: 0; 
+    height: fit-content;
+}
+
+.jwplayer, .jw-flag-aspect-mode {
+    height: 100vh !important;
+}
+#myElement {
+    position: relative; 
+    width:auto !important; 
+    height: 100vh !important;
+    margin: 0 auto;
+}
 }
 
 /*PARA tv*/
 @media (max-aspect-ratio: 2.26) and (orientation: landscape) {
-/*.controls, .playlist {display: block;}*/
+
+.container {
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 80% 19%;
+/*    grid-template-rows: 92vh;*/
+    grid-template-rows: calc(100vw * 0.45);
+    align-items: stretch;
+    height: 90vh;
+}
+
+.playlist {
+    display: flex;
+    grid-gap: 1vw;
+    align-items: stretch;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    padding: 0 0vw;
+    margin-top: 2vw;
+}
 
 #nombreCanal {
     display: flex;
@@ -213,39 +227,19 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
 }
 .video-container {
     padding-bottom: 0;
-    height: calc(100vh * 0.85);
+/*    height: calc(100vh * 0.85);*/
     width: calc(100% - 5vw);
 }
-.jwplayer, .jw-flag-aspect-mode {height: 100vh !important;}
+.jwplayer, .jw-flag-aspect-mode {
+    height: 100vh !important;
+}
 #myElement {
     position: relative; 
     width:auto !important; 
     height: auto !important;
     margin: 0 auto;
-    border-radius: 7px;
-}
-.container {
-    display: grid;
-    grid-gap: 1%;
-    grid-template-columns: 80% 19%;
-    grid-template-rows: 92vh;
-    align-items: stretch;
-    height: 90vh;}
-
-.playlist {
-    display: flex;
-    grid-gap: 1vw;
-    align-items: stretch;
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    padding: 0 0vw;
-    margin-top: 2vw;
 }
 
-/*
-#listaVideos li {padding: 1vh 0; font-size: 12px;}
-.grid-container { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));}*/
 
 *::-webkit-scrollbar-thumb {
     background-color: #065fd442;
@@ -260,21 +254,13 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
 }
 
 @keyframes fadeInOut {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeOutIn {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 /* Añadir esta regla para que la animación no afecte otras propiedades */
@@ -334,7 +320,7 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
 <li data-src="https://panel.dattalive.com/8250/8250/.m3u8">Multivisión</li>
 <li data-src="https://cnnsanjuan.com:9999/live/telesol/playlist.m3u8?PlaylistM3UCL">Telesol</li>
 <li data-src="https://videohd.live:19360/8020/8020.m3u8?PlaylistM3UCL">Telediez</li>
-<li data-src="https://live-edge01.telecentro.net.ar/live/smil:c26.smil/playlist.m3u8">Canal 26</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_26)/index.m3u8">Canal 26</li>
 <li data-src="https://d1nmqgphjn0y4.cloudfront.net/live/ip/live.isml/5ee6e167-1167-4a85-9d8d-e08a3f55cff3.m3u8?caster">IP TV</li>
 <li data-src="https://siloh.pluto.tv/lilo/production/BEIN/ES/master.m3u8">Bein Sport XTRA ñ</li>
 <li data-src="https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index.m3u8">TyC Sports</li>
@@ -453,7 +439,7 @@ related: { displayMode: "shelfWidget", },
 // ... Otras configuraciones ...
 //    preload: 'auto',
 //    skin: {
-    preload: 'auto',
+    preload: 'none',
     skin: {
         name: "six",
         active: "#FF4500",
@@ -464,7 +450,7 @@ related: { displayMode: "shelfWidget", },
     // ... Resto de tu configuración ...
 playlist: [{
 image: "https://pbs.twimg.com/profile_images/1242114940/LogoCanal26_200x200.jpg",
-file: "https://live-edge01.telecentro.net.ar/live/smil:c26.smil/playlist.m3u8",
+file: "https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_26)/index.m3u8",
 description: "información general de Argentina y el mundo",
 title: "Canal 26"
 }]
@@ -576,7 +562,7 @@ player.on('complete', function() {
     nombreCanal.style.animation = 'fadeInOut 1s forwards'; // Inicia la animación fadeInOut
     inactividadTimer = setTimeout(function () {
       nombreCanal.style.animation = 'fadeOutIn 1s forwards'; // Inicia la animación fadeOutIn después de 5 segundos de inactividad
-    }, 5000);
+    }, 15000);
   };
 });
 
