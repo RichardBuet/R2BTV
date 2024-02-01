@@ -66,20 +66,7 @@ body {
     height: 100%;
 }
 
-.controls {
-    display: flex; /* Utilizamos flexbox para alinear los controles en una fila */
-    justify-content: space-between; /* Distribuye los elem. manera unif en la fila */
-/*    gap: 7px;*/
-    padding: 8px 5px;
-}
-
-/* button {
-    font-size: 16px;
-    font-stretch: condensed;
-    width: 18%;
-    border-radius: 25px;
-}*/
-
+/*
 .controls button {
   color: #fff;
   background-color: #4285f4;
@@ -94,11 +81,39 @@ body {
 .controls button:hover {
   background-color: #3b73c8;
 }
+*/
+
+.controls {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
+  width: 100%;
+  padding-top: 5px;
+}
+
+button {
+  flex: 1; /* Hace que cada botón ocupe todo el espacio disponible */
+  margin: 0 5px; /* Añade un pequeño margen entre los botones */
+  padding: 5px 10px; /* Añade relleno para mejorar la apariencia */
+  border: 2px solid #393d52; /* Borde gris */
+  border-radius: 8px; /* Esquinas redondeadas */
+  overflow: hidden; /* Para que el fondo degradado no se salga hacia fuera */
+  background: linear-gradient(to bottom, #292e41, #1b1e31); /* Fondo degradado entre dos tonos de azules */
+  color: #dde0e2; /* Letras en blanco */
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s; /* Transición suave */
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #2c3e50, #1f2b38); /* Cambio de color en el fondo al pasar el mouse */
+}
+
+
 
 #nombreCanal {
     font-size: 1.1em; /*16px; */
     text-align: center;
     color: rgba(255,255,255,.8);
+      color: #dde0e2;
     padding: 8px 0;
     opacity: 1;
     display: flex;
@@ -115,7 +130,7 @@ body {
   list-style: none; /* Elimina los puntos de lista */
   padding: 0;
   margin: 0;
-  /*cursor: pointer;*/
+/*  cursor: pointer;*/
 }
 
 #listaVideos li {
@@ -164,7 +179,7 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
 
 /*PARA SMARTPHONE*/
 @media (min-aspect-ratio: 2.16) and (orientation: landscape) {
-.controls,  .playlist {display: none;}
+/*.controls,  .playlist {display: none;}*/
 
 #nombreCanal {
     display: flex;
@@ -178,7 +193,7 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
 
 /*PARA tv*/
 @media (max-aspect-ratio: 2.26) and (orientation: landscape) {
-.controls, .playlist {display: block;}
+/*.controls, .playlist {display: block;}*/
 
 #nombreCanal {
     display: flex;
@@ -265,6 +280,7 @@ https://p4.wallpaperbetter.com/wallpaper/10/268/984/dots-connection-abstract-wal
 /* Añadir esta regla para que la animación no afecte otras propiedades */
 #nombreCanal {
   animation: none;
+
 }
 
 </style>
