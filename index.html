@@ -74,6 +74,7 @@ button:hover {
 #nombreCanal {
     font-size: 1.1em; /*16px; */
     text-align: center;
+    text-transform: uppercase;
     color: rgba(255,255,255,.8);
     color: #dde0e2;
     padding: 8px 0;
@@ -99,6 +100,7 @@ button:hover {
     padding: 12px 0;
     text-align: center;
     text-overflow: ellipsis;
+    text-transform: uppercase;
     white-space: nowrap;
     font-size: 0.7em;
     border: 1px solid rgb(72 97 135);
@@ -125,30 +127,102 @@ listaVideos:hover {
 .jw-controlbar {
     background-image: cover !important;
     background-size: cover !important;
-    opacity: 0.20;
+    opacity: 0.70;
 }
 
-#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement, .jw-settings-topbar {
-    background-image: none !important;
-}
+#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement .jw-settings-topbar {background-image: none !important;}
 
+.jw-settings-content-item {background: unset!important; padding: 4px 0 4px 15px!important; line-height: 1!important;}
+
+/*.jw-sharing-copy*/ 
+.jw-sharing-link {
+/*    display: block!important;*/
+    color: white!important;
+    background: unset!important;
+}
 /*
-jwplayer jw-reset jw-state-buffering jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint-3 jw-flag-touch jw-floating-dismissible jw-flag-live
-
-jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint--1 jw-flag-touch jw-floating-dismissible jw-flag-live jw-flag-small-player
-
-*/
-
-.jw-error-msg, .jw-info-overlay, .jw-state-error, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player  {
+.jw-error-msg, .jw-info-overlay, .jw-state-error {
     background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100%;
 }
-.jw-error-text, .jw-reset-text {
-  opacity: 0;
+*/
+.jw-error-msg, .jw-info-overlay, .jw-state-error, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player {
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
+    background-size: cover;
+    background-position: center;
+/*    width: 100%;
+    height: 100%*/;
+        width: 68vw;
+    height: 66vh;
 }
+
+
+
+.jw-error-text { opacity: 0;}
+
+.jw-rightclick{  opacity: 0.7; }
+
+.jw-stats-panel {overflow-y: auto!important ; height: auto!important }
+
+.jw-settings-content-item:hover {color: rgb(33, 171, 181)!important;}
+
+.jw-rightclick-item {
+    background-color: unset!important;
+    border-bottom: 0px!important;
+    margin: 1px!important;
+}
+
+.jw-featured { display:none!important ; }
+
+/*
+
+, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player 
+
+
+
+.jwplayer .jw-rightclick .jw-rightclick-list {
+    display: none!important;}
+
+
+
+
+.jw-controlbar {
+    background-image: cover !important;
+    background-size: cover !important;
+    opacity: 0.20;
+}
+
+#myElement .jw-nextup, #myElement {
+    background-image: none !important;
+}
+
+#myElement .jw-nextup, .jw-settings-topbar, #myElement .jw-settings-menu
+{
+    background-color: white;
+}
+
+#myElement .jw-nextup, #myElement .jw-settings-menu {background: none;}
+.jw-settings-content-item {background: unset;}
+
+#myElement .jw-settings-topbar {none;}
+
+
+
+jwplayer jw-reset jw-state-buffering jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint-3 jw-flag-touch jw-floating-dismissible jw-flag-live
+
+jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint--1 jw-flag-touch jw-floating-dismissible jw-flag-live jw-flag-small-player
+
+imagen cuando hay un error
+.jw-error-msg, .jw-info-overlay, .jw-state-error, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player  
+
+
+
+*/
+
+
 
 /*######################################*/
 /*PARA SMARTPHONE*/
@@ -156,32 +230,67 @@ jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-
 .controls{
     padding: 5px 2.5vw;
         padding-bottom: 0;
+        width: 93%;
 }
 .video-container {
     height: calc(52vw * 0.75);}
 }
 
-/*PARA SMARTPHONE*/
-@media (min-aspect-ratio: 2.16) and (orientation: landscape) {
 
-#nombreCanal {
-    display: flex;
-    position: fixed;
-    z-index: 1;
-}
+/*PARA SMARTPHONE   min-aspect-ratio: 2.16 */
+@media (min-aspect-ratio: 2.26) and (orientation: landscape) {
+
 .fixed-controls {
     border-top: 0; 
     height: fit-content;
+    display: contents;
 }
+
+.video-container {
+    height: 100vh;
+    padding-bottom: 0;
+    position:relative;
+    visibility:visible;
+    z-index: 0;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    /* visibility: visible; */
+    z-index: 2;
+    /* padding-top: 10vh; */
+    opacity: 0.25;
+    flex-direction: column;
+    width: max-content;
+    height: -webkit-fill-available;
+    gap: 5px;
+}
+
+
+.controls:hover { 
+transition: opacity 2s;
+}
+
+#nombreCanal {
+    display: flex;
+    position:absolute;
+    z-index: 2;
+    padding-top: 1vh;
+}
+
+.playlist { display: none;}
 
 .jwplayer, .jw-flag-aspect-mode {
     height: 100vh !important;
 }
+
 #myElement {
     position: relative; 
-    width:auto !important; 
-    height: 100vh !important;
+/*    width:auto !important; 
+    height: 100vh !important;*/
     margin: 0 auto;
+    height: 100vh !important;
 }
 }
 
@@ -196,23 +305,6 @@ jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-
     grid-template-rows: calc(100vw * 0.45);
     align-items: stretch;
     height: 90vh;
-}
-
-.playlist {
-    display: flex;
-    grid-gap: 1vw;
-    align-items: stretch;
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    padding: 0 0vw;
-    margin-top: 2vw;
-}
-
-#nombreCanal {
-    display: flex;
-    position: fixed;
-    z-index: 1;
 }
 .fixed-controls { 
     position: relative;
@@ -230,13 +322,31 @@ jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-
 /*    height: calc(100vh * 0.85);*/
     width: calc(100% - 5vw);
 }
+
+#nombreCanal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+}
+
+.playlist {
+    display: flex;
+    grid-gap: 1vw;
+    align-items: stretch;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    padding: 0 0vw;
+    margin-top: 2vw;
+}
+
 .jwplayer, .jw-flag-aspect-mode {
     height: 100vh !important;
 }
 #myElement {
     position: relative; 
-    width:auto !important; 
-    height: auto !important;
+/*    width:auto !important; 
+    height: auto !important;*/
     margin: 0 auto;
 }
 
@@ -253,6 +363,9 @@ jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-
 
 }
 
+
+
+
 @keyframes fadeInOut {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -264,10 +377,7 @@ jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-
 }
 
 /* Añadir esta regla para que la animación no afecte otras propiedades */
-#nombreCanal {
-  animation: none;
-
-}
+#nombreCanal {  animation: none; }
 
 </style>
 
@@ -302,6 +412,30 @@ jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-
 <li data-src="https://live-01-01-tn.vodgc.net/TN24/index.m3u8">Todo Noticias</li>
 <li data-src="https://live-edge01.telecentro.net.ar/live/tlxhd-720/playlist.m3u8">Telemax</li>
 <li data-src="https://wowza.telpin.com.ar:1935/canal3/canal3.stream/playlist.m3u8">CN 3 pinamar</li>
+
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(AMERICA_TV)/index.m3u8 ">AMERICA</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TV_PUBLICA)/index.m3u8 ">TV PUBLICA</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TELEFE)/index.m3u8 ">TELEFE</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_13)/index.m3u8 ">EL TRECE</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TN)/index.m3u8 ">TN</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(A24)/index.m3u8 ">A24</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_9)/index.m3u8 ">CANAL 9</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_26)/index.m3u8 ">CANAL 26</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CRONICA_TV)/index.m3u8 ">CRONICA</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(C5N)/index.m3u8 ">C5N</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TYC_SPORTS)/index.m3u8 ">TYC</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(ESPN)/index.m3u8 ">ESPN</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(ESPN2)/index.m3u8 ">ESPN2</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(ESPN3)/index.m3u8 ">ESPN3</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS_PREMIUM)/index.m3u8 ">ESPN PREMIUM</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TNT_SPORTS)/index.m3u8 ">TNTSPORTS</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS)/index.m3u8 ">FOX SPORTS</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS_2)/index.m3u8 ">FOX SPORTS 2</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS_3)/index.m3u8 ">FOX SPORTS 3</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(C5N)/index.m3u8 ">C5N</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TN)/index.m3u8 ">TN</li>
+<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(A24)/index.m3u8 ">A24</li>
+
 <li data-src="http://190.52.32.13:1935/canal4/smil:manifest.smil/playlist.m3u8">Canal 4</li>
 <li data-src="https://stream.arcast.live/canal7jujuy/ngrp:canal7jujuy_all/playlist.m3u8?PlaylistM3UCL">Canal 7 Jujuy</li>
 <li data-src="https://stream.arcast.live/ahora/ahora/playlist.m3u8?PlaylistM3UCL">Canal 9 Litoral</li>
@@ -437,13 +571,20 @@ document.addEventListener("DOMContentLoaded", function () {
 const player = jwplayer("myElement").setup({
 related: { displayMode: "shelfWidget", },
 // ... Otras configuraciones ...
-//    preload: 'auto',
+//    preload: 'auto', 
+// activo :: #FF4500   #21abb5
+// inactivo :: #FFFFFF     #7a2350  #49c4b0
+// skin :: name :: six  roundster
 //    skin: {
-    preload: 'none',
+    preload: 'auto',
+
+    autostart: 'true',
+    id : 'playerID',
+
     skin: {
-        name: "six",
-        active: "#FF4500",
-        inactive: "#FFFFFF",
+        name: "roundster",
+        active: "#21abb5",
+        inactive: "#d1d1e0",
         background: "url('https://raw.githubusercontent.com/Marvel999/Android-Loading-Animation/master/LoadingAnimation/src/main/res/drawable/black_four_dot.gif') center center repeat", // Especifica la URL de tu imagen como fondo.
     },
 
@@ -559,9 +700,9 @@ player.on('complete', function() {
 
   window.onmousemove = function () {
     clearTimeout(inactividadTimer);
-    nombreCanal.style.animation = 'fadeInOut 1s forwards'; // Inicia la animación fadeInOut
+    nombreCanal.style.animation = 'fadeInOut 1.5s forwards'; // Inicia la animación fadeInOut
     inactividadTimer = setTimeout(function () {
-      nombreCanal.style.animation = 'fadeOutIn 1s forwards'; // Inicia la animación fadeOutIn después de 5 segundos de inactividad
+      nombreCanal.style.animation = 'fadeOutIn 1.5s forwards'; // Inicia la animación fadeOutIn después de 5 segundos de inactividad
     }, 15000);
   };
 });
