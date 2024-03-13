@@ -4,34 +4,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>R2BTV 2024 JW 4.2</title>
+<title>R2BTV 2024 JW 4.4.1</title>
 <link rel="shortcut icon" href="https://media.flaticon.com/dist/min/img/favicon.ico">
-<meta name="description" content="TV online 24/7 free - v4.2">
-<!-- <script src="https://content.jwplatform.com/libraries/whqXCOFb.js"></script> 
-<script src="https://content.jwplatform.com/libraries/oCTK7cQT.js"></script> 
-<script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>-->
-<!-- <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
-    <script src="https://content.jwplatform.com/libraries/whqXCOFb.js"></script> -->
+<meta name="description" content="R2BTV 2024 JWPB4.4 TV online 24/7 free +300 CANALES">
+<!--script src="https://content.jwplatform.com/libraries/oCTK7cQT.js"></script-->
+
 <script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
 
-
-
-    
-<!-- <script type="text/javascript">
-jwplayer.key = "GO/bHvcIycFaixHqFyFeXsWuMA5+Yr1Dm+PmH6I3sZ0=";
-</script> -->
-
-
-
-
 <style>
+
+
+.jw-state-idle .jw-svg-icon-play path {	
+  display: none!important;
+}
+.jw-state-idle .jw-svg-icon-play {
+  background-image: url('//sample-icons.jwplayer.com/icons/play.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+display: none!important;
+}
 
 body {
     font-family: Arial, sans-serif;
     margin: 0 auto;
     padding: 0;
-/*    background: #01000c;*/
     background: #0c111b;
+}
+
+*::-webkit-scrollbar {
+/*    width: 10px;*/
+    display: none;
+    background: #5f9ea01c;
+    border-radius: 15px;
+}
+
+*:focus-visible {
+    outline: #00FF00 /*#1225a74d*/;
+    outline-style: groove;
 }
 
 .container {
@@ -44,7 +53,7 @@ body {
 .fixed-controls{
     position: fixed;
     width: 96vw;
-    height: calc(100vw * 0.75); /*fit-content;*/
+    height: calc(100vw * 0.71);
     border-top: 2vw solid #01000c00;
     background: #0c111b;
 }
@@ -58,15 +67,16 @@ body {
 }
 
 .playlist {
-    padding-top: 78vw;
+    padding-top: calc(100vw * 0.74);
     margin: 0 1px;
+    z-index: auto;
 }
 
 .controls {
-  display: flex;
-  justify-content: space-between; /* Distribuye los elementos uniformemente */
-  width: 100%;
-  padding-top: 5px;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    width: 100%;
+    padding-top: 5px;
 }
 
 button {
@@ -87,7 +97,7 @@ button:hover {
 }
 
 #nombreCanal {
-    font-size: 1.1em; /*16px; */
+    font-size: small; /*1em; 16px; */
     text-align: center;
     text-transform: uppercase;
     color: rgba(255,255,255,.8);
@@ -99,12 +109,14 @@ button:hover {
     z-index: 1;
     justify-content: center;
     width: 100%;
+    /* Añadir esta regla para que la animación no afecte otras propiedades */
+    animation: none; 
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Crea una grilla con columnas autoajustables */
-  gap: 10px; /* Espacio entre elementos */
+  gap: 0.8vh; /*gap: 10px;  Espacio entre elementos */
   list-style: none; /* Elimina los puntos de lista */
   padding: 0;
   margin: 0 2px;
@@ -112,7 +124,7 @@ button:hover {
 
 #listaVideos li {
     display: inline-block;
-    padding: 10px 0; /*12px 0;*/
+    padding: 2vh 0;
     text-align: center;
     text-overflow: ellipsis;
     text-transform: uppercase;
@@ -132,65 +144,35 @@ listaVideos:hover {
   background: linear-gradient(to bottom, #2c3e50, #1f2b38); /* Cambio de color en el fondo al pasar el mouse */
 }
 
+
+/*Configuracion del reproductor JWPlayer para uso adecuado*/ 
+
 #myElement {
     position: absolute;
     width: 100% !important;
     height: 100% !important;
     border-radius: 5px;
 }
-
 .jw-controlbar {
     background-image: cover !important;
     background-size: cover !important;
     opacity: 0.70;
 }
-
-#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement .jw-settings-topbar {background-image: none !important;}
-
-.jw-settings-content-item {background: unset!important; padding: 4px 0 4px 15px!important; line-height: 1!important;}
-
-/*.jw-sharing-copy*/ 
-.jw-sharing-link {
-/*    display: block!important;*/
-    color: white!important;
-    background: unset!important;
-}
-
 .jw-error-msg, .jw-info-overlay, .jw-state-error {
-    background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
+/*   background-image: url('https://p4.wallpaperbetter.com/wallpaper/843/827/737/simple-background-text-typography-quote-wallpaper-preview.jpg');
+    background-image: url('https://www.axn-asia.com/sites/all/modules/custom/features/site_galleries/images/gallery-loading.gif');*/
+
+    background-image: url('https://img.freepik.com/free-photo/modern-home-interior-with-comfortable-sofa-window-generative-ai_188544-19459.jpg');
     background-size: cover;
     background-position: center;
-    width: 68vw;
-    height: 66vh;
+    width: 100%;
+    height: 100%;
 }
-
-
-
-.jw-error-text { opacity: 0;}
-
-.jw-rightclick{  opacity: 0.7; }
-
-.jw-stats-panel {overflow-y: auto!important ; height: auto!important }
-
-.jw-settings-content-item:hover {color: rgb(33, 171, 181)!important;}
-
 .jw-rightclick-item {
     background-color: unset!important;
     border-bottom: 0px!important;
     margin: 1px!important;
 }
-
-.jw-featured { display:none!important ; }
-/*
-.jw-text-track-display {
-    font-size: inherit!important ;;
-    line-height: 1!important ;;
-    padding: 0 0.1em!important ;;
-    color: crimson!important ;;
-}
-
-.jw-captions.jw-captions-enabled {    color: crimson!important ;;}*/
-
 .jw-text-track-cue {    
     color: #fff; 
     font-family: tahoma!important;
@@ -198,73 +180,120 @@ listaVideos:hover {
     background-color: rgb(0 0 0 / 10%);
 }
 
+.jwplayer.jw-stretch-uniform .jw-media video {  
+    background: black; 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
 /*
+body .jw-error .jw-error-msg .jw-icon, body .jwplayer.jw-state-error .jw-error-msg .jw-icon {display: none !important;}
+#myElement .jw-nextup, #myElement .jw-settings-menu, #myElement .jw-settings-topbar {background-image: none !important;}
 
-, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player 
+*/
+
+/**/
+ .jw-nextup, .jw-settings-menu, .jw-settings-topbar {background-image: none !important;}
+
+.jw-settings-content-item {background: unset!important; padding: 4px 0 4px 15px!important; line-height: 1!important;}
+.jw-sharing-link { color: white!important; background: unset!important;}
+.jw-featured, .jw-slider-time, .jw-error { display:none!important ; }
+.jw-error-text { opacity: 0; font-size:0.0em!important;}
+.jw-rightclick{  opacity: 0.7; }
+.jw-stats-panel {overflow-y: auto!important ; height: auto!important }
+.jw-settings-content-item:hover {color: rgb(33, 171, 181)!important;}
+.jw-svg-icon-buffer { fill: rgb(237 11 88)!important;}
+
+/*.jw-chapter-slider-time, .jw-old-rail, .jw-timesegment, .jw-display-icon-container { display: none!important;}
+
+.jw-flag-autostart, .jw-flag-user-inactive, .jw-flag-live
+
+.jw-floating-dismissible, .jw-keep-thumbnail, .jw-flag-user-inactive { opacity: 0.4 !important;} 
+.jw-error .jw-preview {  background-size: contain;  opacity: 0.8;}
+*/
 
 
+body .jw-error .jw-error-msg .jw-icon, body .jwplayer.jw-state-error .jw-error-msg .jw-icon, .jw-state-idle .jw-svg-icon-play {display: none!important;}
 
-.jwplayer .jw-rightclick .jw-rightclick-list {
-    display: none!important;}
-
-
-
-
-.jw-controlbar {
-    background-image: cover !important;
-    background-size: cover !important;
-    opacity: 0.20;
+/*.jw-breakpoint-0, .jw-breakpoint-1, .jw-breakpoint-2, .jw-breakpoint-3, 
+.jw-breakpoint-4, .jw-breakpoint-5, .jw-breakpoint-6, .jw-breakpoint-7 {display: none!important;}*/
+.jw-flag-media-audio, .jw-flag-floating .jw-wrapper {display: none!important;}
+/*
+.jw-error .jw-display-icon-container, .jwplayer .jw-display-icon-container {
+    width: auto;
+    height: auto;
+    box-sizing: revert;
+    display: none;
 }
 
-#myElement .jw-nextup, #myElement {
-    background-image: none !important;
+#myElement {
+    background-image: url('https://www.appcreator24.com/srv/imgs/gen/1618668_ico.png'); /* Ruta de la imagen predeterminada * /
+    background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor * /
+    background-position: center; /* Centra la imagen * /
 }
-
-#myElement .jw-nextup, .jw-settings-topbar, #myElement .jw-settings-menu
-{
-    background-color: white;
-}
-
-#myElement .jw-nextup, #myElement .jw-settings-menu {background: none;}
-.jw-settings-content-item {background: unset;}
-
-#myElement .jw-settings-topbar {none;}
-
-
-
-jwplayer jw-reset jw-state-buffering jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint-3 jw-flag-touch jw-floating-dismissible jw-flag-live
-
-jwplayer jw-reset jw-state-error jw-stretch-uniform jw-flag-aspect-mode jw-skin-six jw-breakpoint--1 jw-flag-touch jw-floating-dismissible jw-flag-live jw-flag-small-player
-
-imagen cuando hay un error
-.jw-error-msg, .jw-info-overlay, .jw-state-error, .jw-breakpoint--1, .jw-flag-small-player, .jw-state-buffering, .jw-state-buffering, .jw-flag-small-player  
-
-
 
 */
 
 
 
-/*######################################*/
-/*PARA SMARTPHONE*/
-@media (min-aspect-ratio: 1){
-.controls{
-    padding: 5px 2.5vw;
-        padding-bottom: 0;
-        width: 93%;
+/* 
+--para btns de abajo--
+#myElement .jw-button-color:not(.jw-icon-cast), #myElement .jw-button-color.jw-toggle.jw-off:not(.jw-icon-cast) 
+-- para icono PIP en pantalla siempre -- 
+.jw-svg-icon-pip-on{display:block;}
+
+*/
+
+
+
+
+/*################## DISEÑO MULTIPLATAFORMA ####################*/
+
+
+/*  PARA SMARTPHONE  */
+
+@media (min-aspect-ratio: 1.5){
+.controls{ 
+    padding: 5px 2.5vw; padding-bottom: 0; width: 93%;
 }
-.video-container {
-    height: calc(52vw * 0.75);}
+.video-container {  
+    height: calc(52vw * 0.75);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    display: block;
+}
+
 }
 
 
-/*PARA SMARTPHONE   min-aspect-ratio: 2.16 */
+/*  PARA SMARTPHONE muy ancho  min-aspect-ratio: 2.16 */
 @media (min-aspect-ratio: 2.26) and (orientation: landscape) {
+.jwplayer, .jw-flag-aspect-mode {  height: 100vh !important;}
+.fixed-controls { width: 100vw;}
+
+#myElement {
+    position: relative; 
+    margin: 0 auto;
+    height: 100vh !important;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 95vh;
+}
 
 .fixed-controls {
-    border-top: 0; 
+    border-top: 0;
     height: fit-content;
-    display: contents;
+    display: grid;
 }
 
 .video-container {
@@ -273,24 +302,26 @@ imagen cuando hay un error
     position:relative;
     visibility:visible;
     z-index: 0;
+    width: calc(100vh* 16 / 9);
+    margin: auto;
 }
 
 .controls {
     display: flex;
-    position: absolute;
-    /* visibility: visible; */
-    z-index: 2;
-    /* padding-top: 10vh; */
-    opacity: 0.25;
+    position: fixed;
+    z-index: 3;
     flex-direction: column;
-    width: max-content;
-    height: -webkit-fill-available;
-    gap: 5px;
+    gap: 5vh;
+    padding: 5vh 0px 0px 0.4vw;
+    width: 13.5vw;
+    height: 90vh;
 }
 
+button {font-size: medium;}
 
-.controls:hover { 
-transition: opacity 2s;
+.controls:hover, .controls:active { 
+    opacity: 0.75;
+    transition: opacity 2s;
 }
 
 #nombreCanal {
@@ -300,33 +331,71 @@ transition: opacity 2s;
     padding-top: 1vh;
 }
 
-.playlist { display: none;}
-
-.jwplayer, .jw-flag-aspect-mode {
-    height: 100vh !important;
+.playlist {
+    overflow: auto;
+    padding: 0 0vw;
+    position: absolute;
+    margin: 5px 6px 0 0;
+    width: 14vw;
+    height: 88vh;
+    height: 97vh;
+    z-index: 3;
 }
 
-#myElement {
-    position: relative; 
-/*    width:auto !important; 
-    height: 100vh !important;*/
-    margin: 0 auto;
-    height: 100vh !important;
-}
+.grid-container {
+    display: grid;
+    gap: 1.3vh;
+    list-style: none;
+    margin: 0 2px;
+    justify-content: end;
+    height: auto;
+    opacity: 0.85;
 }
 
-/*PARA tv*/
-@media (max-aspect-ratio: 2.26) and (orientation: landscape) {
+/*#listaVideos li {
+    display: flex;
+    padding: 0;
+    font-size: 0.5em;
+    width: auto;
+    border: 1px solid rgb(72 97 135);
+    border-radius: 8px;
+    border-style: inset;
+    height: 8vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+}*/
+
+
+#listaVideos li {
+    padding: 2.6vh 0;
+    font-size: 0.5em;
+    border: 1px solid rgb(72 97 135);
+    border-radius: 8px;
+    border-style: inset;
+}
+
+
+#listaVideos li:hover, #listaVideos li:active { 
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+}
+
+
+
+/*  PARA ANDRIOD TV  */
+@media (min-aspect-ratio: 1.18) and (max-aspect-ratio: 2.26) and (orientation: landscape) {
 
 .container {
     display: grid;
     grid-gap: 0%;
     grid-template-columns: 79% 21%;
-/*    grid-template-rows: 92vh;*/
     grid-template-rows: calc(100vw * 0.45);
     align-items: stretch;
     height: 90vh;
 }
+
 .fixed-controls { 
     position: relative;
     width: 98%;
@@ -338,9 +407,9 @@ transition: opacity 2s;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .video-container {
     padding-bottom: 0;
-/*    height: calc(100vh * 0.85);*/
     width: calc(100% - 5vw);
 }
 
@@ -359,28 +428,20 @@ transition: opacity 2s;
     overflow: auto;
     padding: 0 0vw;
     margin-top: 2vw;
+    width: 21vw;
+    height: 89vh;
+    z-index: 3;
 }
 
 .jwplayer, .jw-flag-aspect-mode {
     height: 100vh !important;
 }
+
 #myElement {
     position: relative; 
-/*    width:auto !important; 
-    height: auto !important;*/
     margin: 0 auto;
 }
 
-
-*::-webkit-scrollbar-thumb {
-    background-color: #065fd442;
-    border-radius: 20px;
-    border: 2px solid #065fd49e;
-    height: 15%;
-}
-*::-webkit-scrollbar {
-    width: 10px;
-}
 
 }
 
@@ -397,12 +458,23 @@ transition: opacity 2s;
   to { opacity: 0; }
 }
 
-/* Añadir esta regla para que la animación no afecte otras propiedades */
-#nombreCanal {  animation: none; }
+
+
+*::-webkit-scrollbar-thumb {
+    background-color: #065fd442;
+    border-radius: 15px;
+    border: 2px solid #065fd49e;
+    height: 32px;
+}
+
+
 
 </style>
 
 </head>
+
+
+
 
 <body>
 
@@ -412,280 +484,257 @@ transition: opacity 2s;
         <!-- Botones de control aquí -->
 
 <div class="video-container">
-  <div id="myElement"></div>
+  <div tabindex="0" id="myElement"></div>
 </div>
 
 <div class="controls">
-  <button id="mute">Mute</button>
-  <button id="anterior">Prev</button>
-  <button id="playPause">Play</button>
-  <button id="siguiente">Next</button>
-  <button id="fullScreen">Full</button>
+  <button tabindex="0" id="mute">Mute</button>
+  <button tabindex="0" id="anterior">Prev</button>
+  <button tabindex="0" id="playPause">Play</button>
+  <button tabindex="0" id="siguiente">Next</button>
+  <button tabindex="0" id="fullScreen">Full</button>
 </div>
-<div id="nombreCanal">Bienvenido a R2B TV, estás viendo Canal 26</div>
+<div id="nombreCanal">Bienvenido a R2BTV JWPB4.4.1</div>
 </div>
 
 <div class="playlist">
 <ul id="listaVideos" class="grid-container">
 
-<li data-src="https://live-01-01-tn.vodgc.net/TN24/index.m3u8">Todo Noticias</li>
-<li data-src="https://wowza.telpin.com.ar:1935/canal3/canal3.stream/playlist.m3u8">CN 3 pinamar</li>
+<li tabindex="0" data-src="https://live-01-01-tn.vodgc.net/TN24/index.m3u8">Todo Noticias</li>
+<li tabindex="0" data-src="https://wowza.telpin.com.ar:1935/canal3/canal3.stream/playlist.m3u8">CN 3 pinamar</li>
+<li tabindex="0" data-src="http://190.52.32.13:1935/canal4/smil:manifest.smil/playlist.m3u8">Canal 4</li>
+<li tabindex="0" data-src="https://stream.arcast.live/canal7jujuy/ngrp:canal7jujuy_all/playlist.m3u8?PlaylistM3UCL">Canal 7 Jujuy</li>
+<li tabindex="0" data-src="https://stream.arcast.live/ahora/ahora/playlist.m3u8?PlaylistM3UCL">Canal 9 Litoral</li>
+<li tabindex="0" data-src="https://stream.arcast.live/canal10/ngrp:canal10_all/playlist.m3u8?PlaylistM3UCL">Canal 10</li>
+<li tabindex="0" data-src="https://g3.mc-hor.transport.edge-access.net/a05/ngrp:c12_live01-100129_all/Playlist.m3u8?sense=true">Canal 12 Misiones</li>
+<li tabindex="0" data-src="http://coninfo.net:1935/13maxhd/live13maxtvnuevo_720p/playlist.m3u8">13 Max</li>
 
 
-<li data-src="http://190.52.32.13:1935/canal4/smil:manifest.smil/playlist.m3u8">Canal 4</li>
-<li data-src="https://stream.arcast.live/canal7jujuy/ngrp:canal7jujuy_all/playlist.m3u8?PlaylistM3UCL">Canal 7 Jujuy</li>
-<li data-src="https://stream.arcast.live/ahora/ahora/playlist.m3u8?PlaylistM3UCL">Canal 9 Litoral</li>
-<li data-src="https://stream.arcast.live/canal10/ngrp:canal10_all/playlist.m3u8?PlaylistM3UCL">Canal 10</li>
-<li data-src="https://g3.mc-hor.transport.edge-access.net/a05/ngrp:c12_live01-100129_all/Playlist.m3u8?sense=true">Canal 12 Misiones</li>
-<li data-src="http://coninfo.net:1935/13maxhd/live13maxtvnuevo_720p/playlist.m3u8">13 Max</li>
-<li data-src="https://5fb24b460df87.streamlock.net/live-cont.ar/encuentro/chunklist_w1733579940.m3u8">Encuentro</li>
-<li data-src="https://wowza.telpin.com.ar:1935/telpintv/smil:ttv.stream.smil/playlist.m3u8">Telpin Canal</li>
-<li data-src="https://videostream.shockmedia.com.ar:19360/neotvdigital/neotvdigital.m3u8">Neo TV</li>
-<li data-src="https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8?PlaylistM3UCL">Canal Provincial</li>
-<li data-src="https://stream.arcast.live/canalu/canalu/playlist.m3u8">Canal U</li>
+<li tabindex="0" data-src="https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index.m3u8">TyC Sports</li>
+<li tabindex="0" data-src="https://d3awnlgqz0szay.cloudfront.net/out/v1/09e35529553d472b8f14e437af642e2f/index_13.m3u8">TyC PLAY</li>
+<li tabindex="0" data-src="https://d3awnlgqz0szay.cloudfront.net/out/v1/19321d887c274b58a4f62fe0f6e2151b/index_9.m3u8">TyC</li>
+<li tabindex="0" data-src="https://dpyzprfzko681.cloudfront.net/out/v1/366fc52554ae42c58465ea4b278eac0c/index_15.m3u8">TyC Eventos</li>
+
+
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch573/playlist.m3u8">ACCN ESPN</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch548/playlist.m3u8">AFIZZIONADOS MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch542/playlist.m3u8">ESPN 2 MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch320/playlist.m3u8">ESPN 3 MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch311/playlist.m3u8">ESPN DEPORTES</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch319/playlist.m3u8">ESPN MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch329/playlist.m3u8">ESPN US</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch313/playlist.m3u8">ESPN USA</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch301/playlist.m3u8">Fox Deportes</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch321/playlist.m3u8">FOX SPORTS 1 MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch322/playlist.m3u8">FOX SPORTS 2 MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch338/playlist.m3u8">FOX SPORTS 3 MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch339/playlist.m3u8">FS1 US</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch326/playlist.m3u8">FS2 USA</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch302/playlist.m3u8">TUDN USA</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch534/playlist.m3u8">UFC</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch310/playlist.m3u8">NBATV</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch331/playlist.m3u8">NBCS SPORTS</li>
+
+
+
+
+<li tabindex="0" data-src="http://digicom.hls.iptvdc.com/canalmotor/index.m3u8">Canal Motor</li>
+<li tabindex="0" data-src="https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/playlist.m3u8">All Sports BR</li>
+<li tabindex="0" data-src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8">RedBull TV</li>
+
+
+<li tabindex="0" data-src="https://wowza.telpin.com.ar:1935/telpintv/smil:ttv.stream.smil/playlist.m3u8">Telpin Canal</li>
+<li tabindex="0" data-src="https://videostream.shockmedia.com.ar:19360/neotvdigital/neotvdigital.m3u8">Neo TV</li>
+<li tabindex="0" data-src="https://streaming.telered.com.ar/provincial/streaming/mystream.m3u8?PlaylistM3UCL">Canal Provincial</li>
+<li tabindex="0" data-src="https://stream.arcast.live/canalu/canalu/playlist.m3u8">Canal U</li>
+
+
+<li tabindex="0" data-src="https://panel.dattalive.com/8250/8250/.m3u8">Multivisión</li>
+<li tabindex="0" data-src="https://cnnsanjuan.com:9999/live/telesol/playlist.m3u8?PlaylistM3UCL">Telesol</li>
+<li tabindex="0" data-src="https://videohd.live:19360/8020/8020.m3u8?PlaylistM3UCL">Telediez</li>
+
 
 <!-- 
-<li data-src="https://video.streamtvradio.com:8443/uv096/uv096/playlist.m3u8?PlaylistM3UCL">PANC TV</li>
-<li data-src="https://unlimited1-us.dps.live/nettv/nettv.smil/nettv/livestream2/chunks.m3u8">Net TV</li>
-<li data-src="https://cda2.alsolnet.com/elrural/live/playlist.m3u8">Canal Rural</li>
-<li data-src="https://video.alfasocialmedia.com.ar:3396/live/milleniumtvlive.m3u8">Milenium TV</li>
-<li data-src="https://d1nmqgphjn0y4.cloudfront.net/live/ip/live.isml/5ee6e167-1167-4a85-9d8d-e08a3f55cff3.m3u8?caster">IP TV</li>
-<li data-src="https://siloh.pluto.tv/lilo/production/BEIN/ES/master.m3u8">Bein Sport XTRA ñ</li>
+<li tabindex="0" data-src="">A3</li>
+ -->
+
+<li tabindex="0" data-src="https://directes-tv-int.ccma.cat/live-origin/tvi-hls/master.m3u8">TV3 Catalunya</li>
+<li tabindex="0" data-src="https://ondacadiztv.es:30443/octv/directo_multi/playlist.m3u8">Onda Cadiz</li>
+<li tabindex="0" data-src="https://multimedia.eitb.eus/live-content/etb1hd-hls/master.m3u8">ETB</li>
+<li tabindex="0" data-src="https://multimedia.eitb.eus/live-content/etb2hd-hls/master.m3u8">ETB</li>
+<li tabindex="0" data-src="http://america-crtvg.flumotion.com/playlist.m3u8">TV Galicia America</li>
+<li tabindex="0" data-src="https://latv-rcn-xtra-1-mx.tcl.wurl.tv/playlist.m3u8">RCN Xtra</li>
+<li tabindex="0" data-src="https://rcntv-rcnmas-1-us.plex.wurl.tv/playlist.m3u8">RCN Mas</li>
+<li tabindex="0" data-src="https://tastemadees16intl-brightcove.amagi.tv/playlist.m3u8">Tastemade</li>
+<li tabindex="0" data-src="https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8">My Zen TV Fit</li>
+<li tabindex="0" data-src="https://linear-46.frequency.stream/46/hls/master/playlist.m3u8">AFV</li>
+<li tabindex="0" data-src="https://mdstrm.com/live-stream-playlist/60b578b060947317de7b57ac.m3u8">ADN 40</li>
+<li tabindex="0" data-src="https://vivo.canaloncelive.tv/alivepkgr3/ngrp:cepro_all/playlist.m3u8">Canal Once</li>
+<li tabindex="0" data-src="https://canal10.mediaflix.istream.mx/wza_live/live/movil/playlist.m3u8">Canal 10 Cancun</li>
+<li tabindex="0" data-src="https://streamconex.com:1936/canalxfn/canalxfn/playlist.m3u8">Canal XFN</li>
+<li tabindex="0" data-src="http://boliviatv1.srfms.com:5735/live/livestream/playlist.m3u8">Bolivia TV 7.1</li>
+<li tabindex="0" data-src="https://master.tucableip.com/live/tvlatinamontero/playlist.m3u8">TV Latina</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/lared/lared.smil/playlist.m3u8">La Red Chile</li>
+<li tabindex="0" data-src="https://unlimited2-cl-isp.dps.live/ucvtv2/ucvtv2.smil/playlist.m3u8?PlaylistM3UCL">UCV  Chile</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/uchiletv/uchiletv.smil/playlist.m3u8">U Chile TV</li>
+<li tabindex="0" data-src="https://unlimited10-cl.dps.live/ucvtveventos/ucvtveventos.smil/playlist.m3u8">UCV 2  Chile</li>
+<li tabindex="0" data-src="https://stv.janus.cl/playlist/stream.m3u8">STGO.TV</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/campustv/campustv.smil/playlist.m3u8">Campus TV</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/t13/t13.smil/playlist.m3u8?PlaylistM3UCL">T13  Chile</li>
+<li tabindex="0" data-src="https://v4.tustreaming.cl/poptv/index.m3u8">TV Pop</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/atv/atv.smil/playlist.m3u8">Antofagasta TV</li>
+<li tabindex="0" data-src="https://v2.tustreaming.cl/chilechannel/index.m3u8">Chile Channel</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/tvr/tvr.smil/playlist.m3u8">TVR</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/tcsc/tcsc.smil/playlist.m3u8">Telecanal Santa Cruz</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/tctc/tctc.smil/playlist.m3u8">Telecanal Talca</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/c9/c9.smil/playlist.m3u8">Canal 9 Bío Bío</li>
+<li tabindex="0" data-src="https://mediacpstreamchile.com:1936/clubtv/clubtv/playlist.m3u8">Club TV</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/pucontv/pucontv.smil/playlist.m3u8">Pucon TV</li>
+<li tabindex="0" data-src="https://paneltv.online:1936/8034/8034/playlist.m3u8">SurTV</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/itv/itv.smil/playlist.m3u8">ITV Patagonia</li>
+<li tabindex="0" data-src="https://unlimited1-cl-isp.dps.live/bbtv/bbtv.smil/playlist.m3u8">Bio Bio TV</li>
+<li tabindex="0" data-src="http://38.75.136.76:1935/cncmedellin720/canalcncmedellin.stream_720p/playlist.m3u8">Canal CNC Peru</li>
+<li tabindex="0" data-src="https://stream.logicideas.media/canaltrece-live/smil:live.smil/playlist.m3u8">Canal Trece Colombia</li>
+<li tabindex="0" data-src="https://streaming.rtvc.gov.co/TV_Senal_Colombia_live/smil:live.smil/playlist.m3u8">Señal Colombia</li>
+<li tabindex="0" data-src="https://play.amelbasoluciones.co:3971/live/tdicolombiatvlive.m3u8?PlaylistM3UCL">TDI Colombia</li>
+<li tabindex="0" data-src="https://stream.logicideas.media/telepacifico-live/live.smil/.m3u8">Telepacífico</li>
+<li tabindex="0" data-src="https://cloudvideo.servers10.com:8081/8030/index.m3u8">CB TV Costa Rica</li>
+<li tabindex="0" data-src="http://tiquiciatv.com:1935/stv/envivo/playlist.m3u8">Sarapiqui TV</li>
+<li tabindex="0" data-src="http://k4.usastreams.com/limontv1/limontv1/playlist.m3u8">Limon TV</li>
+<li tabindex="0" data-src="http://tv.ticosmedia.com:1935/TVSUR/TVSUR/playlist.m3u8">TV Sur Canal 9</li>
+<li tabindex="0" data-src="https://vcp.myplaytv.com/promar/promar/playlist.m3u8?PlaylistM3UCL">Promar TV Venezuela</li>
+<li tabindex="0" data-src="https://vcp.myplaytv.com/canali/canali/playlist.m3u8">Canal i Venezuela</li>
+<li tabindex="0" data-src="https://rds3.desdeparaguay.net/mitv/mitv/playlist.m3u8">Mi TV</li>
+<li tabindex="0" data-src="https://stream.plixitv.live/oktv/oktv/playlist.m3u8?PlaylistM3UCL">OK TeVe</li>
+<li tabindex="0" data-src="https://streaming.trece.com.py/live/trece.m3u8">Trece PY</li>
+<li tabindex="0" data-src="https://live.obslivestream.com/telecolormux/index.m3u8?PlaylistM3UCL">Telecolor TV</li>
+<li tabindex="0" data-src="https://cdn4.hostlagarto.com:8081/static/puntacanatv/playlist.m3u8?PlaylistM3UCL">Punta Cana TV</li>
+<li tabindex="0" data-src="https://livees.cgtn.com/1000e/prog_index.m3u8">CGTN China</li>
+<li tabindex="0" data-src="https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8">DW - Esp</li>
+<li tabindex="0" data-src="https://rt-esp.rttv.com/live/rtesp/playlist.m3u8">RT - Esp</li>
+<li tabindex="0" data-src="https://cdnesmain.telesur.ultrabase.net/mbliveMain/480p/chunklist.m3u8">TeleSur</li>
+<li tabindex="0" data-src="https://estrellanews-plex.amagi.tv/playlist.m3u8">Estrella News</li>
+<li tabindex="0" data-src="https://www.bloomberg.com/media-manifest/streams/us.m3u8">Bloomberg - Ing</li>
+<li tabindex="0" data-src="https://reuters-reutersnow-1-us.plex.wurl.tv/playlist.m3u8">Reuters - Ing</li>
+<li tabindex="0" data-src="http://g5.mc-hor.transport.edge-access.net/a09/ngrp:CM_CanaldelaMusica-100044_all/Playlist.m3u8?sense=true">CM</li>
+<li tabindex="0" data-src="https://vcp.myplaytv.com/oxigenotv/oxigenotv/chunklist_w34527763.m3u8">Oxigeno TV</li>
+<li tabindex="0" data-src="https://zmlive.zappingtv.com/zm-free/zm.smil/playlist.m3u8?PlaylistM3UCL">Zapping music</li>
+<li tabindex="0" data-src="http://149.56.17.92:1935/portalfoxmix/_definst_/portalfoxmix/playlist.m3u8?PlaylistM3UCL">Portal Fox Mix</li>
+<li tabindex="0" data-src="https://vdo1.streamgato.us:3359/live/tvexitoslive.m3u8">TV Exitos</li>
+<li tabindex="0" data-src="https://livelist01.yowi.tv/lista/dc1b71c6fda2e687050facaa7242062cbf5a7f2a/master.m3u8">HGM música relax</li>
+<li tabindex="0" data-src="http://k4.usastreams.com/videotour/videotour/playlist.m3u8?PlaylistM3UCL">Video tour</li>
+<li tabindex="0" data-src="https://59f1cbe63db89.streamlock.net:1443/retroplussenal2/_definst_/retroplussenal2/playlist.m3u8?PlaylistM3UCL">Retro Plus music</li>
+<li tabindex="0" data-src="https://sabermas-plex.amagi.tv/SaberMas-xumo/master.m3u8">SABER MÁS</li>
+<li tabindex="0" data-src="https://live.atresmediainternacional.com/ATRESMEDIA/holatv-1080.m3u8">¡Hola!TV</li>
+<li tabindex="0" data-src="http://154.62.74.12:1935/live/smil:cosmoHD/.m3u8">COSMO</li>
+<li tabindex="0" data-src="https://estrellatv-roku.amagi.tv/playlist.m3u8">Estrellas</li>
+<li tabindex="0" data-src="https://livestream.lamusica.com/megatvP320/ngrp:megatvP320_all/.m3u8">Mega TV</li>
+
+<!-- 
+<li tabindex="0" data-src="https://edge2.prepro.cvattv.com.ar/live/live/AnimalPlanet/SA_Live_WebVTT_FTA/AnimalPlanet-spa=20001-AVC1=10000.m3u8">Animal Planet</li>
+<li tabindex="0" data-src="https://bamus-spa-roku.amagi.tv/playlist.m3u8">Love Nature 4K</li>
+<li tabindex="0" data-src="https://euronews-euronews-spanish-2-mx.samsung.wurl.com/manifest/playlist.m3u8">EuroNews - Esp</li>
+
+<li tabindex="0" data-src="https://failarmy-linear-us.sinclair.wurl.tv/playlist.m3u8">Failarmy</li>
+<li tabindex="0" data-src="https://tls-cl.cdnz.cl/planetatvkids/live/playlist.m3u8">PlanetaTV Kids</li>
+<li tabindex="0" data-src="https://srv5.zcast.com.br/simpsons/simpsons/playlist.m3u8">Los Simpsons D</li>
+<li tabindex="0" data-src="https://vivo.solumedia.com:19360/retromagico/retromagico.m3u8">Retro Mágico</li>
+
+ -->
+
+<li tabindex="0" data-src="https://tucine-plex.amagi.tv/TuCine-xumo/master_6.m3u8">TU CINE</li>
+<li tabindex="0" data-src="https://cinereal-plex.amagi.tv/CineReal/master_6.m3u8">CINE REAL</li>
+<li tabindex="0" data-src="https://chiquilines-plex.amagi.tv/Chiquilines-plex/master_6.m3u8">CHIQUILINES</li>
+<li tabindex="0" data-src="https://spt-comedias-1-us.lg.wurl.tv/playlist.m3u8">SONY Comedia</li>
+<li tabindex="0" data-src="https://spt-novelas-1-us.lg.wurl.tv/playlist.m3u8">SONY Novelas</li>
+<li tabindex="0" data-src="https://olympusamagi.pc.cdn.bitgravity.com/Juntos-roku/master_6.m3u8">JUNTOS</li>
+<li tabindex="0" data-src="https://stormcast-novelas-2-es.samsung.wurl.tv/playlist.m3u8">Novelas en español</li>
+<li tabindex="0" data-src="https://rakuten-hola-2-es.samsung.wurl.tv/playlist.m3u8">Hola Play</li>
+<li tabindex="0" data-src="https://linear-194.frequency.stream/194/hls/master/playlist.m3u8">ViX Romance</li>
+<li tabindex="0" data-src="https://linear-195.frequency.stream/195/hls/master/playlist.m3u8">ViX Familia</li>
+<li tabindex="0" data-src="https://spt-competencias-1-us.samsung.wurl.tv/playlist.m3u8">Sony Competencias</li>
+
+
+
+<!-- 
 
 
  -->
 
 
-<li data-src="https://panel.dattalive.com/8250/8250/.m3u8">Multivisión</li>
-<li data-src="https://cnnsanjuan.com:9999/live/telesol/playlist.m3u8?PlaylistM3UCL">Telesol</li>
-<li data-src="https://videohd.live:19360/8020/8020.m3u8?PlaylistM3UCL">Telediez</li>
-<li data-src="https://router.cdn.rcs.net.ar/mnp/canal26_hls/playlist.m3u8?a=1&b=2">Canal 26</li>
 
-<li data-src="https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index.m3u8">TyC Sports</li>
-<li data-src="https://d3awnlgqz0szay.cloudfront.net/out/v1/09e35529553d472b8f14e437af642e2f/index_13.m3u8">TyC PLAY</li>
-<li data-src="https://d3awnlgqz0szay.cloudfront.net/out/v1/19321d887c274b58a4f62fe0f6e2151b/index_9.m3u8">TyC</li>
-<li data-src="https://dpyzprfzko681.cloudfront.net/out/v1/366fc52554ae42c58465ea4b278eac0c/index_15.m3u8">TyC Eventos</li>
-<!-- 
-
-<li data-src="https://5fb24b460df87.streamlock.net/live-cont.ar/deportv/chunklist_w442563431.m3u8">DeporTV</li>
-<li data-src="https://claro-jw.cdn.vustreams.com/live/channel07/live.isml/live-audio_0=64000-video=6499968.m3u8">Claro Sports</li>
-
- -->
-
-<li data-src="http://digicom.hls.iptvdc.com/canalmotor/index.m3u8">Canal Motor</li>
-<li data-src="https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/playlist.m3u8">All Sports BR</li>
-<li data-src="https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8">RedBull TV</li>
-
-<!-- 
-<li data-src="https://live.atresmediainternacional.com/ATRESMEDIA/a3cine-1080.m3u8">A3cine</li>
-<li data-src="http://cartv.streaming.aranova.es/hls/live/aragontv_canal1.m3u8?PlaylistM3UCL">Aragon TV</li>
-<li data-src="https://rtvelivestream.akamaized.net/rtvesec/la2/la2_main_dvr.m3u8">La 2</li>
-
-
- -->
-<li data-src="https://directes-tv-int.ccma.cat/live-origin/tvi-hls/master.m3u8">TV3 Catalunya</li>
-<li data-src="https://ondacadiztv.es:30443/octv/directo_multi/playlist.m3u8">Onda Cadiz</li>
-<li data-src="https://multimedia.eitb.eus/live-content/etb1hd-hls/master.m3u8">ETB</li>
-<li data-src="https://multimedia.eitb.eus/live-content/etb2hd-hls/master.m3u8">ETB</li>
-<li data-src="http://america-crtvg.flumotion.com/playlist.m3u8">TV Galicia America</li>
-<li data-src="https://latv-rcn-xtra-1-mx.tcl.wurl.tv/playlist.m3u8">RCN Xtra</li>
-<li data-src="https://rcntv-rcnmas-1-us.plex.wurl.tv/playlist.m3u8">RCN Mas</li>
-<li data-src="https://tastemadees16intl-brightcove.amagi.tv/playlist.m3u8">Tastemade</li>
-<li data-src="https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8">My Zen TV Fit</li>
-<li data-src="https://linear-46.frequency.stream/46/hls/master/playlist.m3u8">AFV</li>
-<li data-src="https://mdstrm.com/live-stream-playlist/60b578b060947317de7b57ac.m3u8">ADN 40</li>
-<li data-src="https://vivo.canaloncelive.tv/alivepkgr3/ngrp:cepro_all/playlist.m3u8">Canal Once</li>
-<li data-src="https://canal10.mediaflix.istream.mx/wza_live/live/movil/playlist.m3u8">Canal 10 Cancun</li>
-<li data-src="https://streamconex.com:1936/canalxfn/canalxfn/playlist.m3u8">Canal XFN</li>
-<li data-src="http://boliviatv1.srfms.com:5735/live/livestream/playlist.m3u8">Bolivia TV 7.1</li>
-<li data-src="https://master.tucableip.com/live/tvlatinamontero/playlist.m3u8">TV Latina</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/lared/lared.smil/playlist.m3u8">La Red Chile</li>
-<li data-src="https://unlimited2-cl-isp.dps.live/ucvtv2/ucvtv2.smil/playlist.m3u8?PlaylistM3UCL">UCV  Chile</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/uchiletv/uchiletv.smil/playlist.m3u8">U Chile TV</li>
-<li data-src="https://unlimited10-cl.dps.live/ucvtveventos/ucvtveventos.smil/playlist.m3u8">UCV 2  Chile</li>
-<li data-src="https://stv.janus.cl/playlist/stream.m3u8">STGO.TV</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/campustv/campustv.smil/playlist.m3u8">Campus TV</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/t13/t13.smil/playlist.m3u8?PlaylistM3UCL">T13  Chile</li>
-<li data-src="https://v4.tustreaming.cl/poptv/index.m3u8">TV Pop</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/atv/atv.smil/playlist.m3u8">Antofagasta TV</li>
-<li data-src="https://v2.tustreaming.cl/chilechannel/index.m3u8">Chile Channel</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/tvr/tvr.smil/playlist.m3u8">TVR</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/tcsc/tcsc.smil/playlist.m3u8">Telecanal Santa Cruz</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/tctc/tctc.smil/playlist.m3u8">Telecanal Talca</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/c9/c9.smil/playlist.m3u8">Canal 9 Bío Bío</li>
-<li data-src="https://mediacpstreamchile.com:1936/clubtv/clubtv/playlist.m3u8">Club TV</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/pucontv/pucontv.smil/playlist.m3u8">Pucon TV</li>
-<li data-src="https://paneltv.online:1936/8034/8034/playlist.m3u8">SurTV</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/itv/itv.smil/playlist.m3u8">ITV Patagonia</li>
-<li data-src="https://unlimited1-cl-isp.dps.live/bbtv/bbtv.smil/playlist.m3u8">Bio Bio TV</li>
-<li data-src="http://38.75.136.76:1935/cncmedellin720/canalcncmedellin.stream_720p/playlist.m3u8">Canal CNC Peru</li>
-<li data-src="https://stream.logicideas.media/canaltrece-live/smil:live.smil/playlist.m3u8">Canal Trece Colombia</li>
-<li data-src="https://streaming.rtvc.gov.co/TV_Senal_Colombia_live/smil:live.smil/playlist.m3u8">Señal Colombia</li>
-<li data-src="https://play.amelbasoluciones.co:3971/live/tdicolombiatvlive.m3u8?PlaylistM3UCL">TDI Colombia</li>
-<li data-src="https://stream.logicideas.media/telepacifico-live/live.smil/.m3u8">Telepacífico</li>
-<li data-src="https://cloudvideo.servers10.com:8081/8030/index.m3u8">CB TV Costa Rica</li>
-<li data-src="http://tiquiciatv.com:1935/stv/envivo/playlist.m3u8">Sarapiqui TV</li>
-<li data-src="http://k4.usastreams.com/limontv1/limontv1/playlist.m3u8">Limon TV</li>
-<li data-src="http://tv.ticosmedia.com:1935/TVSUR/TVSUR/playlist.m3u8">TV Sur Canal 9</li>
-<li data-src="https://vcp.myplaytv.com/promar/promar/playlist.m3u8?PlaylistM3UCL">Promar TV Venezuela</li>
-<li data-src="https://vcp.myplaytv.com/canali/canali/playlist.m3u8">Canal i Venezuela</li>
-<li data-src="https://rds3.desdeparaguay.net/mitv/mitv/playlist.m3u8">Mi TV</li>
-<li data-src="https://stream.plixitv.live/oktv/oktv/playlist.m3u8?PlaylistM3UCL">OK TeVe</li>
-<li data-src="https://streaming.trece.com.py/live/trece.m3u8">Trece PY</li>
-<li data-src="https://live.obslivestream.com/telecolormux/index.m3u8?PlaylistM3UCL">Telecolor TV</li>
-<li data-src="https://cdn4.hostlagarto.com:8081/static/puntacanatv/playlist.m3u8?PlaylistM3UCL">Punta Cana TV</li>
-<li data-src="https://livees.cgtn.com/1000e/prog_index.m3u8">CGTN China</li>
-<li data-src="https://euronews-euronews-spanish-2-mx.samsung.wurl.com/manifest/playlist.m3u8">EuroNews - Esp</li>
-<li data-src="https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8">DW - Esp</li>
-<li data-src="https://rt-esp.rttv.com/live/rtesp/playlist.m3u8">RT - Esp</li>
-<li data-src="https://cdnesmain.telesur.ultrabase.net/mbliveMain/480p/chunklist.m3u8">TeleSur</li>
-<li data-src="https://estrellanews-plex.amagi.tv/playlist.m3u8">Estrella News</li>
-<li data-src="https://www.bloomberg.com/media-manifest/streams/us.m3u8">Bloomberg - Ing</li>
-<li data-src="https://reuters-reutersnow-1-us.plex.wurl.tv/playlist.m3u8">Reuters - Ing</li>
-<li data-src="http://g5.mc-hor.transport.edge-access.net/a09/ngrp:CM_CanaldelaMusica-100044_all/Playlist.m3u8?sense=true">CM</li>
-<li data-src="https://vcp.myplaytv.com/oxigenotv/oxigenotv/chunklist_w34527763.m3u8">Oxigeno TV</li>
-<li data-src="https://zmlive.zappingtv.com/zm-free/zm.smil/playlist.m3u8?PlaylistM3UCL">Zapping music</li>
-<li data-src="http://149.56.17.92:1935/portalfoxmix/_definst_/portalfoxmix/playlist.m3u8?PlaylistM3UCL">Portal Fox Mix</li>
-<li data-src="https://vdo1.streamgato.us:3359/live/tvexitoslive.m3u8">TV Exitos</li>
-<li data-src="https://livelist01.yowi.tv/lista/dc1b71c6fda2e687050facaa7242062cbf5a7f2a/master.m3u8">HGM música relax</li>
-<li data-src="http://k4.usastreams.com/videotour/videotour/playlist.m3u8?PlaylistM3UCL">Video tour</li>
-<li data-src="https://59f1cbe63db89.streamlock.net:1443/retroplussenal2/_definst_/retroplussenal2/playlist.m3u8?PlaylistM3UCL">Retro Plus music</li>
-<li data-src="https://sabermas-plex.amagi.tv/SaberMas-xumo/master.m3u8">SABER MÁS</li>
-<li data-src="https://live.atresmediainternacional.com/ATRESMEDIA/holatv-1080.m3u8">¡Hola!TV</li>
-<li data-src="http://154.62.74.12:1935/live/smil:cosmoHD/.m3u8">COSMO</li>
-<li data-src="https://estrellatv-roku.amagi.tv/playlist.m3u8">Estrellas</li>
-<li data-src="https://livestream.lamusica.com/megatvP320/ngrp:megatvP320_all/.m3u8">Mega TV</li>
-
-<!-- 
-<li data-src="https://edge2.prepro.cvattv.com.ar/live/live/AnimalPlanet/SA_Live_WebVTT_FTA/AnimalPlanet-spa=20001-AVC1=10000.m3u8">Animal Planet</li>
-<li data-src="https://bamus-spa-roku.amagi.tv/playlist.m3u8">Love Nature 4K</li>
-
-<li data-src="https://failarmy-linear-us.sinclair.wurl.tv/playlist.m3u8">Failarmy</li>
-<li data-src="https://tls-cl.cdnz.cl/planetatvkids/live/playlist.m3u8">PlanetaTV Kids</li>
-<li data-src="https://srv5.zcast.com.br/simpsons/simpsons/playlist.m3u8">Los Simpsons D</li>
-<li data-src="https://vivo.solumedia.com:19360/retromagico/retromagico.m3u8">Retro Mágico</li>
-
- -->
-
-<li data-src="https://tucine-plex.amagi.tv/TuCine-xumo/master_6.m3u8">TU CINE</li>
-<li data-src="https://cinereal-plex.amagi.tv/CineReal/master_6.m3u8">CINE REAL</li>
-<li data-src="https://chiquilines-plex.amagi.tv/Chiquilines-plex/master_6.m3u8">CHIQUILINES</li>
-<li data-src="https://spt-comedias-1-us.lg.wurl.tv/playlist.m3u8">SONY Comedia</li>
-<li data-src="https://spt-novelas-1-us.lg.wurl.tv/playlist.m3u8">SONY Novelas</li>
-<li data-src="https://olympusamagi.pc.cdn.bitgravity.com/Juntos-roku/master_6.m3u8">JUNTOS</li>
-<li data-src="https://stormcast-novelas-2-es.samsung.wurl.tv/playlist.m3u8">Novelas en español</li>
-<li data-src="https://rakuten-hola-2-es.samsung.wurl.tv/playlist.m3u8">Hola Play</li>
-<li data-src="https://linear-194.frequency.stream/194/hls/master/playlist.m3u8">ViX Romance</li>
-<li data-src="https://linear-195.frequency.stream/195/hls/master/playlist.m3u8">ViX Familia</li>
-<li data-src="https://spt-competencias-1-us.samsung.wurl.tv/playlist.m3u8">Sony Competencias</li>
-
-
-
-<!-- 
-
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(AMERICA_TV)/index.m3u8">AMERICA</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TV_PUBLICA)/index.m3u8">TV PUBLICA</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TELEFE)/index.m3u8">TELEFE</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_13)/index.m3u8">EL TRECE</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TN)/index.m3u8">TN</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TN)/01.m3u8">TN2</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(A24)/index.m3u8">A24</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CANAL_9)/index.m3u8">CANAL 9</li>
-<li data-src="https://router.cdn.rcs.net.ar/mnp/canal26_hls/playlist.m3u8?a=1&b=2">CANAL 26</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(CRONICA_TV)/index.m3u8">CRONICA</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(C5N)/index.m3u8">C5N</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TYC_SPORTS)/index.m3u8">TYC</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(ESPN)/index.m3u8">ESPN</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(ESPN2)/index.m3u8">ESPN2</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(ESPN3)/index.m3u8">ESPN3</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS_PREMIUM)/index.m3u8">ESPN PREMIUM</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TNT_SPORTS)/index.m3u8">TNTSPORTS</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS)/index.m3u8">FOX SPORTS</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS_2)/index.m3u8">FOX SPORTS 2</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(FOX_SPORTS_3)/index.m3u8">FOX SPORTS 3</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(C5N)/index.m3u8">C5N</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(TN)/index.m3u8">TN</li>
-<li data-src="https://pylocaltstvhls.lcdn.clarotv.com.py/Content/HLS_HLS_FK/Live/channel(A24)/index.m3u8">A24</li>
-
- -->
-
-
-
-<li data-src="https://linear-317.frequency.stream/mt/studio/317/hls/master/playlist.m3u8">Cocina TV</li>
-<li data-src="https://linear-304.frequency.stream/mt/studio/304/hls/master/playlist.m3u8">Fuakata!</li>
-<li data-src="https://linear-261.frequency.stream/mt/studio/261/hls/master/playlist.m3u8">My Time Original</li>
-<li data-src="https://linear-260.frequency.stream/mt/studio/260/hls/master/playlist.m3u8">vivo play</li>
-<li data-src="https://linear-393.frequency.stream/mt/studio/393/hls/master/playlist.m3u8">Adrenalina Sport</li>
-<li data-src="https://linear-348.frequency.stream/mt/studio/348/hls/master/playlist.m3u8">Afizzionados</li>
-<li data-src="https://linear-256.frequency.stream/mt/studio/256/hls/master/playlist.m3u8">beIn Sports XTRA ÃƒÂ±</li>
-<li data-src="https://linear-452.frequency.stream/mt/studio/452/hls/master/playlist.m3u8">Lo Mejor Liga MX</li>
-<li data-src="https://linear-439.frequency.stream/mt/studio/439/hls/master/playlist.m3u8">TUDN</li>
-<li data-src="https://linear-441.frequency.stream/mt/studio/441/hls/master/playlist.m3u8">TUDN 2</li>
-<li data-src="https://linear-442.frequency.stream/mt/studio/442/hls/master/playlist.m3u8">TUDN 3</li>
-<li data-src="https://linear-258.frequency.stream/mt/studio/258/hls/master/playlist.m3u8">ATV+</li>
-<li data-src="https://linear-351.frequency.stream/mt/studio/351/hls/master/playlist.m3u8">Canal 5</li>
-<li data-src="https://linear-300.frequency.stream/mt/studio/300/hls/master/playlist.m3u8">ForoTV</li>
-<li data-src="https://linear-413.frequency.stream/mt/studio/413/hls/master/playlist.m3u8">Las Estrellas</li>
-<li data-src="https://linear-414.frequency.stream/mt/studio/414/hls/master/playlist.m3u8">Las Estrellas -1 Hora</li>
-<li data-src="https://linear-415.frequency.stream/mt/studio/415/hls/master/playlist.m3u8">Las Estrellas -2 Horas</li>
-<li data-src="https://linear-416.frequency.stream/mt/studio/416/hls/master/playlist.m3u8">Las Estrellas Latam</li>
-<li data-src="https://linear-263.frequency.stream/mt/studio/263/hls/master/playlist.m3u8">levelup</li>
-<li data-src="https://linear-301.frequency.stream/mt/studio/301/hls/master/playlist.m3u8">N+ Media</li>
-<li data-src="https://linear-352.frequency.stream/mt/studio/352/hls/master/playlist.m3u8">Nu9ve</li>
-<li data-src="https://linear-262.frequency.stream/mt/studio/262/hls/master/playlist.m3u8">Nuestra Vision</li>
-<li data-src="https://linear-402.frequency.stream/mt/studio/402/hls/master/playlist.m3u8">Televisa Guadalajara</li>
-<li data-src="https://linear-403.frequency.stream/mt/studio/403/hls/master/playlist.m3u8">Televisa Monterrey</li>
-<li data-src="https://linear-453.frequency.stream/mt/studio/453/hls/master/playlist.m3u8">The Weather Channel Español</li>
-<li data-src="https://linear-259.frequency.stream/mt/studio/259/hls/master/playlist.m3u8">TN23</li>
-<li data-src="https://linear-423.frequency.stream/mt/studio/423/hls/master/playlist.m3u8">Unicable</li>
-<li data-src="https://linear-424.frequency.stream/mt/studio/424/hls/master/playlist.m3u8">Univision Latam</li>
-<li data-src="https://linear-358.frequency.stream/mt/studio/358/hls/master/playlist.m3u8">CNN Español</li>
-<li data-src="https://linear-255.frequency.stream/mt/studio/255/hls/master/playlist.m3u8">Euronews</li>
-<li data-src="https://linear-254.frequency.stream/mt/studio/254/hls/master/playlist.m3u8">Noticias Univision 24/7</li>
-<li data-src="https://linear-334.frequency.stream/mt/studio/334/hls/master/playlist.m3u8">RCTV Novelas</li>
-<li data-src="https://linear-406.frequency.stream/mt/studio/406/hls/master/playlist.m3u8">Golden</li>
-<li data-src="https://linear-407.frequency.stream/mt/studio/407/hls/master/playlist.m3u8">Golden Edge</li>
-<li data-src="https://linear-409.frequency.stream/mt/studio/409/hls/master/playlist.m3u8">Golden Multiplex</li>
-<li data-src="https://linear-408.frequency.stream/mt/studio/408/hls/master/playlist.m3u8">Golden Multiplex -1 hora</li>
-<li data-src="https://linear-410.frequency.stream/mt/studio/410/hls/master/playlist.m3u8">Golden Plus</li>
-<li data-src="https://linear-411.frequency.stream/mt/studio/411/hls/master/playlist.m3u8">Golden Premier</li>
-<li data-src="https://linear-421.frequency.stream/mt/studio/421/hls/master/playlist.m3u8">TlNovelas</li>
-<li data-src="https://linear-340.frequency.stream/mt/studio/340/hls/master/playlist.m3u8">40 Y 20</li>
-<li data-src="https://linear-308.frequency.stream/mt/studio/308/hls/master/playlist.m3u8">Cine de Oro</li>
-<li data-src="https://linear-307.frequency.stream/mt/studio/307/hls/master/playlist.m3u8">Cine Retro</li>
-<li data-src="https://linear-315.frequency.stream/mt/studio/315/hls/master/playlist.m3u8">Crónicas</li>
-<li data-src="https://linear-354.frequency.stream/mt/studio/354/hls/master/playlist.m3u8">De pelicula</li>
-<li data-src="https://linear-404.frequency.stream/mt/studio/404/hls/master/playlist.m3u8">De pelicula Plus</li>
-<li data-src="https://linear-405.frequency.stream/mt/studio/405/hls/master/playlist.m3u8">Distrito Comedia</li>
-<li data-src="https://linear-325.frequency.stream/mt/studio/325/hls/master/playlist.m3u8">Galanes</li>
-<li data-src="https://linear-468.frequency.stream/mt/studio/468/hls/master/playlist.m3u8">La Parodia</li>
-<li data-src="https://linear-328.frequency.stream/mt/studio/328/hls/master/playlist.m3u8">Las 3 Marias</li>
-<li data-src="https://linear-429.frequency.stream/mt/studio/429/hls/master/playlist.m3u8">Novelas de Oro</li>
-<li data-src="https://linear-335.frequency.stream/mt/studio/335/hls/master/playlist.m3u8">Rebelde</li>
-<li data-src="https://linear-313.frequency.stream/mt/studio/313/hls/master/playlist.m3u8">Risas de Oro</li>
-<li data-src="https://linear-339.frequency.stream/mt/studio/339/hls/master/playlist.m3u8">Villanos de Novela</li>
-<li data-src="https://linear-310.frequency.stream/mt/studio/310/hls/master/playlist.m3u8">Jajaja</li>
-<li data-src="https://linear-323.frequency.stream/mt/studio/323/hls/master/playlist.m3u8">Los HÃƒÂ©roes del Norte</li>
-<li data-src="https://linear-309.frequency.stream/mt/studio/309/hls/master/playlist.m3u8">Moovi Mex</li>
-<li data-src="https://linear-337.frequency.stream/mt/studio/337/hls/master/playlist.m3u8">Sortilegio</li>
-<li data-src="https://linear-305.frequency.stream/mt/studio/305/hls/master/playlist.m3u8">Amores Verdaderos</li>
-<li data-src="https://linear-321.frequency.stream/mt/studio/321/hls/master/playlist.m3u8">Angelique</li>
-<li data-src="https://linear-306.frequency.stream/mt/studio/306/hls/master/playlist.m3u8">Aqui Y Ahora</li>
-<li data-src="https://linear-341.frequency.stream/mt/studio/341/hls/master/playlist.m3u8">Como dice el dicho</li>
-<li data-src="https://linear-447.frequency.stream/mt/studio/447/hls/master/playlist.m3u8">Hasta que el dinero nos separe</li>
-<li data-src="https://linear-311.frequency.stream/mt/studio/311/hls/master/playlist.m3u8">La Familia P.Luche</li>
-<li data-src="https://linear-448.frequency.stream/mt/studio/448/hls/master/playlist.m3u8">La Usurpadora</li>
-<li data-src="https://linear-451.frequency.stream/mt/studio/451/hls/master/playlist.m3u8">Nosotros los Guapos</li>
-<li data-src="https://linear-342.frequency.stream/mt/studio/342/hls/master/playlist.m3u8">Teresa</li>
-<li data-src="https://linear-338.frequency.stream/mt/studio/338/hls/master/playlist.m3u8">Triunfo del Amor</li>
-<li data-src="https://linear-450.frequency.stream/mt/studio/450/hls/master/playlist.m3u8">Una Familia de Diez</li>
-<li data-src="https://linear-314.frequency.stream/mt/studio/314/hls/master/playlist.m3u8">Vecinos</li>
-<li data-src="https://linear-401.frequency.stream/mt/studio/401/hls/master/playlist.m3u8">bitMe</li>
-<li data-src="https://linear-355.frequency.stream/mt/studio/355/hls/master/playlist.m3u8">Pinkfong Baby Shark</li>
-<li data-src="https://linear-417.frequency.stream/mt/studio/417/hls/master/playlist.m3u8">Telehit</li>
-<li data-src="https://linear-418.frequency.stream/mt/studio/418/hls/master/playlist.m3u8">Telehit Musica</li>
-<li data-src="https://linear-419.frequency.stream/mt/studio/419/hls/master/playlist.m3u8">Telehit Musica Plus</li>
-<li data-src="https://linear-400.frequency.stream/mt/studio/400/hls/master/playlist.m3u8">Bandamax</li>
+<li tabindex="0" data-src="https://linear-317.frequency.stream/mt/studio/317/hls/master/playlist.m3u8">Cocina TV</li>
+<li tabindex="0" data-src="https://linear-304.frequency.stream/mt/studio/304/hls/master/playlist.m3u8">Fuakata!</li>
+<li tabindex="0" data-src="https://linear-261.frequency.stream/mt/studio/261/hls/master/playlist.m3u8">My Time Original</li>
+<li tabindex="0" data-src="https://linear-260.frequency.stream/mt/studio/260/hls/master/playlist.m3u8">vivo play</li>
+<li tabindex="0" data-src="https://linear-393.frequency.stream/mt/studio/393/hls/master/playlist.m3u8">Adrenalina Sport</li>
+<li tabindex="0" data-src="https://linear-348.frequency.stream/mt/studio/348/hls/master/playlist.m3u8">Afizzionados</li>
+<li tabindex="0" data-src="https://linear-256.frequency.stream/mt/studio/256/hls/master/playlist.m3u8">beIn Sports XTRA ÃƒÂ±</li>
+<li tabindex="0" data-src="https://linear-452.frequency.stream/mt/studio/452/hls/master/playlist.m3u8">Lo Mejor Liga MX</li>
+<li tabindex="0" data-src="https://linear-439.frequency.stream/mt/studio/439/hls/master/playlist.m3u8">TUDN</li>
+<li tabindex="0" data-src="https://linear-441.frequency.stream/mt/studio/441/hls/master/playlist.m3u8">TUDN 2</li>
+<li tabindex="0" data-src="https://linear-442.frequency.stream/mt/studio/442/hls/master/playlist.m3u8">TUDN 3</li>
+<li tabindex="0" data-src="https://linear-258.frequency.stream/mt/studio/258/hls/master/playlist.m3u8">ATV+</li>
+<li tabindex="0" data-src="https://linear-351.frequency.stream/mt/studio/351/hls/master/playlist.m3u8">Canal 5</li>
+<li tabindex="0" data-src="https://linear-300.frequency.stream/mt/studio/300/hls/master/playlist.m3u8">ForoTV</li>
+<li tabindex="0" data-src="https://linear-413.frequency.stream/mt/studio/413/hls/master/playlist.m3u8">Las Estrellas</li>
+<li tabindex="0" data-src="https://linear-416.frequency.stream/mt/studio/416/hls/master/playlist.m3u8">Las Estrellas Latam</li>
+<li tabindex="0" data-src="https://linear-263.frequency.stream/mt/studio/263/hls/master/playlist.m3u8">levelup</li>
+<li tabindex="0" data-src="https://linear-301.frequency.stream/mt/studio/301/hls/master/playlist.m3u8">N+ Media</li>
+<li tabindex="0" data-src="https://linear-352.frequency.stream/mt/studio/352/hls/master/playlist.m3u8">Nu9ve</li>
+<li tabindex="0" data-src="https://linear-262.frequency.stream/mt/studio/262/hls/master/playlist.m3u8">Nuestra Vision</li>
+<li tabindex="0" data-src="https://linear-402.frequency.stream/mt/studio/402/hls/master/playlist.m3u8">Televisa Guadalajara</li>
+<li tabindex="0" data-src="https://linear-403.frequency.stream/mt/studio/403/hls/master/playlist.m3u8">Televisa Monterrey</li>
+<li tabindex="0" data-src="https://linear-453.frequency.stream/mt/studio/453/hls/master/playlist.m3u8">The Weather Channel Español</li>
+<li tabindex="0" data-src="https://linear-259.frequency.stream/mt/studio/259/hls/master/playlist.m3u8">TN23</li>
+<li tabindex="0" data-src="https://linear-423.frequency.stream/mt/studio/423/hls/master/playlist.m3u8">Unicable</li>
+<li tabindex="0" data-src="https://linear-424.frequency.stream/mt/studio/424/hls/master/playlist.m3u8">Univision Latam</li>
+<li tabindex="0" data-src="https://linear-358.frequency.stream/mt/studio/358/hls/master/playlist.m3u8">CNN Español</li>
+<li tabindex="0" data-src="https://linear-255.frequency.stream/mt/studio/255/hls/master/playlist.m3u8">Euronews</li>
+<li tabindex="0" data-src="https://linear-254.frequency.stream/mt/studio/254/hls/master/playlist.m3u8">Noticias Univision 24/7</li>
+<li tabindex="0" data-src="https://linear-334.frequency.stream/mt/studio/334/hls/master/playlist.m3u8">RCTV Novelas</li>
+<li tabindex="0" data-src="https://linear-406.frequency.stream/mt/studio/406/hls/master/playlist.m3u8">Golden</li>
+<li tabindex="0" data-src="https://linear-407.frequency.stream/mt/studio/407/hls/master/playlist.m3u8">Golden Edge</li>
+<li tabindex="0" data-src="https://linear-409.frequency.stream/mt/studio/409/hls/master/playlist.m3u8">Golden Multiplex</li>
+<li tabindex="0" data-src="https://linear-410.frequency.stream/mt/studio/410/hls/master/playlist.m3u8">Golden Plus</li>
+<li tabindex="0" data-src="https://linear-411.frequency.stream/mt/studio/411/hls/master/playlist.m3u8">Golden Premier</li>
+<li tabindex="0" data-src="https://linear-421.frequency.stream/mt/studio/421/hls/master/playlist.m3u8">TlNovelas</li>
+<li tabindex="0" data-src="https://linear-340.frequency.stream/mt/studio/340/hls/master/playlist.m3u8">40 Y 20</li>
+<li tabindex="0" data-src="https://linear-308.frequency.stream/mt/studio/308/hls/master/playlist.m3u8">Cine de Oro</li>
+<li tabindex="0" data-src="https://linear-307.frequency.stream/mt/studio/307/hls/master/playlist.m3u8">Cine Retro</li>
+<li tabindex="0" data-src="https://linear-315.frequency.stream/mt/studio/315/hls/master/playlist.m3u8">Crónicas</li>
+<li tabindex="0" data-src="https://linear-354.frequency.stream/mt/studio/354/hls/master/playlist.m3u8">De pelicula</li>
+<li tabindex="0" data-src="https://linear-404.frequency.stream/mt/studio/404/hls/master/playlist.m3u8">De pelicula Plus</li>
+<li tabindex="0" data-src="https://linear-405.frequency.stream/mt/studio/405/hls/master/playlist.m3u8">Distrito Comedia</li>
+<li tabindex="0" data-src="https://linear-325.frequency.stream/mt/studio/325/hls/master/playlist.m3u8">Galanes</li>
+<li tabindex="0" data-src="https://linear-468.frequency.stream/mt/studio/468/hls/master/playlist.m3u8">La Parodia</li>
+<li tabindex="0" data-src="https://linear-328.frequency.stream/mt/studio/328/hls/master/playlist.m3u8">Las 3 Marias</li>
+<li tabindex="0" data-src="https://linear-429.frequency.stream/mt/studio/429/hls/master/playlist.m3u8">Novelas de Oro</li>
+<li tabindex="0" data-src="https://linear-335.frequency.stream/mt/studio/335/hls/master/playlist.m3u8">Rebelde</li>
+<li tabindex="0" data-src="https://linear-313.frequency.stream/mt/studio/313/hls/master/playlist.m3u8">Risas de Oro</li>
+<li tabindex="0" data-src="https://linear-339.frequency.stream/mt/studio/339/hls/master/playlist.m3u8">Villanos de Novela</li>
+<li tabindex="0" data-src="https://linear-310.frequency.stream/mt/studio/310/hls/master/playlist.m3u8">Jajaja</li>
+<li tabindex="0" data-src="https://linear-323.frequency.stream/mt/studio/323/hls/master/playlist.m3u8">Los HÃƒÂ©roes del Norte</li>
+<li tabindex="0" data-src="https://linear-309.frequency.stream/mt/studio/309/hls/master/playlist.m3u8">Moovi Mex</li>
+<li tabindex="0" data-src="https://linear-337.frequency.stream/mt/studio/337/hls/master/playlist.m3u8">Sortilegio</li>
+<li tabindex="0" data-src="https://linear-305.frequency.stream/mt/studio/305/hls/master/playlist.m3u8">Amores Verdaderos</li>
+<li tabindex="0" data-src="https://linear-321.frequency.stream/mt/studio/321/hls/master/playlist.m3u8">Angelique</li>
+<li tabindex="0" data-src="https://linear-306.frequency.stream/mt/studio/306/hls/master/playlist.m3u8">Aqui Y Ahora</li>
+<li tabindex="0" data-src="https://linear-341.frequency.stream/mt/studio/341/hls/master/playlist.m3u8">Como dice el dicho</li>
+<li tabindex="0" data-src="https://linear-447.frequency.stream/mt/studio/447/hls/master/playlist.m3u8">Hasta que el dinero nos separe</li>
+<li tabindex="0" data-src="https://linear-311.frequency.stream/mt/studio/311/hls/master/playlist.m3u8">La Familia P.Luche</li>
+<li tabindex="0" data-src="https://linear-448.frequency.stream/mt/studio/448/hls/master/playlist.m3u8">La Usurpadora</li>
+<li tabindex="0" data-src="https://linear-451.frequency.stream/mt/studio/451/hls/master/playlist.m3u8">Nosotros los Guapos</li>
+<li tabindex="0" data-src="https://linear-342.frequency.stream/mt/studio/342/hls/master/playlist.m3u8">Teresa</li>
+<li tabindex="0" data-src="https://linear-338.frequency.stream/mt/studio/338/hls/master/playlist.m3u8">Triunfo del Amor</li>
+<li tabindex="0" data-src="https://linear-450.frequency.stream/mt/studio/450/hls/master/playlist.m3u8">Una Familia de Diez</li>
+<li tabindex="0" data-src="https://linear-314.frequency.stream/mt/studio/314/hls/master/playlist.m3u8">Vecinos</li>
+<li tabindex="0" data-src="https://linear-401.frequency.stream/mt/studio/401/hls/master/playlist.m3u8">bitMe</li>
+<li tabindex="0" data-src="https://linear-355.frequency.stream/mt/studio/355/hls/master/playlist.m3u8">Pinkfong Baby Shark</li>
+<li tabindex="0" data-src="https://linear-417.frequency.stream/mt/studio/417/hls/master/playlist.m3u8">Telehit</li>
+<li tabindex="0" data-src="https://linear-418.frequency.stream/mt/studio/418/hls/master/playlist.m3u8">Telehit Musica</li>
+<li tabindex="0" data-src="https://linear-419.frequency.stream/mt/studio/419/hls/master/playlist.m3u8">Telehit Musica Plus</li>
+<li tabindex="0" data-src="https://linear-400.frequency.stream/mt/studio/400/hls/master/playlist.m3u8">Bandamax</li>
 
 
 
@@ -696,546 +745,657 @@ transition: opacity 2s;
 
 
 
-<li data-src="https://linear-482.frequency.stream/mt/studio/482/hls/master/playlist.m3u8">482 " NOVELA ESP"</li>
-<li data-src="https://linear-484.frequency.stream/mt/studio/484/hls/master/playlist.m3u8">484 " NOVELA ESP"</li>
-<li data-src="https://linear-478.frequency.stream/mt/studio/478/hls/master/playlist.m3u8">478 " NOVELA ESP"</li>
-<li data-src="https://linear-557.frequency.stream/mt/studio/557/hls/master/playlist.m3u8">557 " NOVELA ESP"</li>
-<li data-src="https://linear-565.frequency.stream/mt/studio/565/hls/master/playlist.m3u8">565 " NOVELA ESP"</li>
-<li data-src="https://linear-568.frequency.stream/mt/studio/568/hls/master/playlist.m3u8">568 " NOVELA ESP"</li>
-<li data-src="https://linear-577.frequency.stream/mt/studio/577/hls/master/playlist.m3u8">577 " NOVELA ESP"</li>
-<li data-src="https://linear-580.frequency.stream/mt/studio/580/hls/master/playlist.m3u8">580 " NOVELA ESP"</li>
-<li data-src="https://linear-533.frequency.stream/mt/studio/533/hls/master/playlist.m3u8">533 " tv en español"</li>
-<li data-src="https://linear-573.frequency.stream/mt/studio/573/hls/master/playlist.m3u8">573 " tv en español"</li>
-<li data-src="https://linear-570.frequency.stream/mt/studio/570/hls/master/playlist.m3u8">570 "futbol 3:4"</li>
-<li data-src="https://linear-46.frequency.stream/mt/studio/46/hls/master/playlist.m3u8">46. ALWAYS FUNNY</li>
-<li data-src="https://linear-49.frequency.stream/mt/studio/49/hls/master/playlist.m3u8">49. ALWAYS FUNNY</li>
-<li data-src="https://linear-548.frequency.stream/mt/studio/548/hls/master/playlist.m3u8">548 AMERICAN PICKERS</li>
-<li data-src="https://linear-12.frequency.stream/mt/studio/12/hls/master/playlist.m3u8">12. Animal LOLs</li>
-<li data-src="https://linear-524.frequency.stream/mt/studio/524/hls/master/playlist.m3u8">524 Anime infantil</li>
-<li data-src="https://linear-526.frequency.stream/mt/studio/526/hls/master/playlist.m3u8">526 Anime infantil pelis</li>
-<li data-src="https://linear-458.frequency.stream/mt/studio/458/hls/master/playlist.m3u8">458 AT HOME</li>
-<li data-src="https://linear-505.frequency.stream/mt/studio/505/hls/master/playlist.m3u8">505 AT HOME</li>
-<li data-src="https://linear-477.frequency.stream/mt/studio/477/hls/master/playlist.m3u8">477 BLEAV</li>
-<li data-src="https://linear-493.frequency.stream/mt/studio/493/hls/master/playlist.m3u8">493 BLEAV</li>
-<li data-src="https://linear-434.frequency.stream/mt/studio/434/hls/master/playlist.m3u8">434 BOUNGE XL</li>
-<li data-src="https://linear-462.frequency.stream/mt/studio/462/hls/master/playlist.m3u8">462 BOUNGE XL</li>
-<li data-src="https://linear-552.frequency.stream/mt/studio/552/hls/master/playlist.m3u8">552 BUSINESS INSIDER</li>
-<li data-src="https://linear-604.frequency.stream/mt/studio/604/hls/master/playlist.m3u8">604 Canal VIX</li>
-<li data-src="https://linear-605.frequency.stream/mt/studio/605/hls/master/playlist.m3u8">605 Canal VIX</li>
-<li data-src="https://linear-455.frequency.stream/mt/studio/455/hls/master/playlist.m3u8">455 CINEMA Century 21st</li>
-<li data-src="https://linear-102.frequency.stream/mt/studio/102/hls/master/playlist.m3u8">102 CityLine</li>
-<li data-src="https://linear-454.frequency.stream/mt/studio/454/hls/master/playlist.m3u8">454 Classic Movies</li>
-<li data-src="https://linear-465.frequency.stream/mt/studio/465/hls/master/playlist.m3u8">465 COURT TV</li>
-<li data-src="https://linear-84.frequency.stream/mt/studio/84/hls/master/playlist.m3u8">84. COURT TV</li>
-<li data-src="https://linear-549.frequency.stream/mt/studio/549/hls/master/playlist.m3u8">549 CRIME & JUSTICE</li>
-<li data-src="https://linear-593.frequency.stream/mt/studio/593/hls/master/playlist.m3u8">593 CRIME & JUSTICE ONE</li>
-<li data-src="https://linear-535.frequency.stream/mt/studio/535/hls/master/playlist.m3u8">535 e-GAME tv</li>
-<li data-src="https://linear-594.frequency.stream/mt/studio/594/hls/master/playlist.m3u8">594 e-GAME tv</li>
-<li data-src="https://linear-295.frequency.stream/mt/studio/295/hls/master/playlist.m3u8">295 FAILARMY</li>
-<li data-src="https://linear-198.frequency.stream/mt/studio/198/hls/master/playlist.m3u8">198 FAILARMY</li>
-<li data-src="https://linear-137.frequency.stream/mt/studio/137/hls/master/playlist.m3u8">137 FLIX Family</li>
-<li data-src="https://linear-360.frequency.stream/mt/studio/360/hls/master/playlist.m3u8">360 Futbol evernto</li>
-<li data-src="https://linear-362.frequency.stream/mt/studio/362/hls/master/playlist.m3u8">362 Futbol evernto</li>
-<li data-src="https://linear-363.frequency.stream/mt/studio/363/hls/master/playlist.m3u8">363 Futbol evernto</li>
-<li data-src="https://linear-364.frequency.stream/mt/studio/364/hls/master/playlist.m3u8">364 Futbol evernto</li>
-<li data-src="https://linear-365.frequency.stream/mt/studio/365/hls/master/playlist.m3u8">365 Futbol evernto</li>
-<li data-src="https://linear-366.frequency.stream/mt/studio/366/hls/master/playlist.m3u8">366 Futbol evernto</li>
-<li data-src="https://linear-367.frequency.stream/mt/studio/367/hls/master/playlist.m3u8">367 Futbol evernto</li>
-<li data-src="https://linear-368.frequency.stream/mt/studio/368/hls/master/playlist.m3u8">368 Futbol evernto</li>
-<li data-src="https://linear-371.frequency.stream/mt/studio/371/hls/master/playlist.m3u8">371 Futbol evernto</li>
-<li data-src="https://linear-372.frequency.stream/mt/studio/372/hls/master/playlist.m3u8">372 Futbol evernto</li>
-<li data-src="https://linear-373.frequency.stream/mt/studio/373/hls/master/playlist.m3u8">373 Futbol evernto</li>
-<li data-src="https://linear-374.frequency.stream/mt/studio/374/hls/master/playlist.m3u8">374 Futbol evernto</li>
-<li data-src="https://linear-375.frequency.stream/mt/studio/375/hls/master/playlist.m3u8">375 Futbol evernto</li>
-<li data-src="https://linear-376.frequency.stream/mt/studio/376/hls/master/playlist.m3u8">376 Futbol evernto</li>
-<li data-src="https://linear-377.frequency.stream/mt/studio/377/hls/master/playlist.m3u8">377 Futbol evernto</li>
-<li data-src="https://linear-378.frequency.stream/mt/studio/378/hls/master/playlist.m3u8">378 Futbol evernto</li>
-<li data-src="https://linear-379.frequency.stream/mt/studio/379/hls/master/playlist.m3u8">379 Futbol evernto</li>
-<li data-src="https://linear-380.frequency.stream/mt/studio/380/hls/master/playlist.m3u8">380 Futbol evernto</li>
-<li data-src="https://linear-381.frequency.stream/mt/studio/381/hls/master/playlist.m3u8">381 Futbol evernto</li>
-<li data-src="https://linear-383.frequency.stream/mt/studio/383/hls/master/playlist.m3u8">383 Futbol evernto</li>
-<li data-src="https://linear-384.frequency.stream/mt/studio/384/hls/master/playlist.m3u8">384 Futbol evernto</li>
-<li data-src="https://linear-385.frequency.stream/mt/studio/385/hls/master/playlist.m3u8">385 Futbol evernto</li>
-<li data-src="https://linear-386.frequency.stream/mt/studio/386/hls/master/playlist.m3u8">386 Futbol evernto</li>
-<li data-src="https://linear-438.frequency.stream/mt/studio/438/hls/master/playlist.m3u8">438 Futbol evernto</li>
-<li data-src="https://linear-440.frequency.stream/mt/studio/440/hls/master/playlist.m3u8">440 Futbol evernto</li>
-<li data-src="https://linear-668.frequency.stream/mt/studio/668/hls/master/playlist.m3u8">668 Futbol evernto</li>
-<li data-src="https://linear-669.frequency.stream/mt/studio/669/hls/master/playlist.m3u8">669 Futbol evernto</li>
-<li data-src="https://linear-670.frequency.stream/mt/studio/670/hls/master/playlist.m3u8">670 Futbol evernto</li>
-<li data-src="https://linear-671.frequency.stream/mt/studio/671/hls/master/playlist.m3u8">671 Futbol evernto</li>
-<li data-src="https://linear-678.frequency.stream/mt/studio/678/hls/master/playlist.m3u8">678 Futbol evernto</li>
-<li data-src="https://linear-679.frequency.stream/mt/studio/679/hls/master/playlist.m3u8">679 Futbol evernto</li>
-<li data-src="https://linear-64.frequency.stream/mt/studio/64/hls/master/playlist.m3u8">64. GEAR SCOUT</li>
-<li data-src="https://linear-789.frequency.stream/mt/studio/789/hls/master/playlist.m3u8">789 Gran Hermano MX bñ</li>
-<li data-src="https://linear-790.frequency.stream/mt/studio/790/hls/master/playlist.m3u8">790 Gran Hermano MX com</li>
-<li data-src="https://linear-788.frequency.stream/mt/studio/788/hls/master/playlist.m3u8">788 Gran Hermano MX dorX</li>
-<li data-src="https://linear-787.frequency.stream/mt/studio/787/hls/master/playlist.m3u8">787 Gran Hermano MX dorY</li>
-<li data-src="https://linear-785.frequency.stream/mt/studio/785/hls/master/playlist.m3u8">785 Gran Hermano MX ext</li>
-<li data-src="https://linear-786.frequency.stream/mt/studio/786/hls/master/playlist.m3u8">786 Gran Hermano MX ext</li>
-<li data-src="https://linear-792.frequency.stream/mt/studio/792/hls/master/playlist.m3u8">792 Gran Hermano MX gym</li>
-<li data-src="https://linear-791.frequency.stream/mt/studio/791/hls/master/playlist.m3u8">791 Gran Hermano MX liv</li>
-<li data-src="https://linear-784.frequency.stream/mt/studio/784/hls/master/playlist.m3u8">784 Gran Hermano MX viv</li>
-<li data-src="https://linear-467.frequency.stream/mt/studio/467/hls/master/playlist.m3u8">467 GRIT xtra</li>
-<li data-src="https://linear-83.frequency.stream/mt/studio/83/hls/master/playlist.m3u8">83. GRIT xtra</li>
-<li data-src="https://linear-59.frequency.stream/mt/studio/59/hls/master/playlist.m3u8">59. HI-YAH!</li>
-<li data-src="https://linear-444.frequency.stream/mt/studio/444/hls/master/playlist.m3u8">444 Home Refresh</li>
-<li data-src="https://linear-723.frequency.stream/mt/studio/723/hls/master/playlist.m3u8">723 Homeful</li>
-<li data-src="https://linear-432.frequency.stream/mt/studio/432/hls/master/playlist.m3u8">432 ION</li>
-<li data-src="https://linear-464.frequency.stream/mt/studio/464/hls/master/playlist.m3u8">464 ION</li>
-<li data-src="https://linear-436.frequency.stream/mt/studio/436/hls/master/playlist.m3u8">436 ION MYSTERY</li>
-<li data-src="https://linear-466.frequency.stream/mt/studio/466/hls/master/playlist.m3u8">466 ION MYSTERY</li>
-<li data-src="https://linear-433.frequency.stream/mt/studio/433/hls/master/playlist.m3u8">433 ION PLUS</li>
-<li data-src="https://linear-463.frequency.stream/mt/studio/463/hls/master/playlist.m3u8">463 ION PLUS</li>
-<li data-src="https://linear-207.frequency.stream/mt/studio/207/hls/master/playlist.m3u8">207 IPTV_108</li>
-<li data-src="https://linear-208.frequency.stream/mt/studio/208/hls/master/playlist.m3u8">208 IPTV_109</li>
-<li data-src="https://linear-213.frequency.stream/mt/studio/213/hls/master/playlist.m3u8">213 IPTV_114</li>
-<li data-src="https://linear-219.frequency.stream/mt/studio/219/hls/master/playlist.m3u8">219 IPTV_120</li>
-<li data-src="https://linear-459.frequency.stream/mt/studio/459/hls/master/playlist.m3u8">459 Jamie Kennedy Channel</li>
-<li data-src="https://linear-252.frequency.stream/mt/studio/252/hls/master/playlist.m3u8">252 JOURNY</li>
-<li data-src="https://linear-291.frequency.stream/mt/studio/291/hls/master/playlist.m3u8">291 JOURNY</li>
-<li data-src="https://linear-298.frequency.stream/mt/studio/298/hls/master/playlist.m3u8">298 JOURNY</li>
-<li data-src="https://linear-90.frequency.stream/mt/studio/90/hls/master/playlist.m3u8">90. JUSTICE</li>
-<li data-src="https://linear-92.frequency.stream/mt/studio/92/hls/master/playlist.m3u8">92. KCRA Sacramento</li>
-<li data-src="https://linear-640.frequency.stream/mt/studio/640/hls/master/playlist.m3u8">640 Las Noticias +</li>
-<li data-src="https://linear-717.frequency.stream/mt/studio/717/hls/master/playlist.m3u8">717 Las Noticias +</li>
-<li data-src="https://linear-553.frequency.stream/mt/studio/553/hls/master/playlist.m3u8">553 Las Noticias +2</li>
-<li data-src="https://linear-569.frequency.stream/mt/studio/569/hls/master/playlist.m3u8">569 Liga MX Futbol</li>
-<li data-src="https://linear-272.frequency.stream/mt/studio/272/hls/master/playlist.m3u8">272 LOCAL NEW CafeeHouse</li>
-<li data-src="https://linear-135.frequency.stream/mt/studio/135/hls/master/playlist.m3u8">135 Local News FUNNY</li>
-<li data-src="https://linear-125.frequency.stream/mt/studio/125/hls/master/playlist.m3u8">125 Local News ZEN</li>
-<li data-src="https://linear-519.frequency.stream/mt/studio/519/hls/master/playlist.m3u8">519 Love animal</li>
-<li data-src="https://linear-639.frequency.stream/mt/studio/639/hls/master/playlist.m3u8">639 MGM ACTION</li>
-<li data-src="https://linear-513.frequency.stream/mt/studio/513/hls/master/playlist.m3u8">513 MGM Addams Family</li>
-<li data-src="https://linear-718.frequency.stream/mt/studio/718/hls/master/playlist.m3u8">718 MGM ClassicTV</li>
-<li data-src="https://linear-638.frequency.stream/mt/studio/638/hls/master/playlist.m3u8">638 MGM Green acres</li>
-<li data-src="https://linear-515.frequency.stream/mt/studio/515/hls/master/playlist.m3u8">515 MGM HEAT NIGHT</li>
-<li data-src="https://linear-642.frequency.stream/mt/studio/642/hls/master/playlist.m3u8">642 MGM OUTHER</li>
-<li data-src="https://linear-518.frequency.stream/mt/studio/518/hls/master/playlist.m3u8">518 MGM PATERNITY</li>
-<li data-src="https://linear-637.frequency.stream/mt/studio/637/hls/master/playlist.m3u8">637 MGM Pink Panther</li>
-<li data-src="https://linear-686.frequency.stream/mt/studio/686/hls/master/playlist.m3u8">686 MGM SCI-FI</li>
-<li data-src="https://linear-658.frequency.stream/mt/studio/658/hls/master/playlist.m3u8">658 MGM STARGATE</li>
-<li data-src="https://linear-563.frequency.stream/mt/studio/563/hls/master/playlist.m3u8">563 MOOVI MEX</li>
-<li data-src="https://linear-564.frequency.stream/mt/studio/564/hls/master/playlist.m3u8">564 MOOVI MEX</li>
-<li data-src="https://linear-236.frequency.stream/mt/studio/236/hls/master/playlist.m3u8">236 MOVIES OF THE WEEK</li>
-<li data-src="https://linear-286.frequency.stream/mt/studio/286/hls/master/playlist.m3u8">286 NCN mas</li>
-<li data-src="https://linear-736.frequency.stream/mt/studio/736/hls/master/playlist.m3u8">736 NCN noticias</li>
-<li data-src="https://linear-280.frequency.stream/mt/studio/280/hls/master/playlist.m3u8">280 o</li>
-<li data-src="https://linear-190.frequency.stream/mt/studio/190/hls/master/playlist.m3u8">190 OPIL</li>
-<li data-src="https://linear-600.frequency.stream/mt/studio/600/hls/master/playlist.m3u8">600 OUTDOOR AMERICA</li>
-<li data-src="https://linear-293.frequency.stream/mt/studio/293/hls/master/playlist.m3u8">293 OVATION</li>
-<li data-src="https://linear-76.frequency.stream/mt/studio/76/hls/master/playlist.m3u8">76. pattrn</li>
-<li data-src="https://linear-175.frequency.stream/mt/studio/175/hls/master/playlist.m3u8">175 PEOPLE are AWESOME</li>
-<li data-src="https://linear-174.frequency.stream/mt/studio/174/hls/master/playlist.m3u8">174 PET collective</li>
-<li data-src="https://linear-426.frequency.stream/mt/studio/426/hls/master/playlist.m3u8">426 Poker GO</li>
-<li data-src="https://linear-205.frequency.stream/mt/studio/205/hls/master/playlist.m3u8">205 pursuiyUP</li>
-<li data-src="https://linear-491.frequency.stream/mt/studio/491/hls/master/playlist.m3u8">491 Real Madrid TV</li>
-<li data-src="https://linear-582.frequency.stream/mt/studio/582/hls/master/playlist.m3u8">582 RedBull</li>
-<li data-src="https://linear-296.frequency.stream/mt/studio/296/hls/master/playlist.m3u8">296 REPO operative</li>
-<li data-src="https://linear-181.frequency.stream/mt/studio/181/hls/master/playlist.m3u8">181 revry Brasil</li>
-<li data-src="https://linear-73.frequency.stream/mt/studio/73/hls/master/playlist.m3u8">73. revry her</li>
-<li data-src="https://linear-142.frequency.stream/mt/studio/142/hls/master/playlist.m3u8">142 revry latinX</li>
-<li data-src="https://linear-44.frequency.stream/mt/studio/44/hls/master/playlist.m3u8">44. revry news</li>
-<li data-src="https://linear-43.frequency.stream/mt/studio/43/hls/master/playlist.m3u8">43. revry TV</li>
-<li data-src="https://linear-5.frequency.stream/mt/studio/5/hls/master/playlist.m3u8">5.f revry TV</li>
-<li data-src="https://linear-456.frequency.stream/mt/studio/456/hls/master/playlist.m3u8">456 REWIND 80&90s</li>
-<li data-src="https://linear-461.frequency.stream/mt/studio/461/hls/master/playlist.m3u8">461 ROXI Music</li>
-<li data-src="https://linear-611.frequency.stream/mt/studio/611/hls/master/playlist.m3u8">611 scan me</li>
-<li data-src="https://linear-460.frequency.stream/mt/studio/460/hls/master/playlist.m3u8">460 SCRIPPS NEWS</li>
-<li data-src="https://linear-78.frequency.stream/mt/studio/78/hls/master/playlist.m3u8">78. SCRIPPS NEWS</li>
-<li data-src="https://linear-496.frequency.stream/mt/studio/496/hls/master/playlist.m3u8">496 SN TV</li>
-<li data-src="https://linear-497.frequency.stream/mt/studio/497/hls/master/playlist.m3u8">497 SN TV</li>
-<li data-src="https://linear-502.frequency.stream/mt/studio/502/hls/master/playlist.m3u8">502 SN TV</li>
-<li data-src="https://linear-165.frequency.stream/mt/studio/165/hls/master/playlist.m3u8">165 SN TV</li>
-<li data-src="https://linear-836.frequency.stream/mt/studio/836/hls/master/playlist.m3u8">836 STAY</li>
-<li data-src="https://linear-112.frequency.stream/mt/studio/112/hls/master/playlist.m3u8">112 stitch</li>
-<li data-src="https://linear-253.frequency.stream/mt/studio/253/hls/master/playlist.m3u8">253 SWERVE combat</li>
-<li data-src="https://linear-596.frequency.stream/mt/studio/596/hls/master/playlist.m3u8">596 TEAL D!SASTER</li>
-<li data-src="https://linear-514.frequency.stream/mt/studio/514/hls/master/playlist.m3u8">514 TEEN WOLF</li>
-<li data-src="https://linear-479.frequency.stream/mt/studio/479/hls/master/playlist.m3u8">479 TeleHITS MX</li>
-<li data-src="https://linear-188.frequency.stream/mt/studio/188/hls/master/playlist.m3u8">188 TH usa</li>
-<li data-src="https://linear-11.frequency.stream/mt/studio/11/hls/master/playlist.m3u8">11. The Family</li>
-<li data-src="https://linear-584.frequency.stream/mt/studio/584/hls/master/playlist.m3u8">584 The Grios</li>
-<li data-src="https://linear-197.frequency.stream/mt/studio/197/hls/master/playlist.m3u8">197 the PETcollective</li>
-<li data-src="https://linear-598.frequency.stream/mt/studio/598/hls/master/playlist.m3u8">598 the Sullivan SHOW</li>
-<li data-src="https://linear-431.frequency.stream/mt/studio/431/hls/master/playlist.m3u8">431 The Weather Español</li>
-<li data-src="https://linear-556.frequency.stream/mt/studio/556/hls/master/playlist.m3u8">556 Tigo SPORTS</li>
-<li data-src="https://linear-727.frequency.stream/mt/studio/727/hls/master/playlist.m3u8">727 TODO CINE</li>
-<li data-src="https://linear-347.frequency.stream/mt/studio/347/hls/master/playlist.m3u8">347 TUDN</li>
-<li data-src="https://linear-581.frequency.stream/mt/studio/581/hls/master/playlist.m3u8">581 TUDN futbol</li>
-<li data-src="https://linear-356.frequency.stream/mt/studio/356/hls/master/playlist.m3u8">356 TUDN zona</li>
-<li data-src="https://linear-554.frequency.stream/mt/studio/554/hls/master/playlist.m3u8">554 US Sport old race</li>
-<li data-src="https://linear-685.frequency.stream/mt/studio/685/hls/master/playlist.m3u8">685 US Tortuga ninjas</li>
-<li data-src="https://linear-100.frequency.stream/mt/studio/100/hls/master/playlist.m3u8">100 VERY LOCAL</li>
-<li data-src="https://linear-103.frequency.stream/mt/studio/103/hls/master/playlist.m3u8">103 VERY LOCAL</li>
-<li data-src="https://linear-105.frequency.stream/mt/studio/105/hls/master/playlist.m3u8">105 VERY LOCAL</li>
-<li data-src="https://linear-106.frequency.stream/mt/studio/106/hls/master/playlist.m3u8">106 VERY LOCAL</li>
-<li data-src="https://linear-107.frequency.stream/mt/studio/107/hls/master/playlist.m3u8">107 VERY LOCAL</li>
-<li data-src="https://linear-108.frequency.stream/mt/studio/108/hls/master/playlist.m3u8">108 VERY LOCAL</li>
-<li data-src="https://linear-109.frequency.stream/mt/studio/109/hls/master/playlist.m3u8">109 VERY LOCAL</li>
-<li data-src="https://linear-110.frequency.stream/mt/studio/110/hls/master/playlist.m3u8">110 VERY LOCAL</li>
-<li data-src="https://linear-111.frequency.stream/mt/studio/111/hls/master/playlist.m3u8">111 VERY LOCAL</li>
-<li data-src="https://linear-113.frequency.stream/mt/studio/113/hls/master/playlist.m3u8">113 VERY LOCAL</li>
-<li data-src="https://linear-114.frequency.stream/mt/studio/114/hls/master/playlist.m3u8">114 VERY LOCAL</li>
-<li data-src="https://linear-115.frequency.stream/mt/studio/115/hls/master/playlist.m3u8">115 VERY LOCAL</li>
-<li data-src="https://linear-116.frequency.stream/mt/studio/116/hls/master/playlist.m3u8">116 VERY LOCAL</li>
-<li data-src="https://linear-117.frequency.stream/mt/studio/117/hls/master/playlist.m3u8">117 VERY LOCAL</li>
-<li data-src="https://linear-200.frequency.stream/mt/studio/200/hls/master/playlist.m3u8">200 VERY LOCAL</li>
-<li data-src="https://linear-22.frequency.stream/mt/studio/22/hls/master/playlist.m3u8">22. VERY LOCAL</li>
-<li data-src="https://linear-33.frequency.stream/mt/studio/33/hls/master/playlist.m3u8">33. VERY LOCAL</li>
-<li data-src="https://linear-36.frequency.stream/mt/studio/36/hls/master/playlist.m3u8">36. VERY LOCAL</li>
-<li data-src="https://linear-93.frequency.stream/mt/studio/93/hls/master/playlist.m3u8">93. VERY LOCAL</li>
-<li data-src="https://linear-94.frequency.stream/mt/studio/94/hls/master/playlist.m3u8">94. VERY LOCAL</li>
-<li data-src="https://linear-95.frequency.stream/mt/studio/95/hls/master/playlist.m3u8">95. VERY LOCAL</li>
-<li data-src="https://linear-96.frequency.stream/mt/studio/96/hls/master/playlist.m3u8">96. VERY LOCAL</li>
-<li data-src="https://linear-97.frequency.stream/mt/studio/97/hls/master/playlist.m3u8">97. VERY LOCAL</li>
-<li data-src="https://linear-98.frequency.stream/mt/studio/98/hls/master/playlist.m3u8">98. VERY LOCAL</li>
-<li data-src="https://linear-99.frequency.stream/mt/studio/99/hls/master/playlist.m3u8">99. VERY LOCAL</li>
-<li data-src="https://linear-494.frequency.stream/mt/studio/494/hls/master/playlist.m3u8">494 VEVO</li>
-<li data-src="https://linear-312.frequency.stream/mt/studio/312/hls/master/playlist.m3u8">312 VIX</li>
-<li data-src="https://linear-480.frequency.stream/mt/studio/480/hls/master/playlist.m3u8">480 VIX</li>
-<li data-src="https://linear-481.frequency.stream/mt/studio/481/hls/master/playlist.m3u8">481 VIX</li>
-<li data-src="https://linear-483.frequency.stream/mt/studio/483/hls/master/playlist.m3u8">483 VIX</li>
-<li data-src="https://linear-487.frequency.stream/mt/studio/487/hls/master/playlist.m3u8">487 VIX</li>
-<li data-src="https://linear-574.frequency.stream/mt/studio/574/hls/master/playlist.m3u8">574 VIX</li>
-<li data-src="https://linear-575.frequency.stream/mt/studio/575/hls/master/playlist.m3u8">575 VIX</li>
-<li data-src="https://linear-660.frequency.stream/mt/studio/660/hls/master/playlist.m3u8">660 VIX</li>
-<li data-src="https://linear-576.frequency.stream/mt/studio/576/hls/master/playlist.m3u8">576 VIX …</li>
-<li data-src="https://linear-734.frequency.stream/mt/studio/734/hls/master/playlist.m3u8">734 VIX …</li>
-<li data-src="https://linear-735.frequency.stream/mt/studio/735/hls/master/playlist.m3u8">735 VIX …</li>
-<li data-src="https://linear-784.frequency.stream/mt/studio/784/hls/master/playlist.m3u8">784 VIX …</li>
-<li data-src="https://linear-566.frequency.stream/mt/studio/566/hls/master/playlist.m3u8">566 VIX ….</li>
-<li data-src="https://linear-559.frequency.stream/mt/studio/559/hls/master/playlist.m3u8">559 VIX CINE CLUB</li>
-<li data-src="https://linear-567.frequency.stream/mt/studio/567/hls/master/playlist.m3u8">567 VIX CINE CLUB</li>
-<li data-src="https://linear-357.frequency.stream/mt/studio/357/hls/master/playlist.m3u8">357 VIX Deporte</li>
-<li data-src="https://linear-558.frequency.stream/mt/studio/558/hls/master/playlist.m3u8">558 VIX GRANDES PAREJAS</li>
-<li data-src="https://linear-560.frequency.stream/mt/studio/560/hls/master/playlist.m3u8">560 VIX JAJAJA</li>
-<li data-src="https://linear-561.frequency.stream/mt/studio/561/hls/master/playlist.m3u8">561 VIX NOVELAS DE ORO</li>
-<li data-src="https://linear-361.frequency.stream/mt/studio/361/hls/master/playlist.m3u8">361 VIX TUDN</li>
-<li data-src="https://linear-571.frequency.stream/mt/studio/571/hls/master/playlist.m3u8">571 VIX VILLANOS DE NOVELA</li>
-<li data-src="https://linear-562.frequency.stream/mt/studio/562/hls/master/playlist.m3u8">562 VIXRETRO CINE</li>
-<li data-src="https://linear-737.frequency.stream/mt/studio/737/hls/master/playlist.m3u8">737 Wapa +</li>
-<li data-src="https://linear-176.frequency.stream/mt/studio/176/hls/master/playlist.m3u8">176 WEATHER SPY</li>
-<li data-src="https://linear-199.frequency.stream/mt/studio/199/hls/master/playlist.m3u8">199 WEATHER SPY</li>
-<li data-src="https://linear-279.frequency.stream/mt/studio/279/hls/master/playlist.m3u8">279 WeThePeople</li>
-<li data-src="https://linear-799.frequency.stream/mt/studio/799/hls/master/playlist.m3u8">799 WILDWEST TV</li>
-<li data-src="https://linear-10.frequency.stream/mt/studio/10/hls/master/playlist.m3u8">10. IPTV_10</li>
-<li data-src="https://linear-608.frequency.stream/mt/studio/608/hls/master/playlist.m3u8">608 IPTV_108</li>
-<li data-src="https://linear-220.frequency.stream/mt/studio/220/hls/master/playlist.m3u8">220 IPTV_121</li>
-<li data-src="https://linear-221.frequency.stream/mt/studio/221/hls/master/playlist.m3u8">221 IPTV_122</li>
-<li data-src="https://linear-222.frequency.stream/mt/studio/222/hls/master/playlist.m3u8">222 IPTV_123</li>
-<li data-src="https://linear-223.frequency.stream/mt/studio/223/hls/master/playlist.m3u8">223 IPTV_124</li>
-<li data-src="https://linear-225.frequency.stream/mt/studio/225/hls/master/playlist.m3u8">225 IPTV_126</li>
-<li data-src="https://linear-227.frequency.stream/mt/studio/227/hls/master/playlist.m3u8">227 IPTV_128</li>
-<li data-src="https://linear-235.frequency.stream/mt/studio/235/hls/master/playlist.m3u8">235 IPTV_136</li>
-<li data-src="https://linear-240.frequency.stream/mt/studio/240/hls/master/playlist.m3u8">240 IPTV_141</li>
-<li data-src="https://linear-242.frequency.stream/mt/studio/242/hls/master/playlist.m3u8">242 IPTV_143</li>
-<li data-src="https://linear-244.frequency.stream/mt/studio/244/hls/master/playlist.m3u8">244 IPTV_145</li>
-<li data-src="https://linear-246.frequency.stream/mt/studio/246/hls/master/playlist.m3u8">246 IPTV_147</li>
-<li data-src="https://linear-249.frequency.stream/mt/studio/249/hls/master/playlist.m3u8">249 IPTV_150</li>
-<li data-src="https://linear-659.frequency.stream/mt/studio/659/hls/master/playlist.m3u8">659 IPTV_159</li>
-<li data-src="https://linear-264.frequency.stream/mt/studio/264/hls/master/playlist.m3u8">264 IPTV_165</li>
-<li data-src="https://linear-265.frequency.stream/mt/studio/265/hls/master/playlist.m3u8">265 IPTV_166</li>
-<li data-src="https://linear-267.frequency.stream/mt/studio/267/hls/master/playlist.m3u8">267 IPTV_168</li>
-<li data-src="https://linear-274.frequency.stream/mt/studio/274/hls/master/playlist.m3u8">274 IPTV_175</li>
-<li data-src="https://linear-276.frequency.stream/mt/studio/276/hls/master/playlist.m3u8">276 IPTV_177</li>
-<li data-src="https://linear-278.frequency.stream/mt/studio/278/hls/master/playlist.m3u8">278 IPTV_179</li>
-<li data-src="https://linear-281.frequency.stream/mt/studio/281/hls/master/playlist.m3u8">281 IPTV_182</li>
-<li data-src="https://linear-282.frequency.stream/mt/studio/282/hls/master/playlist.m3u8">282 IPTV_183</li>
-<li data-src="https://linear-283.frequency.stream/mt/studio/283/hls/master/playlist.m3u8">283 IPTV_184</li>
-<li data-src="https://linear-285.frequency.stream/mt/studio/285/hls/master/playlist.m3u8">285 IPTV_186</li>
-<li data-src="https://linear-687.frequency.stream/mt/studio/687/hls/master/playlist.m3u8">687 IPTV_187</li>
-<li data-src="https://linear-290.frequency.stream/mt/studio/290/hls/master/playlist.m3u8">290 IPTV_191</li>
-<li data-src="https://linear-119.frequency.stream/mt/studio/119/hls/master/playlist.m3u8">119 IPTV_20</li>
-<li data-src="https://linear-120.frequency.stream/mt/studio/120/hls/master/playlist.m3u8">120 IPTV_21</li>
-<li data-src="https://linear-719.frequency.stream/mt/studio/719/hls/master/playlist.m3u8">719 IPTV_219</li>
-<li data-src="https://linear-523.frequency.stream/mt/studio/523/hls/master/playlist.m3u8">523 IPTV_23</li>
-<li data-src="https://linear-122.frequency.stream/mt/studio/122/hls/master/playlist.m3u8">122 IPTV_23</li>
-<li data-src="https://linear-739.frequency.stream/mt/studio/739/hls/master/playlist.m3u8">739 IPTV_239</li>
-<li data-src="https://linear-124.frequency.stream/mt/studio/124/hls/master/playlist.m3u8">124 IPTV_25</li>
-<li data-src="https://linear-527.frequency.stream/mt/studio/527/hls/master/playlist.m3u8">527 IPTV_27</li>
-<li data-src="https://linear-128.frequency.stream/mt/studio/128/hls/master/playlist.m3u8">128 IPTV_29</li>
-<li data-src="https://linear-503.frequency.stream/mt/studio/503/hls/master/playlist.m3u8">503 IPTV_3</li>
-<li data-src="https://linear-530.frequency.stream/mt/studio/530/hls/master/playlist.m3u8">530 IPTV_30</li>
-<li data-src="https://linear-430.frequency.stream/mt/studio/430/hls/master/playlist.m3u8">430 IPTV_331</li>
-<li data-src="https://linear-534.frequency.stream/mt/studio/534/hls/master/playlist.m3u8">534 IPTV_34</li>
-<li data-src="https://linear-133.frequency.stream/mt/studio/133/hls/master/playlist.m3u8">133 IPTV_34</li>
-<li data-src="https://linear-536.frequency.stream/mt/studio/536/hls/master/playlist.m3u8">536 IPTV_36</li>
-<li data-src="https://linear-136.frequency.stream/mt/studio/136/hls/master/playlist.m3u8">136 IPTV_37</li>
-<li data-src="https://linear-469.frequency.stream/mt/studio/469/hls/master/playlist.m3u8">469 IPTV_370</li>
-<li data-src="https://linear-138.frequency.stream/mt/studio/138/hls/master/playlist.m3u8">138 IPTV_39</li>
-<li data-src="https://linear-492.frequency.stream/mt/studio/492/hls/master/playlist.m3u8">492 IPTV_393</li>
-<li data-src="https://linear-504.frequency.stream/mt/studio/504/hls/master/playlist.m3u8">504 IPTV_4</li>
-<li data-src="https://linear-141.frequency.stream/mt/studio/141/hls/master/playlist.m3u8">141 IPTV_42</li>
-<li data-src="https://linear-542.frequency.stream/mt/studio/542/hls/master/playlist.m3u8">542 IPTV_42</li>
-<li data-src="https://linear-143.frequency.stream/mt/studio/143/hls/master/playlist.m3u8">143 IPTV_44</li>
-<li data-src="https://linear-149.frequency.stream/mt/studio/149/hls/master/playlist.m3u8">149 IPTV_50</li>
-<li data-src="https://linear-150.frequency.stream/mt/studio/150/hls/master/playlist.m3u8">150 IPTV_51</li>
-<li data-src="https://linear-152.frequency.stream/mt/studio/152/hls/master/playlist.m3u8">152 IPTV_53</li>
-<li data-src="https://linear-508.frequency.stream/mt/studio/508/hls/master/playlist.m3u8">508 IPTV_8</li>
-<li data-src="https://linear-80.frequency.stream/mt/studio/80/hls/master/playlist.m3u8">80. IPTV_80</li>
-<li data-src="https://linear-81.frequency.stream/mt/studio/81/hls/master/playlist.m3u8">81. IPTV_81</li>
-<li data-src="https://linear-82.frequency.stream/mt/studio/82/hls/master/playlist.m3u8">82. IPTV_82</li>
-<li data-src="https://linear-89.frequency.stream/mt/studio/89/hls/master/playlist.m3u8">89. IPTV_89</li>
-<li data-src="https://linear-471.frequency.stream/mt/studio/471/hls/master/playlist.m3u8">471 IPTV_372SoloAudio</li>
-<li data-src="https://linear-498.frequency.stream/mt/studio/498/hls/master/playlist.m3u8">498 IPTV_399SoloAudio</li>
-<li data-src="https://linear-544.frequency.stream/mt/studio/544/hls/master/playlist.m3u8">544 IPTV_44SoloAudio</li>
-<li data-src="https://linear-144.frequency.stream/mt/studio/144/hls/master/playlist.m3u8">144 IPTV_45SoloAudio</li>
-<li data-src="https://linear-509.frequency.stream/mt/studio/509/hls/master/playlist.m3u8">509 IPTV_9SoloAudio</li>
-<li data-src="https://linear-715.frequency.stream/mt/studio/715/hls/master/playlist.m3u8">715 Laff more!</li>
-<li data-src="https://linear-716.frequency.stream/mt/studio/716/hls/master/playlist.m3u8">716 Laff more!</li>
-<li data-src="https://linear-597.frequency.stream/mt/studio/597/hls/master/playlist.m3u8">597 Poker GO</li>
-<li data-src="https://linear-612.frequency.stream/mt/studio/612/hls/master/playlist.m3u8">612 IPTV_112</li>
-<li data-src="https://linear-624.frequency.stream/mt/studio/624/hls/master/playlist.m3u8">624 IPTV_124</li>
-<li data-src="https://linear-627.frequency.stream/mt/studio/627/hls/master/playlist.m3u8">627 IPTV_127</li>
-<li data-src="https://linear-628.frequency.stream/mt/studio/628/hls/master/playlist.m3u8">628 IPTV_128</li>
-<li data-src="https://linear-629.frequency.stream/mt/studio/629/hls/master/playlist.m3u8">629 IPTV_129</li>
-<li data-src="https://linear-630.frequency.stream/mt/studio/630/hls/master/playlist.m3u8">630 IPTV_130</li>
-<li data-src="https://linear-631.frequency.stream/mt/studio/631/hls/master/playlist.m3u8">631 IPTV_131</li>
-<li data-src="https://linear-641.frequency.stream/mt/studio/641/hls/master/playlist.m3u8">641 IPTV_141</li>
-<li data-src="https://linear-643.frequency.stream/mt/studio/643/hls/master/playlist.m3u8">643 IPTV_143</li>
-<li data-src="https://linear-644.frequency.stream/mt/studio/644/hls/master/playlist.m3u8">644 IPTV_144</li>
-<li data-src="https://linear-645.frequency.stream/mt/studio/645/hls/master/playlist.m3u8">645 IPTV_145</li>
-<li data-src="https://linear-647.frequency.stream/mt/studio/647/hls/master/playlist.m3u8">647 IPTV_147</li>
-<li data-src="https://linear-648.frequency.stream/mt/studio/648/hls/master/playlist.m3u8">648 IPTV_148</li>
-<li data-src="https://linear-649.frequency.stream/mt/studio/649/hls/master/playlist.m3u8">649 IPTV_149</li>
-<li data-src="https://linear-650.frequency.stream/mt/studio/650/hls/master/playlist.m3u8">650 IPTV_150</li>
-<li data-src="https://linear-651.frequency.stream/mt/studio/651/hls/master/playlist.m3u8">651 IPTV_151</li>
-<li data-src="https://linear-656.frequency.stream/mt/studio/656/hls/master/playlist.m3u8">656 IPTV_156</li>
-<li data-src="https://linear-673.frequency.stream/mt/studio/673/hls/master/playlist.m3u8">673 IPTV_173</li>
-<li data-src="https://linear-677.frequency.stream/mt/studio/677/hls/master/playlist.m3u8">677 IPTV_177</li>
-<li data-src="https://linear-680.frequency.stream/mt/studio/680/hls/master/playlist.m3u8">680 IPTV_180</li>
-<li data-src="https://linear-681.frequency.stream/mt/studio/681/hls/master/playlist.m3u8">681 IPTV_181</li>
-<li data-src="https://linear-683.frequency.stream/mt/studio/683/hls/master/playlist.m3u8">683 IPTV_183</li>
-<li data-src="https://linear-684.frequency.stream/mt/studio/684/hls/master/playlist.m3u8">684 IPTV_184</li>
-<li data-src="https://linear-688.frequency.stream/mt/studio/688/hls/master/playlist.m3u8">688 IPTV_188</li>
-<li data-src="https://linear-689.frequency.stream/mt/studio/689/hls/master/playlist.m3u8">689 IPTV_189</li>
-<li data-src="https://linear-690.frequency.stream/mt/studio/690/hls/master/playlist.m3u8">690 IPTV_190</li>
-<li data-src="https://linear-691.frequency.stream/mt/studio/691/hls/master/playlist.m3u8">691 IPTV_191</li>
-<li data-src="https://linear-692.frequency.stream/mt/studio/692/hls/master/playlist.m3u8">692 IPTV_192</li>
-<li data-src="https://linear-693.frequency.stream/mt/studio/693/hls/master/playlist.m3u8">693 IPTV_193</li>
-<li data-src="https://linear-694.frequency.stream/mt/studio/694/hls/master/playlist.m3u8">694 IPTV_194</li>
-<li data-src="https://linear-695.frequency.stream/mt/studio/695/hls/master/playlist.m3u8">695 IPTV_195</li>
-<li data-src="https://linear-696.frequency.stream/mt/studio/696/hls/master/playlist.m3u8">696 IPTV_196</li>
-<li data-src="https://linear-697.frequency.stream/mt/studio/697/hls/master/playlist.m3u8">697 IPTV_197</li>
-<li data-src="https://linear-698.frequency.stream/mt/studio/698/hls/master/playlist.m3u8">698 IPTV_198</li>
-<li data-src="https://linear-699.frequency.stream/mt/studio/699/hls/master/playlist.m3u8">699 IPTV_199</li>
-<li data-src="https://linear-700.frequency.stream/mt/studio/700/hls/master/playlist.m3u8">700 IPTV_200</li>
-<li data-src="https://linear-701.frequency.stream/mt/studio/701/hls/master/playlist.m3u8">701 IPTV_201</li>
-<li data-src="https://linear-702.frequency.stream/mt/studio/702/hls/master/playlist.m3u8">702 IPTV_202</li>
-<li data-src="https://linear-703.frequency.stream/mt/studio/703/hls/master/playlist.m3u8">703 IPTV_203</li>
-<li data-src="https://linear-704.frequency.stream/mt/studio/704/hls/master/playlist.m3u8">704 IPTV_204</li>
-<li data-src="https://linear-705.frequency.stream/mt/studio/705/hls/master/playlist.m3u8">705 IPTV_205</li>
-<li data-src="https://linear-706.frequency.stream/mt/studio/706/hls/master/playlist.m3u8">706 IPTV_206</li>
-<li data-src="https://linear-707.frequency.stream/mt/studio/707/hls/master/playlist.m3u8">707 IPTV_207</li>
-<li data-src="https://linear-708.frequency.stream/mt/studio/708/hls/master/playlist.m3u8">708 IPTV_208</li>
-<li data-src="https://linear-709.frequency.stream/mt/studio/709/hls/master/playlist.m3u8">709 IPTV_209</li>
-<li data-src="https://linear-710.frequency.stream/mt/studio/710/hls/master/playlist.m3u8">710 IPTV_210</li>
-<li data-src="https://linear-711.frequency.stream/mt/studio/711/hls/master/playlist.m3u8">711 IPTV_211</li>
-<li data-src="https://linear-713.frequency.stream/mt/studio/713/hls/master/playlist.m3u8">713 IPTV_213</li>
-<li data-src="https://linear-721.frequency.stream/mt/studio/721/hls/master/playlist.m3u8">721 IPTV_221</li>
-<li data-src="https://linear-722.frequency.stream/mt/studio/722/hls/master/playlist.m3u8">722 IPTV_222</li>
-<li data-src="https://linear-726.frequency.stream/mt/studio/726/hls/master/playlist.m3u8">726 IPTV_226</li>
-<li data-src="https://linear-729.frequency.stream/mt/studio/729/hls/master/playlist.m3u8">729 IPTV_229</li>
-<li data-src="https://linear-730.frequency.stream/mt/studio/730/hls/master/playlist.m3u8">730 IPTV_230</li>
-<li data-src="https://linear-731.frequency.stream/mt/studio/731/hls/master/playlist.m3u8">731 IPTV_231</li>
-<li data-src="https://linear-732.frequency.stream/mt/studio/732/hls/master/playlist.m3u8">732 IPTV_232</li>
-<li data-src="https://linear-744.frequency.stream/mt/studio/744/hls/master/playlist.m3u8">744 IPTV_244</li>
-<li data-src="https://linear-748.frequency.stream/mt/studio/748/hls/master/playlist.m3u8">748 IPTV_248</li>
-<li data-src="https://linear-755.frequency.stream/mt/studio/755/hls/master/playlist.m3u8">755 IPTV_255</li>
-<li data-src="https://linear-765.frequency.stream/mt/studio/765/hls/master/playlist.m3u8">765 IPTV_265</li>
-<li data-src="https://linear-770.frequency.stream/mt/studio/770/hls/master/playlist.m3u8">770 IPTV_270</li>
-<li data-src="https://linear-771.frequency.stream/mt/studio/771/hls/master/playlist.m3u8">771 IPTV_271</li>
-<li data-src="https://linear-779.frequency.stream/mt/studio/779/hls/master/playlist.m3u8">779 IPTV_279</li>
-<li data-src="https://linear-837.frequency.stream/mt/studio/837/hls/master/playlist.m3u8">837 IPTV_337</li>
-<li data-src="https://linear-838.frequency.stream/mt/studio/838/hls/master/playlist.m3u8">838 IPTV_338</li>
-<li data-src="https://linear-839.frequency.stream/mt/studio/839/hls/master/playlist.m3u8">839 IPTV_339</li>
-<li data-src="https://linear-840.frequency.stream/mt/studio/840/hls/master/playlist.m3u8">840 IPTV_340</li>
-<li data-src="https://linear-841.frequency.stream/mt/studio/841/hls/master/playlist.m3u8">841 IPTV_341</li>
-<li data-src="https://linear-842.frequency.stream/mt/studio/842/hls/master/playlist.m3u8">842 IPTV_342</li>
-<li data-src="https://linear-843.frequency.stream/mt/studio/843/hls/master/playlist.m3u8">843 IPTV_343</li>
-<li data-src="https://linear-844.frequency.stream/mt/studio/844/hls/master/playlist.m3u8">844 IPTV_344</li>
-<li data-src="https://linear-845.frequency.stream/mt/studio/845/hls/master/playlist.m3u8">845 IPTV_345</li>
-<li data-src="https://linear-846.frequency.stream/mt/studio/846/hls/master/playlist.m3u8">846 IPTV_346</li>
-<li data-src="https://linear-847.frequency.stream/mt/studio/847/hls/master/playlist.m3u8">847 IPTV_347</li>
-<li data-src="https://linear-848.frequency.stream/mt/studio/848/hls/master/playlist.m3u8">848 IPTV_348</li>
-<li data-src="https://linear-849.frequency.stream/mt/studio/849/hls/master/playlist.m3u8">849 IPTV_349</li>
-<li data-src="https://linear-850.frequency.stream/mt/studio/850/hls/master/playlist.m3u8">850 IPTV_350</li>
-<li data-src="https://linear-851.frequency.stream/mt/studio/851/hls/master/playlist.m3u8">851 IPTV_351</li>
-<li data-src="https://linear-852.frequency.stream/mt/studio/852/hls/master/playlist.m3u8">852 IPTV_352</li>
-<li data-src="https://linear-853.frequency.stream/mt/studio/853/hls/master/playlist.m3u8">853 IPTV_353</li>
-<li data-src="https://linear-854.frequency.stream/mt/studio/854/hls/master/playlist.m3u8">854 IPTV_354</li>
-<li data-src="https://linear-855.frequency.stream/mt/studio/855/hls/master/playlist.m3u8">855 IPTV_355</li>
-<li data-src="https://linear-856.frequency.stream/mt/studio/856/hls/master/playlist.m3u8">856 IPTV_356</li>
-<li data-src="https://linear-857.frequency.stream/mt/studio/857/hls/master/playlist.m3u8">857 IPTV_357</li>
-<li data-src="https://linear-858.frequency.stream/mt/studio/858/hls/master/playlist.m3u8">858 IPTV_358</li>
-<li data-src="https://linear-859.frequency.stream/mt/studio/859/hls/master/playlist.m3u8">859 IPTV_359</li>
-<li data-src="https://linear-860.frequency.stream/mt/studio/860/hls/master/playlist.m3u8">860 IPTV_360</li>
-<li data-src="https://linear-861.frequency.stream/mt/studio/861/hls/master/playlist.m3u8">861 IPTV_361</li>
-<li data-src="https://linear-862.frequency.stream/mt/studio/862/hls/master/playlist.m3u8">862 IPTV_362</li>
-<li data-src="https://linear-863.frequency.stream/mt/studio/863/hls/master/playlist.m3u8">863 IPTV_363</li>
-<li data-src="https://linear-864.frequency.stream/mt/studio/864/hls/master/playlist.m3u8">864 IPTV_364</li>
-<li data-src="https://linear-865.frequency.stream/mt/studio/865/hls/master/playlist.m3u8">865 IPTV_365</li>
-<li data-src="https://linear-866.frequency.stream/mt/studio/866/hls/master/playlist.m3u8">866 IPTV_366</li>
-<li data-src="https://linear-867.frequency.stream/mt/studio/867/hls/master/playlist.m3u8">867 IPTV_367</li>
-<li data-src="https://linear-868.frequency.stream/mt/studio/868/hls/master/playlist.m3u8">868 IPTV_368</li>
-<li data-src="https://linear-869.frequency.stream/mt/studio/869/hls/master/playlist.m3u8">869 IPTV_369</li>
-<li data-src="https://linear-870.frequency.stream/mt/studio/870/hls/master/playlist.m3u8">870 IPTV_370</li>
-<li data-src="https://linear-871.frequency.stream/mt/studio/871/hls/master/playlist.m3u8">871 IPTV_371</li>
-<li data-src="https://linear-872.frequency.stream/mt/studio/872/hls/master/playlist.m3u8">872 IPTV_372</li>
-<li data-src="https://linear-873.frequency.stream/mt/studio/873/hls/master/playlist.m3u8">873 IPTV_373</li>
-<li data-src="https://linear-874.frequency.stream/mt/studio/874/hls/master/playlist.m3u8">874 IPTV_374</li>
-<li data-src="https://linear-875.frequency.stream/mt/studio/875/hls/master/playlist.m3u8">875 IPTV_375</li>
-<li data-src="https://linear-876.frequency.stream/mt/studio/876/hls/master/playlist.m3u8">876 IPTV_376</li>
-<li data-src="https://linear-877.frequency.stream/mt/studio/877/hls/master/playlist.m3u8">877 IPTV_377</li>
-<li data-src="https://linear-878.frequency.stream/mt/studio/878/hls/master/playlist.m3u8">878 IPTV_378</li>
-<li data-src="https://linear-879.frequency.stream/mt/studio/879/hls/master/playlist.m3u8">879 IPTV_379</li>
-<li data-src="https://linear-880.frequency.stream/mt/studio/880/hls/master/playlist.m3u8">880 IPTV_380</li>
-<li data-src="https://linear-881.frequency.stream/mt/studio/881/hls/master/playlist.m3u8">881 IPTV_381</li>
-<li data-src="https://linear-882.frequency.stream/mt/studio/882/hls/master/playlist.m3u8">882 IPTV_382</li>
-<li data-src="https://linear-883.frequency.stream/mt/studio/883/hls/master/playlist.m3u8">883 IPTV_383</li>
-<li data-src="https://linear-884.frequency.stream/mt/studio/884/hls/master/playlist.m3u8">884 IPTV_384</li>
-<li data-src="https://linear-885.frequency.stream/mt/studio/885/hls/master/playlist.m3u8">885 IPTV_385</li>
-<li data-src="https://linear-886.frequency.stream/mt/studio/886/hls/master/playlist.m3u8">886 IPTV_386</li>
-<li data-src="https://linear-887.frequency.stream/mt/studio/887/hls/master/playlist.m3u8">887 IPTV_387</li>
-<li data-src="https://linear-888.frequency.stream/mt/studio/888/hls/master/playlist.m3u8">888 IPTV_388</li>
-<li data-src="https://linear-889.frequency.stream/mt/studio/889/hls/master/playlist.m3u8">889 IPTV_389</li>
-<li data-src="https://linear-890.frequency.stream/mt/studio/890/hls/master/playlist.m3u8">890 IPTV_390</li>
-<li data-src="https://linear-891.frequency.stream/mt/studio/891/hls/master/playlist.m3u8">891 IPTV_391</li>
-<li data-src="https://linear-892.frequency.stream/mt/studio/892/hls/master/playlist.m3u8">892 IPTV_392</li>
-<li data-src="https://linear-893.frequency.stream/mt/studio/893/hls/master/playlist.m3u8">893 IPTV_393</li>
-<li data-src="https://linear-894.frequency.stream/mt/studio/894/hls/master/playlist.m3u8">894 IPTV_394</li>
-<li data-src="https://linear-895.frequency.stream/mt/studio/895/hls/master/playlist.m3u8">895 IPTV_395</li>
-<li data-src="https://linear-896.frequency.stream/mt/studio/896/hls/master/playlist.m3u8">896 IPTV_396</li>
-<li data-src="https://linear-897.frequency.stream/mt/studio/897/hls/master/playlist.m3u8">897 IPTV_397</li>
-<li data-src="https://linear-898.frequency.stream/mt/studio/898/hls/master/playlist.m3u8">898 IPTV_398</li>
-<li data-src="https://linear-899.frequency.stream/mt/studio/899/hls/master/playlist.m3u8">899 IPTV_399</li>
+<li tabindex="0" data-src="https://linear-482.frequency.stream/mt/studio/482/hls/master/playlist.m3u8">482 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-484.frequency.stream/mt/studio/484/hls/master/playlist.m3u8">484 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-478.frequency.stream/mt/studio/478/hls/master/playlist.m3u8">478 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-557.frequency.stream/mt/studio/557/hls/master/playlist.m3u8">557 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-565.frequency.stream/mt/studio/565/hls/master/playlist.m3u8">565 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-568.frequency.stream/mt/studio/568/hls/master/playlist.m3u8">568 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-577.frequency.stream/mt/studio/577/hls/master/playlist.m3u8">577 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-580.frequency.stream/mt/studio/580/hls/master/playlist.m3u8">580 " NOVELA ESP"</li>
+<li tabindex="0" data-src="https://linear-533.frequency.stream/mt/studio/533/hls/master/playlist.m3u8">533 " tv en español"</li>
+<li tabindex="0" data-src="https://linear-573.frequency.stream/mt/studio/573/hls/master/playlist.m3u8">573 " tv en español"</li>
+<li tabindex="0" data-src="https://linear-570.frequency.stream/mt/studio/570/hls/master/playlist.m3u8">570 "futbol 3:4"</li>
+<li tabindex="0" data-src="https://linear-46.frequency.stream/mt/studio/46/hls/master/playlist.m3u8">46. ALWAYS FUNNY</li>
+<li tabindex="0" data-src="https://linear-49.frequency.stream/mt/studio/49/hls/master/playlist.m3u8">49. ALWAYS FUNNY</li>
+<li tabindex="0" data-src="https://linear-548.frequency.stream/mt/studio/548/hls/master/playlist.m3u8">548 AMERICAN PICKERS</li>
+<li tabindex="0" data-src="https://linear-12.frequency.stream/mt/studio/12/hls/master/playlist.m3u8">12. Animal LOLs</li>
+<li tabindex="0" data-src="https://linear-524.frequency.stream/mt/studio/524/hls/master/playlist.m3u8">524 Anime infantil</li>
+<li tabindex="0" data-src="https://linear-526.frequency.stream/mt/studio/526/hls/master/playlist.m3u8">526 Anime infantil pelis</li>
+<li tabindex="0" data-src="https://linear-458.frequency.stream/mt/studio/458/hls/master/playlist.m3u8">458 AT HOME</li>
+<li tabindex="0" data-src="https://linear-505.frequency.stream/mt/studio/505/hls/master/playlist.m3u8">505 AT HOME</li>
+<li tabindex="0" data-src="https://linear-477.frequency.stream/mt/studio/477/hls/master/playlist.m3u8">477 BLEAV</li>
+<li tabindex="0" data-src="https://linear-493.frequency.stream/mt/studio/493/hls/master/playlist.m3u8">493 BLEAV</li>
+<li tabindex="0" data-src="https://linear-434.frequency.stream/mt/studio/434/hls/master/playlist.m3u8">434 BOUNGE XL</li>
+<li tabindex="0" data-src="https://linear-462.frequency.stream/mt/studio/462/hls/master/playlist.m3u8">462 BOUNGE XL</li>
+<li tabindex="0" data-src="https://linear-552.frequency.stream/mt/studio/552/hls/master/playlist.m3u8">552 BUSINESS INSIDER</li>
+<li tabindex="0" data-src="https://linear-604.frequency.stream/mt/studio/604/hls/master/playlist.m3u8">604 Canal VIX</li>
+<li tabindex="0" data-src="https://linear-605.frequency.stream/mt/studio/605/hls/master/playlist.m3u8">605 Canal VIX</li>
+<li tabindex="0" data-src="https://linear-455.frequency.stream/mt/studio/455/hls/master/playlist.m3u8">455 CINEMA Century 21st</li>
+<li tabindex="0" data-src="https://linear-102.frequency.stream/mt/studio/102/hls/master/playlist.m3u8">102 CityLine</li>
+<li tabindex="0" data-src="https://linear-454.frequency.stream/mt/studio/454/hls/master/playlist.m3u8">454 Classic Movies</li>
+<li tabindex="0" data-src="https://linear-465.frequency.stream/mt/studio/465/hls/master/playlist.m3u8">465 COURT TV</li>
+<li tabindex="0" data-src="https://linear-84.frequency.stream/mt/studio/84/hls/master/playlist.m3u8">84. COURT TV</li>
+<li tabindex="0" data-src="https://linear-549.frequency.stream/mt/studio/549/hls/master/playlist.m3u8">549 CRIME & JUSTICE</li>
+<li tabindex="0" data-src="https://linear-593.frequency.stream/mt/studio/593/hls/master/playlist.m3u8">593 CRIME & JUSTICE ONE</li>
+<li tabindex="0" data-src="https://linear-535.frequency.stream/mt/studio/535/hls/master/playlist.m3u8">535 e-GAME tv</li>
+<li tabindex="0" data-src="https://linear-594.frequency.stream/mt/studio/594/hls/master/playlist.m3u8">594 e-GAME tv</li>
+<li tabindex="0" data-src="https://linear-295.frequency.stream/mt/studio/295/hls/master/playlist.m3u8">295 FAILARMY</li>
+<li tabindex="0" data-src="https://linear-198.frequency.stream/mt/studio/198/hls/master/playlist.m3u8">198 FAILARMY</li>
+<li tabindex="0" data-src="https://linear-137.frequency.stream/mt/studio/137/hls/master/playlist.m3u8">137 FLIX Family</li>
+<li tabindex="0" data-src="https://linear-360.frequency.stream/mt/studio/360/hls/master/playlist.m3u8">360 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-362.frequency.stream/mt/studio/362/hls/master/playlist.m3u8">362 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-363.frequency.stream/mt/studio/363/hls/master/playlist.m3u8">363 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-364.frequency.stream/mt/studio/364/hls/master/playlist.m3u8">364 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-365.frequency.stream/mt/studio/365/hls/master/playlist.m3u8">365 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-366.frequency.stream/mt/studio/366/hls/master/playlist.m3u8">366 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-367.frequency.stream/mt/studio/367/hls/master/playlist.m3u8">367 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-368.frequency.stream/mt/studio/368/hls/master/playlist.m3u8">368 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-371.frequency.stream/mt/studio/371/hls/master/playlist.m3u8">371 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-372.frequency.stream/mt/studio/372/hls/master/playlist.m3u8">372 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-373.frequency.stream/mt/studio/373/hls/master/playlist.m3u8">373 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-374.frequency.stream/mt/studio/374/hls/master/playlist.m3u8">374 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-375.frequency.stream/mt/studio/375/hls/master/playlist.m3u8">375 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-376.frequency.stream/mt/studio/376/hls/master/playlist.m3u8">376 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-377.frequency.stream/mt/studio/377/hls/master/playlist.m3u8">377 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-378.frequency.stream/mt/studio/378/hls/master/playlist.m3u8">378 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-379.frequency.stream/mt/studio/379/hls/master/playlist.m3u8">379 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-380.frequency.stream/mt/studio/380/hls/master/playlist.m3u8">380 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-381.frequency.stream/mt/studio/381/hls/master/playlist.m3u8">381 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-383.frequency.stream/mt/studio/383/hls/master/playlist.m3u8">383 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-384.frequency.stream/mt/studio/384/hls/master/playlist.m3u8">384 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-385.frequency.stream/mt/studio/385/hls/master/playlist.m3u8">385 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-386.frequency.stream/mt/studio/386/hls/master/playlist.m3u8">386 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-438.frequency.stream/mt/studio/438/hls/master/playlist.m3u8">438 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-440.frequency.stream/mt/studio/440/hls/master/playlist.m3u8">440 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-668.frequency.stream/mt/studio/668/hls/master/playlist.m3u8">668 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-669.frequency.stream/mt/studio/669/hls/master/playlist.m3u8">669 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-670.frequency.stream/mt/studio/670/hls/master/playlist.m3u8">670 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-671.frequency.stream/mt/studio/671/hls/master/playlist.m3u8">671 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-678.frequency.stream/mt/studio/678/hls/master/playlist.m3u8">678 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-679.frequency.stream/mt/studio/679/hls/master/playlist.m3u8">679 Futbol evernto</li>
+<li tabindex="0" data-src="https://linear-789.frequency.stream/mt/studio/789/hls/master/playlist.m3u8">789 Gran Hermano MX bñ</li>
+<li tabindex="0" data-src="https://linear-790.frequency.stream/mt/studio/790/hls/master/playlist.m3u8">790 Gran Hermano MX com</li>
+<li tabindex="0" data-src="https://linear-788.frequency.stream/mt/studio/788/hls/master/playlist.m3u8">788 Gran Hermano MX dorX</li>
+<li tabindex="0" data-src="https://linear-787.frequency.stream/mt/studio/787/hls/master/playlist.m3u8">787 Gran Hermano MX dorY</li>
+<li tabindex="0" data-src="https://linear-785.frequency.stream/mt/studio/785/hls/master/playlist.m3u8">785 Gran Hermano MX ext</li>
+<li tabindex="0" data-src="https://linear-786.frequency.stream/mt/studio/786/hls/master/playlist.m3u8">786 Gran Hermano MX ext</li>
+<li tabindex="0" data-src="https://linear-792.frequency.stream/mt/studio/792/hls/master/playlist.m3u8">792 Gran Hermano MX gym</li>
+<li tabindex="0" data-src="https://linear-791.frequency.stream/mt/studio/791/hls/master/playlist.m3u8">791 Gran Hermano MX liv</li>
+<li tabindex="0" data-src="https://linear-784.frequency.stream/mt/studio/784/hls/master/playlist.m3u8">784 Gran Hermano MX viv</li>
+<li tabindex="0" data-src="https://linear-467.frequency.stream/mt/studio/467/hls/master/playlist.m3u8">467 GRIT xtra</li>
+<li tabindex="0" data-src="https://linear-83.frequency.stream/mt/studio/83/hls/master/playlist.m3u8">83. GRIT xtra</li>
+<li tabindex="0" data-src="https://linear-59.frequency.stream/mt/studio/59/hls/master/playlist.m3u8">59. HI-YAH!</li>
+<li tabindex="0" data-src="https://linear-64.frequency.stream/mt/studio/64/hls/master/playlist.m3u8">64. GEAR SCOUT</li>
+<li tabindex="0" data-src="https://linear-444.frequency.stream/mt/studio/444/hls/master/playlist.m3u8">444 Home Refresh</li>
+<li tabindex="0" data-src="https://linear-723.frequency.stream/mt/studio/723/hls/master/playlist.m3u8">723 Homeful</li>
+<li tabindex="0" data-src="https://linear-432.frequency.stream/mt/studio/432/hls/master/playlist.m3u8">432 ION</li>
+<li tabindex="0" data-src="https://linear-464.frequency.stream/mt/studio/464/hls/master/playlist.m3u8">464 ION</li>
+<li tabindex="0" data-src="https://linear-436.frequency.stream/mt/studio/436/hls/master/playlist.m3u8">436 ION MYSTERY</li>
+<li tabindex="0" data-src="https://linear-466.frequency.stream/mt/studio/466/hls/master/playlist.m3u8">466 ION MYSTERY</li>
+<li tabindex="0" data-src="https://linear-433.frequency.stream/mt/studio/433/hls/master/playlist.m3u8">433 ION PLUS</li>
+<li tabindex="0" data-src="https://linear-463.frequency.stream/mt/studio/463/hls/master/playlist.m3u8">463 ION PLUS</li>
+<li tabindex="0" data-src="https://linear-459.frequency.stream/mt/studio/459/hls/master/playlist.m3u8">459 Jamie Kennedy Channel</li>
+<li tabindex="0" data-src="https://linear-252.frequency.stream/mt/studio/252/hls/master/playlist.m3u8">252 JOURNY</li>
+<li tabindex="0" data-src="https://linear-291.frequency.stream/mt/studio/291/hls/master/playlist.m3u8">291 JOURNY</li>
+<li tabindex="0" data-src="https://linear-298.frequency.stream/mt/studio/298/hls/master/playlist.m3u8">298 JOURNY</li>
+<li tabindex="0" data-src="https://linear-90.frequency.stream/mt/studio/90/hls/master/playlist.m3u8">90. JUSTICE</li>
+<li tabindex="0" data-src="https://linear-92.frequency.stream/mt/studio/92/hls/master/playlist.m3u8">92. KCRA Sacramento</li>
+<li tabindex="0" data-src="https://linear-640.frequency.stream/mt/studio/640/hls/master/playlist.m3u8">640 Las Noticias +</li>
+<li tabindex="0" data-src="https://linear-717.frequency.stream/mt/studio/717/hls/master/playlist.m3u8">717 Las Noticias +</li>
+<li tabindex="0" data-src="https://linear-553.frequency.stream/mt/studio/553/hls/master/playlist.m3u8">553 Las Noticias +2</li>
+<li tabindex="0" data-src="https://linear-569.frequency.stream/mt/studio/569/hls/master/playlist.m3u8">569 Liga MX Futbol</li>
+<li tabindex="0" data-src="https://linear-272.frequency.stream/mt/studio/272/hls/master/playlist.m3u8">272 LOCAL NEW CafeeHouse</li>
+<li tabindex="0" data-src="https://linear-135.frequency.stream/mt/studio/135/hls/master/playlist.m3u8">135 Local News FUNNY</li>
+<li tabindex="0" data-src="https://linear-125.frequency.stream/mt/studio/125/hls/master/playlist.m3u8">125 Local News ZEN</li>
+<li tabindex="0" data-src="https://linear-519.frequency.stream/mt/studio/519/hls/master/playlist.m3u8">519 Love animal</li>
+<li tabindex="0" data-src="https://linear-639.frequency.stream/mt/studio/639/hls/master/playlist.m3u8">639 MGM ACTION</li>
+<li tabindex="0" data-src="https://linear-513.frequency.stream/mt/studio/513/hls/master/playlist.m3u8">513 MGM Addams Family</li>
+<li tabindex="0" data-src="https://linear-718.frequency.stream/mt/studio/718/hls/master/playlist.m3u8">718 MGM ClassicTV</li>
+<li tabindex="0" data-src="https://linear-638.frequency.stream/mt/studio/638/hls/master/playlist.m3u8">638 MGM Green acres</li>
+<li tabindex="0" data-src="https://linear-515.frequency.stream/mt/studio/515/hls/master/playlist.m3u8">515 MGM HEAT NIGHT</li>
+<li tabindex="0" data-src="https://linear-642.frequency.stream/mt/studio/642/hls/master/playlist.m3u8">642 MGM OUTHER</li>
+<li tabindex="0" data-src="https://linear-518.frequency.stream/mt/studio/518/hls/master/playlist.m3u8">518 MGM PATERNITY</li>
+<li tabindex="0" data-src="https://linear-637.frequency.stream/mt/studio/637/hls/master/playlist.m3u8">637 MGM Pink Panther</li>
+<li tabindex="0" data-src="https://linear-686.frequency.stream/mt/studio/686/hls/master/playlist.m3u8">686 MGM SCI-FI</li>
+<li tabindex="0" data-src="https://linear-658.frequency.stream/mt/studio/658/hls/master/playlist.m3u8">658 MGM STARGATE</li>
+<li tabindex="0" data-src="https://linear-563.frequency.stream/mt/studio/563/hls/master/playlist.m3u8">563 MOOVI MEX</li>
+<li tabindex="0" data-src="https://linear-564.frequency.stream/mt/studio/564/hls/master/playlist.m3u8">564 MOOVI MEX</li>
+<li tabindex="0" data-src="https://linear-236.frequency.stream/mt/studio/236/hls/master/playlist.m3u8">236 MOVIES OF THE WEEK</li>
+<li tabindex="0" data-src="https://linear-286.frequency.stream/mt/studio/286/hls/master/playlist.m3u8">286 NCN mas</li>
+<li tabindex="0" data-src="https://linear-736.frequency.stream/mt/studio/736/hls/master/playlist.m3u8">736 NCN noticias</li>
+<li tabindex="0" data-src="https://linear-280.frequency.stream/mt/studio/280/hls/master/playlist.m3u8">280 o</li>
+<li tabindex="0" data-src="https://linear-190.frequency.stream/mt/studio/190/hls/master/playlist.m3u8">190 OPIL</li>
+<li tabindex="0" data-src="https://linear-600.frequency.stream/mt/studio/600/hls/master/playlist.m3u8">600 OUTDOOR AMERICA</li>
+<li tabindex="0" data-src="https://linear-293.frequency.stream/mt/studio/293/hls/master/playlist.m3u8">293 OVATION</li>
+<li tabindex="0" data-src="https://linear-76.frequency.stream/mt/studio/76/hls/master/playlist.m3u8">76. pattrn</li>
+<li tabindex="0" data-src="https://linear-175.frequency.stream/mt/studio/175/hls/master/playlist.m3u8">175 PEOPLE are AWESOME</li>
+<li tabindex="0" data-src="https://linear-174.frequency.stream/mt/studio/174/hls/master/playlist.m3u8">174 PET collective</li>
+<li tabindex="0" data-src="https://linear-426.frequency.stream/mt/studio/426/hls/master/playlist.m3u8">426 Poker GO</li>
+<li tabindex="0" data-src="https://linear-205.frequency.stream/mt/studio/205/hls/master/playlist.m3u8">205 pursuiyUP</li>
+<li tabindex="0" data-src="https://linear-491.frequency.stream/mt/studio/491/hls/master/playlist.m3u8">491 Real Madrid TV</li>
+<li tabindex="0" data-src="https://linear-582.frequency.stream/mt/studio/582/hls/master/playlist.m3u8">582 RedBull</li>
+<li tabindex="0" data-src="https://linear-296.frequency.stream/mt/studio/296/hls/master/playlist.m3u8">296 REPO operative</li>
+<li tabindex="0" data-src="https://linear-181.frequency.stream/mt/studio/181/hls/master/playlist.m3u8">181 revry Brasil</li>
+<li tabindex="0" data-src="https://linear-73.frequency.stream/mt/studio/73/hls/master/playlist.m3u8">73. revry her</li>
+<li tabindex="0" data-src="https://linear-142.frequency.stream/mt/studio/142/hls/master/playlist.m3u8">142 revry latinX</li>
+<li tabindex="0" data-src="https://linear-44.frequency.stream/mt/studio/44/hls/master/playlist.m3u8">44. revry news</li>
+<li tabindex="0" data-src="https://linear-43.frequency.stream/mt/studio/43/hls/master/playlist.m3u8">43. revry TV</li>
+<li tabindex="0" data-src="https://linear-5.frequency.stream/mt/studio/5/hls/master/playlist.m3u8">5.f revry TV</li>
+<li tabindex="0" data-src="https://linear-456.frequency.stream/mt/studio/456/hls/master/playlist.m3u8">456 REWIND 80&90s</li>
+<li tabindex="0" data-src="https://linear-461.frequency.stream/mt/studio/461/hls/master/playlist.m3u8">461 ROXI Music</li>
+<li tabindex="0" data-src="https://linear-611.frequency.stream/mt/studio/611/hls/master/playlist.m3u8">611 scan me</li>
+<li tabindex="0" data-src="https://linear-460.frequency.stream/mt/studio/460/hls/master/playlist.m3u8">460 SCRIPPS NEWS</li>
+<li tabindex="0" data-src="https://linear-78.frequency.stream/mt/studio/78/hls/master/playlist.m3u8">78. SCRIPPS NEWS</li>
+<li tabindex="0" data-src="https://linear-496.frequency.stream/mt/studio/496/hls/master/playlist.m3u8">496 SN TV</li>
+<li tabindex="0" data-src="https://linear-497.frequency.stream/mt/studio/497/hls/master/playlist.m3u8">497 SN TV</li>
+<li tabindex="0" data-src="https://linear-502.frequency.stream/mt/studio/502/hls/master/playlist.m3u8">502 SN TV</li>
+<li tabindex="0" data-src="https://linear-165.frequency.stream/mt/studio/165/hls/master/playlist.m3u8">165 SN TV</li>
+<li tabindex="0" data-src="https://linear-836.frequency.stream/mt/studio/836/hls/master/playlist.m3u8">836 STAY</li>
+<li tabindex="0" data-src="https://linear-112.frequency.stream/mt/studio/112/hls/master/playlist.m3u8">112 stitch</li>
+<li tabindex="0" data-src="https://linear-253.frequency.stream/mt/studio/253/hls/master/playlist.m3u8">253 SWERVE combat</li>
+<li tabindex="0" data-src="https://linear-596.frequency.stream/mt/studio/596/hls/master/playlist.m3u8">596 TEAL D!SASTER</li>
+<li tabindex="0" data-src="https://linear-514.frequency.stream/mt/studio/514/hls/master/playlist.m3u8">514 TEEN WOLF</li>
+<li tabindex="0" data-src="https://linear-479.frequency.stream/mt/studio/479/hls/master/playlist.m3u8">479 TeleHITS MX</li>
+<li tabindex="0" data-src="https://linear-188.frequency.stream/mt/studio/188/hls/master/playlist.m3u8">188 TH usa</li>
+<li tabindex="0" data-src="https://linear-11.frequency.stream/mt/studio/11/hls/master/playlist.m3u8">11. The Family</li>
+<li tabindex="0" data-src="https://linear-584.frequency.stream/mt/studio/584/hls/master/playlist.m3u8">584 The Grios</li>
+<li tabindex="0" data-src="https://linear-197.frequency.stream/mt/studio/197/hls/master/playlist.m3u8">197 the PETcollective</li>
+<li tabindex="0" data-src="https://linear-598.frequency.stream/mt/studio/598/hls/master/playlist.m3u8">598 the Sullivan SHOW</li>
+<li tabindex="0" data-src="https://linear-431.frequency.stream/mt/studio/431/hls/master/playlist.m3u8">431 The Weather Español</li>
+<li tabindex="0" data-src="https://linear-556.frequency.stream/mt/studio/556/hls/master/playlist.m3u8">556 Tigo SPORTS</li>
+<li tabindex="0" data-src="https://linear-727.frequency.stream/mt/studio/727/hls/master/playlist.m3u8">727 TODO CINE</li>
+<li tabindex="0" data-src="https://linear-347.frequency.stream/mt/studio/347/hls/master/playlist.m3u8">347 TUDN</li>
+<li tabindex="0" data-src="https://linear-581.frequency.stream/mt/studio/581/hls/master/playlist.m3u8">581 TUDN futbol</li>
+<li tabindex="0" data-src="https://linear-356.frequency.stream/mt/studio/356/hls/master/playlist.m3u8">356 TUDN zona</li>
+<li tabindex="0" data-src="https://linear-554.frequency.stream/mt/studio/554/hls/master/playlist.m3u8">554 US Sport old race</li>
+<li tabindex="0" data-src="https://linear-685.frequency.stream/mt/studio/685/hls/master/playlist.m3u8">685 US Tortuga ninjas</li>
+<li tabindex="0" data-src="https://linear-100.frequency.stream/mt/studio/100/hls/master/playlist.m3u8">100 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-103.frequency.stream/mt/studio/103/hls/master/playlist.m3u8">103 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-105.frequency.stream/mt/studio/105/hls/master/playlist.m3u8">105 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-106.frequency.stream/mt/studio/106/hls/master/playlist.m3u8">106 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-107.frequency.stream/mt/studio/107/hls/master/playlist.m3u8">107 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-108.frequency.stream/mt/studio/108/hls/master/playlist.m3u8">108 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-109.frequency.stream/mt/studio/109/hls/master/playlist.m3u8">109 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-110.frequency.stream/mt/studio/110/hls/master/playlist.m3u8">110 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-111.frequency.stream/mt/studio/111/hls/master/playlist.m3u8">111 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-113.frequency.stream/mt/studio/113/hls/master/playlist.m3u8">113 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-114.frequency.stream/mt/studio/114/hls/master/playlist.m3u8">114 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-115.frequency.stream/mt/studio/115/hls/master/playlist.m3u8">115 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-116.frequency.stream/mt/studio/116/hls/master/playlist.m3u8">116 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-117.frequency.stream/mt/studio/117/hls/master/playlist.m3u8">117 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-200.frequency.stream/mt/studio/200/hls/master/playlist.m3u8">200 VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-22.frequency.stream/mt/studio/22/hls/master/playlist.m3u8">22. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-33.frequency.stream/mt/studio/33/hls/master/playlist.m3u8">33. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-36.frequency.stream/mt/studio/36/hls/master/playlist.m3u8">36. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-93.frequency.stream/mt/studio/93/hls/master/playlist.m3u8">93. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-94.frequency.stream/mt/studio/94/hls/master/playlist.m3u8">94. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-95.frequency.stream/mt/studio/95/hls/master/playlist.m3u8">95. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-96.frequency.stream/mt/studio/96/hls/master/playlist.m3u8">96. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-97.frequency.stream/mt/studio/97/hls/master/playlist.m3u8">97. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-98.frequency.stream/mt/studio/98/hls/master/playlist.m3u8">98. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-99.frequency.stream/mt/studio/99/hls/master/playlist.m3u8">99. VERY LOCAL</li>
+<li tabindex="0" data-src="https://linear-494.frequency.stream/mt/studio/494/hls/master/playlist.m3u8">494 VEVO</li>
+<li tabindex="0" data-src="https://linear-312.frequency.stream/mt/studio/312/hls/master/playlist.m3u8">312 VIX</li>
+<li tabindex="0" data-src="https://linear-480.frequency.stream/mt/studio/480/hls/master/playlist.m3u8">480 VIX</li>
+<li tabindex="0" data-src="https://linear-481.frequency.stream/mt/studio/481/hls/master/playlist.m3u8">481 VIX</li>
+<li tabindex="0" data-src="https://linear-483.frequency.stream/mt/studio/483/hls/master/playlist.m3u8">483 VIX</li>
+<li tabindex="0" data-src="https://linear-487.frequency.stream/mt/studio/487/hls/master/playlist.m3u8">487 VIX</li>
+<li tabindex="0" data-src="https://linear-574.frequency.stream/mt/studio/574/hls/master/playlist.m3u8">574 VIX</li>
+<li tabindex="0" data-src="https://linear-575.frequency.stream/mt/studio/575/hls/master/playlist.m3u8">575 VIX</li>
+<li tabindex="0" data-src="https://linear-660.frequency.stream/mt/studio/660/hls/master/playlist.m3u8">660 VIX</li>
+<li tabindex="0" data-src="https://linear-576.frequency.stream/mt/studio/576/hls/master/playlist.m3u8">576 VIX …</li>
+<li tabindex="0" data-src="https://linear-734.frequency.stream/mt/studio/734/hls/master/playlist.m3u8">734 VIX …</li>
+<li tabindex="0" data-src="https://linear-735.frequency.stream/mt/studio/735/hls/master/playlist.m3u8">735 VIX …</li>
+<li tabindex="0" data-src="https://linear-784.frequency.stream/mt/studio/784/hls/master/playlist.m3u8">784 VIX …</li>
+<li tabindex="0" data-src="https://linear-566.frequency.stream/mt/studio/566/hls/master/playlist.m3u8">566 VIX ….</li>
+<li tabindex="0" data-src="https://linear-559.frequency.stream/mt/studio/559/hls/master/playlist.m3u8">559 VIX CINE CLUB</li>
+<li tabindex="0" data-src="https://linear-567.frequency.stream/mt/studio/567/hls/master/playlist.m3u8">567 VIX CINE CLUB</li>
+<li tabindex="0" data-src="https://linear-357.frequency.stream/mt/studio/357/hls/master/playlist.m3u8">357 VIX Deporte</li>
+<li tabindex="0" data-src="https://linear-558.frequency.stream/mt/studio/558/hls/master/playlist.m3u8">558 VIX GRANDES PAREJAS</li>
+<li tabindex="0" data-src="https://linear-560.frequency.stream/mt/studio/560/hls/master/playlist.m3u8">560 VIX JAJAJA</li>
+<li tabindex="0" data-src="https://linear-561.frequency.stream/mt/studio/561/hls/master/playlist.m3u8">561 VIX NOVELAS DE ORO</li>
+<li tabindex="0" data-src="https://linear-361.frequency.stream/mt/studio/361/hls/master/playlist.m3u8">361 VIX TUDN</li>
+<li tabindex="0" data-src="https://linear-571.frequency.stream/mt/studio/571/hls/master/playlist.m3u8">571 VIX VILLANOS DE NOVELA</li>
+<li tabindex="0" data-src="https://linear-562.frequency.stream/mt/studio/562/hls/master/playlist.m3u8">562 VIXRETRO CINE</li>
+<li tabindex="0" data-src="https://linear-737.frequency.stream/mt/studio/737/hls/master/playlist.m3u8">737 Wapa +</li>
+<li tabindex="0" data-src="https://linear-176.frequency.stream/mt/studio/176/hls/master/playlist.m3u8">176 WEATHER SPY</li>
+<li tabindex="0" data-src="https://linear-199.frequency.stream/mt/studio/199/hls/master/playlist.m3u8">199 WEATHER SPY</li>
+<li tabindex="0" data-src="https://linear-279.frequency.stream/mt/studio/279/hls/master/playlist.m3u8">279 WeThePeople</li>
+<li tabindex="0" data-src="https://linear-799.frequency.stream/mt/studio/799/hls/master/playlist.m3u8">799 WILDWEST TV</li>
+<li tabindex="0" data-src="https://linear-715.frequency.stream/mt/studio/715/hls/master/playlist.m3u8">715 Laff more!</li>
+<li tabindex="0" data-src="https://linear-716.frequency.stream/mt/studio/716/hls/master/playlist.m3u8">716 Laff more!</li>
+<li tabindex="0" data-src="https://linear-597.frequency.stream/mt/studio/597/hls/master/playlist.m3u8">597 Poker GO</li>
+
+
+
+<!-- 
+
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch542/playlist.m3u8">ESPN 2 | HD</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch320/playlist.m3u8">ESPN 3</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch321/playlist.m3u8">FOX SPORTS HD</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch322/playlist.m3u8">FOX SPORTS 2 HD</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch338/playlist.m3u8">FOX SPORTS 3 HD</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch548/playlist.m3u8">Afizzionados</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch302/playlist.m3u8">TUDN USA</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch301/playlist.m3u8">FOX DEPORTES</li>
+
+
+ -->
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch340/playlist.m3u8">ABC</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch549/playlist.m3u8">AMC</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch208/playlist.m3u8">ANIMAL PLANET</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch351/playlist.m3u8">ANTENA3</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch564/playlist.m3u8">AXS TV</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch570/playlist.m3u8">AZTECA CORAZON</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch550/playlist.m3u8">BABY TV LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch572/playlist.m3u8">BIG NETWORK</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch555/playlist.m3u8">BITE ME LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch545/playlist.m3u8">BOOMERANG</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch316/playlist.m3u8">BravoTV</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch350/playlist.m3u8">CARACOL</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch325/playlist.m3u8">CBS Sports</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch218/playlist.m3u8">CNN</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch318/playlist.m3u8">CNN</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch521/playlist.m3u8">COOKING CHANNEL</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch211/playlist.m3u8">FOOD NETWORK</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch228/playlist.m3u8">Fox Sa</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch312/playlist.m3u8">FOX SA</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch571/playlist.m3u8">DISCOVERY</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch526/playlist.m3u8">DISCOVERY FAMILY</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch525/playlist.m3u8">DISCOVERY ID LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch556/playlist.m3u8">DISCOVERY TURBO LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch308/playlist.m3u8">E!</li>
 
 
 
 
 
 
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch505/playlist.m3u8">FX LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch523/playlist.m3u8">FXX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch535/playlist.m3u8">GAME SHOW</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch552/playlist.m3u8">GOL TV LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch335/playlist.m3u8">GOLF CHANNEL</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch563/playlist.m3u8">GRIT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch524/playlist.m3u8">H&H LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch317/playlist.m3u8">Hallmark</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch515/playlist.m3u8">HBO FAMILY</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch530/playlist.m3u8">HBO FAMILY LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch516/playlist.m3u8">HBO PLUS LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch517/playlist.m3u8">HBO SIGNATURE LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch323/playlist.m3u8">HG TV</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch215/playlist.m3u8">HISTORY</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch342/playlist.m3u8">HISTORY</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch349/playlist.m3u8">HISTORY MX</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch352/playlist.m3u8">HOME AND HEALTH LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch565/playlist.m3u8">ION</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch511/playlist.m3u8">ISAT LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch333/playlist.m3u8">KENS5</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch567/playlist.m3u8">LIFETIME</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch519/playlist.m3u8">MAS CHIC LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch557/playlist.m3u8">ME TV</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch336/playlist.m3u8">MLB NETWORK</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch528/playlist.m3u8">MOTOR TREND</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch217/playlist.m3u8">NAT GEO</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch509/playlist.m3u8">NAT GEO LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch309/playlist.m3u8">News 4</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch332/playlist.m3u8">NFL NETWORK</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch513/playlist.m3u8">NICK TOONS</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch512/playlist.m3u8">NICKELODEON LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch324/playlist.m3u8">outdoor</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch216/playlist.m3u8">OUTDOOR</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch566/playlist.m3u8">OWN</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch544/playlist.m3u8">PARAMOUNT NETWORK</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch506/playlist.m3u8">SONY LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch229/playlist.m3u8">sportnet</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch212/playlist.m3u8">TBS</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch327/playlist.m3u8">TELEMUNDO</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch330/playlist.m3u8">TENNIS</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch527/playlist.m3u8">TLC LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch337/playlist.m3u8">TNT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch520/playlist.m3u8">TNT SERIES LAT</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch558/playlist.m3u8">TRAVEL CHANNEL</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch560/playlist.m3u8">TRUE CRIME</li>
+
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch328/playlist.m3u8">UNIVISION</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch574/playlist.m3u8">US Peli_103</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch314/playlist.m3u8">Unknown_18</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch500/playlist.m3u8">US Peli_49</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch502/playlist.m3u8">US Peli_50</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch503/playlist.m3u8">US Peli_51</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch508/playlist.m3u8">NAT GEO WILD Esp</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch514/playlist.m3u8">US Peli_59</li>
+<!-- <li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch529/playlist.m3u8">Unknown_72</li> -->
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch531/playlist.m3u8">US Peli_74</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch533/playlist.m3u8">US Peli_75</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch546/playlist.m3u8">US Peli_81</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch553/playlist.m3u8">US Peli_86</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch561/playlist.m3u8">BOUNCE</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch341/playlist.m3u8">USA NETWORK</li>
+<li tabindex="0" data-src="http://livex.pop-app.live/s4n/poplive/ch562/playlist.m3u8">WINSPORT</li>
 
 
 
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3078">CANELA TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3105">CINEMA KAUSA</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3178">CINEMA KAUSA</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3054">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3056">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3057">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3058">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3059">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3060">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3061">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3062">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3063">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3064">RUN TIME  - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3053">RUN TIME Retro - ES</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3080">COOKING PANDA</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3098">Documental US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3166">Documental US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3165">Policial US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3171">Policial US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3177">Survival wild</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3096">PREMIUMFREE TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3181">PREMIUMFREE TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3196">PREMIUMFREE TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3148">PREMIUMFREE TV africwood</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3176">PREMIUMFREE TV africwood</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3179">PREMIUMFREE TV africwood</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3192">PREMIUMFREE TV africwood</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3137">PREMIUMFREE TV diva</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3182">PREMIUMFREE TV diva</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3095">PREMIUMFREE TV fresh</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3151">PREMIUMFREE TV fresh</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3184">PREMIUMFREE TV kind</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3136">PREMIUMFREE TV life</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3099">PREMIUMFREE TV limelight</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3141">PREMIUMFREE TV limelight</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3157">PREMIUMFREE TV limelight</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3158">PREMIUMFREE TV limelight</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3101">PREMIUMFREE TV pulse</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3152">PREMIUMFREE TV pulse</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3199">PREMIUMFREE TV pulse</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3107">PREMIUMFREE TV rpm</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3154">PREMIUMFREE TV rpm</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3189">PREMIUMFREE TV rpm</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3103">PREMIUMFREE TV sports</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3188">PREMIUMFREE TV sports</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3104">PREMIUMFREE TV true african</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3183">PREMIUMFREE TV true african</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3197">PREMIUMFREE TV true african</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3112">Cheddar</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3082">GO Traveler</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3076">Honda STAGE</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3046">NBC kcra</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3083">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3084">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3160">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3167">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3168">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3169">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3190">TV US 3.4</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3097">Infantil US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3100">Infantil US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3110">Infantil US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3135">Infantil US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3150">Infantil US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3140">load…</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3143">load…</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3164">load…</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3170">load…</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3174">load…</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3034">STINGRAY CMUSIC</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3035">STINGRAY CMUSIC</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3037">STINGRAY DJAZZ</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3038">STINGRAY INTERMISION</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3032">STINGRAY KARAOKE</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3033">STINGRAY KARAOKE</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3040">STINGRAY KARAOKE</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3029">STINGRAY KARAOKE FUN</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3026">STINGRAY MUSIC AFTER NATIVE</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3021">STINGRAY MUSIC EASY LISTENING</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3019">STINGRAY MUSIC EURO HIT</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3025">STINGRAY MUSIC EXITOS DEL MOMENTO</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3030">STINGRAY MUSIC FLASHBACK 70S</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3024">STINGRAY MUSIC HIP-HOP</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3018">STINGRAY MUSIC K-POP</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3028">STINGRAY MUSIC NOTHIN BUT 90S</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3023">STINGRAY MUSIC POP ADULT</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3022">STINGRAY MUSIC SMOOTH JAZZ</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3027">STINGRAY MUSIC THE SPA</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3020">STINGRAY MUSIC Y2K</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3036">STINGRAY NATURESCAPE</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3041">STINGRAY NATURESCAPE Fire</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3031">STINGRAY QELLO</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3039">STINGRAY QELLO</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3042">STINGRAY QELLO</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3159">Dexule Lounge HD</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3156">Musica</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3193">Musica</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3091">AFRIC</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3092">AFRIC</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3149">AFRIC</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3153">AFRIC</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3155">AFRICA LOL</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3185">AFRICA LOL</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3194">AFRICA LOL</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3198">AFRICA LOL</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3106">BONGO TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3180">BONGO TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3195">BONGO TV</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3043">ABC tilt</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3113">Impact Proffesionls</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3069">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3090">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3161">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3162">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3172">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3173">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3175">Peli US</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3075">Pelicula ESP</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3134">Pelicula ESP</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3049">"lucha"</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3070">"lucha"</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3111">"lucha"</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3118">FIGHT NETWORK</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3010">ITV deportes</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3126">MOTORVISION</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3133">EN PUBLICIDAD</li>
+
+<!-- 
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3044">tilt</li>
+<li tabindex="0" data-src="https://stream.ads.ottera.tv/playlist.m3u8?network_id=3047">tilt</li>
 
 
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch340/playlist.m3u8">ABC</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch573/playlist.m3u8">ACCN ESPN</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch548/playlist.m3u8">AFIZZIONADOS MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch549/playlist.m3u8">AMC</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch208/playlist.m3u8">ANIMAL PLANET</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch351/playlist.m3u8">ANTENA3</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch564/playlist.m3u8">AXS TV</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch570/playlist.m3u8">AZTECA CORAZON</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch550/playlist.m3u8">BABY TV LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch572/playlist.m3u8">BIG NETWORK</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch555/playlist.m3u8">BITE ME LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch545/playlist.m3u8">BOOMERANG</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch316/playlist.m3u8">BravoTV</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch350/playlist.m3u8">CARACOL</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch325/playlist.m3u8">CBS Sports</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch218/playlist.m3u8">CNN</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch318/playlist.m3u8">CNN</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch521/playlist.m3u8">COOKING CHANNEL</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch571/playlist.m3u8">DISCOVERY</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch526/playlist.m3u8">DISCOVERY FAMILY</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch525/playlist.m3u8">DISCOVERY ID LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch556/playlist.m3u8">DISCOVERY TURBO LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch308/playlist.m3u8">E!</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch542/playlist.m3u8">ESPN 2 MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch320/playlist.m3u8">ESPN 3 MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch311/playlist.m3u8">ESPN DEPORTES</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch319/playlist.m3u8">ESPN MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch329/playlist.m3u8">ESPN US</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch313/playlist.m3u8">ESPN USA</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch211/playlist.m3u8">FOOD NETWORK</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch301/playlist.m3u8">Fox Deportes</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch228/playlist.m3u8">Fox Sa</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch312/playlist.m3u8">FOX SA</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch321/playlist.m3u8">FOX SPORT MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch322/playlist.m3u8">FOX SPORTS 2 MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch338/playlist.m3u8">FOX SPORTS 3 MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch339/playlist.m3u8">FS1 US</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch326/playlist.m3u8">FS2 USA</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch505/playlist.m3u8">FX LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch523/playlist.m3u8">FXX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch535/playlist.m3u8">GAME SHOW</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch552/playlist.m3u8">GOL TV LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch335/playlist.m3u8">GOLF CHANNEL</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch563/playlist.m3u8">GRIT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch524/playlist.m3u8">H&H LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch317/playlist.m3u8">Hallmark</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch515/playlist.m3u8">HBO FAMILY</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch530/playlist.m3u8">HBO FAMILY LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch516/playlist.m3u8">HBO PLUS LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch517/playlist.m3u8">HBO SIGNATURE LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch323/playlist.m3u8">HG TV</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch215/playlist.m3u8">HISTORY</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch342/playlist.m3u8">HISTORY</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch349/playlist.m3u8">HISTORY MX</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch352/playlist.m3u8">HOME AND HEALTH LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch565/playlist.m3u8">ION</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch511/playlist.m3u8">ISAT LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch333/playlist.m3u8">KENS5</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch567/playlist.m3u8">LIFETIME</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch519/playlist.m3u8">MAS CHIC LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch557/playlist.m3u8">ME TV</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch336/playlist.m3u8">MLB NETWORK</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch528/playlist.m3u8">MOTOR TREND</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch217/playlist.m3u8">NAT GEO</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch509/playlist.m3u8">NAT GEO LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch310/playlist.m3u8">NBATV</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch331/playlist.m3u8">NBCS SPORTS</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch309/playlist.m3u8">News 4</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch332/playlist.m3u8">NFL NETWORK</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch513/playlist.m3u8">NICK TOONS</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch512/playlist.m3u8">NICKELODEON LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch324/playlist.m3u8">outdoor</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch216/playlist.m3u8">OUTDOOR</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch566/playlist.m3u8">OWN</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch544/playlist.m3u8">PARAMOUNT NETWORK</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch506/playlist.m3u8">SONY LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch229/playlist.m3u8">sportnet</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch212/playlist.m3u8">TBS</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch327/playlist.m3u8">TELEMUNDO</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch330/playlist.m3u8">TENNIS</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch527/playlist.m3u8">TLC LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch337/playlist.m3u8">TNT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch520/playlist.m3u8">TNT SERIES LAT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch558/playlist.m3u8">TRAVEL CHANNEL</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch560/playlist.m3u8">TRUE CRIME</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch302/playlist.m3u8">TUDN USA</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch534/playlist.m3u8">UFC</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch328/playlist.m3u8">UNIVISION</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch574/playlist.m3u8">Unknown_103</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch314/playlist.m3u8">Unknown_18</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch500/playlist.m3u8">Unknown_49</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch502/playlist.m3u8">Unknown_50</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch503/playlist.m3u8">Unknown_51</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch508/playlist.m3u8">Unknown_54</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch514/playlist.m3u8">Unknown_59</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch529/playlist.m3u8">Unknown_72</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch531/playlist.m3u8">Unknown_74</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch533/playlist.m3u8">Unknown_75</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch546/playlist.m3u8">Unknown_81</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch553/playlist.m3u8">Unknown_86</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch561/playlist.m3u8">Unknown_92</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch341/playlist.m3u8">USA NETWORK</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch562/playlist.m3u8">WINSPORT</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch542/playlist.m3u8"> ESPN 2 | HD</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch320/playlist.m3u8"> ESPN 3</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch321/playlist.m3u8">FOX SPORTS HD</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch322/playlist.m3u8">FOX SPORTS 2 HD</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch338/playlist.m3u8">FOX SPORTS 3 HD</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch548/playlist.m3u8"> Afizzionados</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch302/playlist.m3u8"> TUDN USA</li>
-<li data-src="http://livex.pop-app.live/s4n/poplive/ch301/playlist.m3u8"> FOX DEPORTES</li>
+<li tabindex="0" data-src="https://linear-10.frequency.stream/mt/studio/10/hls/master/playlist.m3u8">10. IPTV_10</li>
+<li tabindex="0" data-src="https://linear-608.frequency.stream/mt/studio/608/hls/master/playlist.m3u8">608 IPTV_108</li>
+<li tabindex="0" data-src="https://linear-220.frequency.stream/mt/studio/220/hls/master/playlist.m3u8">220 IPTV_121</li>
+<li tabindex="0" data-src="https://linear-221.frequency.stream/mt/studio/221/hls/master/playlist.m3u8">221 IPTV_122</li>
+<li tabindex="0" data-src="https://linear-222.frequency.stream/mt/studio/222/hls/master/playlist.m3u8">222 IPTV_123</li>
+<li tabindex="0" data-src="https://linear-223.frequency.stream/mt/studio/223/hls/master/playlist.m3u8">223 IPTV_124</li>
+<li tabindex="0" data-src="https://linear-225.frequency.stream/mt/studio/225/hls/master/playlist.m3u8">225 IPTV_126</li>
+<li tabindex="0" data-src="https://linear-227.frequency.stream/mt/studio/227/hls/master/playlist.m3u8">227 IPTV_128</li>
+<li tabindex="0" data-src="https://linear-235.frequency.stream/mt/studio/235/hls/master/playlist.m3u8">235 IPTV_136</li>
+<li tabindex="0" data-src="https://linear-240.frequency.stream/mt/studio/240/hls/master/playlist.m3u8">240 IPTV_141</li>
+<li tabindex="0" data-src="https://linear-242.frequency.stream/mt/studio/242/hls/master/playlist.m3u8">242 IPTV_143</li>
+<li tabindex="0" data-src="https://linear-244.frequency.stream/mt/studio/244/hls/master/playlist.m3u8">244 IPTV_145</li>
+<li tabindex="0" data-src="https://linear-246.frequency.stream/mt/studio/246/hls/master/playlist.m3u8">246 IPTV_147</li>
+<li tabindex="0" data-src="https://linear-249.frequency.stream/mt/studio/249/hls/master/playlist.m3u8">249 IPTV_150</li>
+<li tabindex="0" data-src="https://linear-659.frequency.stream/mt/studio/659/hls/master/playlist.m3u8">659 IPTV_159</li>
+<li tabindex="0" data-src="https://linear-264.frequency.stream/mt/studio/264/hls/master/playlist.m3u8">264 IPTV_165</li>
+<li tabindex="0" data-src="https://linear-265.frequency.stream/mt/studio/265/hls/master/playlist.m3u8">265 IPTV_166</li>
+<li tabindex="0" data-src="https://linear-267.frequency.stream/mt/studio/267/hls/master/playlist.m3u8">267 IPTV_168</li>
+<li tabindex="0" data-src="https://linear-274.frequency.stream/mt/studio/274/hls/master/playlist.m3u8">274 IPTV_175</li>
+<li tabindex="0" data-src="https://linear-276.frequency.stream/mt/studio/276/hls/master/playlist.m3u8">276 IPTV_177</li>
+<li tabindex="0" data-src="https://linear-278.frequency.stream/mt/studio/278/hls/master/playlist.m3u8">278 IPTV_179</li>
+<li tabindex="0" data-src="https://linear-281.frequency.stream/mt/studio/281/hls/master/playlist.m3u8">281 IPTV_182</li>
+<li tabindex="0" data-src="https://linear-282.frequency.stream/mt/studio/282/hls/master/playlist.m3u8">282 IPTV_183</li>
+<li tabindex="0" data-src="https://linear-283.frequency.stream/mt/studio/283/hls/master/playlist.m3u8">283 IPTV_184</li>
+<li tabindex="0" data-src="https://linear-285.frequency.stream/mt/studio/285/hls/master/playlist.m3u8">285 IPTV_186</li>
+<li tabindex="0" data-src="https://linear-687.frequency.stream/mt/studio/687/hls/master/playlist.m3u8">687 IPTV_187</li>
+<li tabindex="0" data-src="https://linear-290.frequency.stream/mt/studio/290/hls/master/playlist.m3u8">290 IPTV_191</li>
+<li tabindex="0" data-src="https://linear-119.frequency.stream/mt/studio/119/hls/master/playlist.m3u8">119 IPTV_20</li>
+<li tabindex="0" data-src="https://linear-120.frequency.stream/mt/studio/120/hls/master/playlist.m3u8">120 IPTV_21</li>
+<li tabindex="0" data-src="https://linear-719.frequency.stream/mt/studio/719/hls/master/playlist.m3u8">719 IPTV_219</li>
+<li tabindex="0" data-src="https://linear-523.frequency.stream/mt/studio/523/hls/master/playlist.m3u8">523 IPTV_23</li>
+<li tabindex="0" data-src="https://linear-122.frequency.stream/mt/studio/122/hls/master/playlist.m3u8">122 IPTV_23</li>
+<li tabindex="0" data-src="https://linear-739.frequency.stream/mt/studio/739/hls/master/playlist.m3u8">739 IPTV_239</li>
+<li tabindex="0" data-src="https://linear-124.frequency.stream/mt/studio/124/hls/master/playlist.m3u8">124 IPTV_25</li>
+<li tabindex="0" data-src="https://linear-527.frequency.stream/mt/studio/527/hls/master/playlist.m3u8">527 IPTV_27</li>
+<li tabindex="0" data-src="https://linear-128.frequency.stream/mt/studio/128/hls/master/playlist.m3u8">128 IPTV_29</li>
+<li tabindex="0" data-src="https://linear-503.frequency.stream/mt/studio/503/hls/master/playlist.m3u8">503 IPTV_3</li>
+<li tabindex="0" data-src="https://linear-530.frequency.stream/mt/studio/530/hls/master/playlist.m3u8">530 IPTV_30</li>
+<li tabindex="0" data-src="https://linear-430.frequency.stream/mt/studio/430/hls/master/playlist.m3u8">430 IPTV_331</li>
+<li tabindex="0" data-src="https://linear-534.frequency.stream/mt/studio/534/hls/master/playlist.m3u8">534 IPTV_34</li>
+<li tabindex="0" data-src="https://linear-133.frequency.stream/mt/studio/133/hls/master/playlist.m3u8">133 IPTV_34</li>
+<li tabindex="0" data-src="https://linear-536.frequency.stream/mt/studio/536/hls/master/playlist.m3u8">536 IPTV_36</li>
+<li tabindex="0" data-src="https://linear-136.frequency.stream/mt/studio/136/hls/master/playlist.m3u8">136 IPTV_37</li>
+<li tabindex="0" data-src="https://linear-469.frequency.stream/mt/studio/469/hls/master/playlist.m3u8">469 IPTV_370</li>
+<li tabindex="0" data-src="https://linear-138.frequency.stream/mt/studio/138/hls/master/playlist.m3u8">138 IPTV_39</li>
+<li tabindex="0" data-src="https://linear-492.frequency.stream/mt/studio/492/hls/master/playlist.m3u8">492 IPTV_393</li>
+<li tabindex="0" data-src="https://linear-504.frequency.stream/mt/studio/504/hls/master/playlist.m3u8">504 IPTV_4</li>
+<li tabindex="0" data-src="https://linear-141.frequency.stream/mt/studio/141/hls/master/playlist.m3u8">141 IPTV_42</li>
+<li tabindex="0" data-src="https://linear-542.frequency.stream/mt/studio/542/hls/master/playlist.m3u8">542 IPTV_42</li>
+<li tabindex="0" data-src="https://linear-143.frequency.stream/mt/studio/143/hls/master/playlist.m3u8">143 IPTV_44</li>
+<li tabindex="0" data-src="https://linear-149.frequency.stream/mt/studio/149/hls/master/playlist.m3u8">149 IPTV_50</li>
+<li tabindex="0" data-src="https://linear-150.frequency.stream/mt/studio/150/hls/master/playlist.m3u8">150 IPTV_51</li>
+<li tabindex="0" data-src="https://linear-152.frequency.stream/mt/studio/152/hls/master/playlist.m3u8">152 IPTV_53</li>
+<li tabindex="0" data-src="https://linear-508.frequency.stream/mt/studio/508/hls/master/playlist.m3u8">508 IPTV_8</li>
+<li tabindex="0" data-src="https://linear-80.frequency.stream/mt/studio/80/hls/master/playlist.m3u8">80. IPTV_80</li>
+<li tabindex="0" data-src="https://linear-81.frequency.stream/mt/studio/81/hls/master/playlist.m3u8">81. IPTV_81</li>
+<li tabindex="0" data-src="https://linear-82.frequency.stream/mt/studio/82/hls/master/playlist.m3u8">82. IPTV_82</li>
+<li tabindex="0" data-src="https://linear-89.frequency.stream/mt/studio/89/hls/master/playlist.m3u8">89. IPTV_89</li> 
+<li tabindex="0" data-src="https://linear-612.frequency.stream/mt/studio/612/hls/master/playlist.m3u8">612 IPTV_112</li>
+<li tabindex="0" data-src="https://linear-624.frequency.stream/mt/studio/624/hls/master/playlist.m3u8">624 IPTV_124</li>
+<li tabindex="0" data-src="https://linear-627.frequency.stream/mt/studio/627/hls/master/playlist.m3u8">627 IPTV_127</li>
+<li tabindex="0" data-src="https://linear-628.frequency.stream/mt/studio/628/hls/master/playlist.m3u8">628 IPTV_128</li>
+<li tabindex="0" data-src="https://linear-629.frequency.stream/mt/studio/629/hls/master/playlist.m3u8">629 IPTV_129</li>
+<li tabindex="0" data-src="https://linear-630.frequency.stream/mt/studio/630/hls/master/playlist.m3u8">630 IPTV_130</li>
+<li tabindex="0" data-src="https://linear-631.frequency.stream/mt/studio/631/hls/master/playlist.m3u8">631 IPTV_131</li>
+<li tabindex="0" data-src="https://linear-641.frequency.stream/mt/studio/641/hls/master/playlist.m3u8">641 IPTV_141</li>
+<li tabindex="0" data-src="https://linear-643.frequency.stream/mt/studio/643/hls/master/playlist.m3u8">643 IPTV_143</li>
+<li tabindex="0" data-src="https://linear-644.frequency.stream/mt/studio/644/hls/master/playlist.m3u8">644 IPTV_144</li>
+<li tabindex="0" data-src="https://linear-645.frequency.stream/mt/studio/645/hls/master/playlist.m3u8">645 IPTV_145</li>
+<li tabindex="0" data-src="https://linear-647.frequency.stream/mt/studio/647/hls/master/playlist.m3u8">647 IPTV_147</li>
+<li tabindex="0" data-src="https://linear-648.frequency.stream/mt/studio/648/hls/master/playlist.m3u8">648 IPTV_148</li>
+<li tabindex="0" data-src="https://linear-649.frequency.stream/mt/studio/649/hls/master/playlist.m3u8">649 IPTV_149</li>
+<li tabindex="0" data-src="https://linear-650.frequency.stream/mt/studio/650/hls/master/playlist.m3u8">650 IPTV_150</li>
+<li tabindex="0" data-src="https://linear-651.frequency.stream/mt/studio/651/hls/master/playlist.m3u8">651 IPTV_151</li>
+<li tabindex="0" data-src="https://linear-656.frequency.stream/mt/studio/656/hls/master/playlist.m3u8">656 IPTV_156</li>
+<li tabindex="0" data-src="https://linear-673.frequency.stream/mt/studio/673/hls/master/playlist.m3u8">673 IPTV_173</li>
+<li tabindex="0" data-src="https://linear-677.frequency.stream/mt/studio/677/hls/master/playlist.m3u8">677 IPTV_177</li>
+<li tabindex="0" data-src="https://linear-680.frequency.stream/mt/studio/680/hls/master/playlist.m3u8">680 IPTV_180</li>
+<li tabindex="0" data-src="https://linear-681.frequency.stream/mt/studio/681/hls/master/playlist.m3u8">681 IPTV_181</li>
+<li tabindex="0" data-src="https://linear-683.frequency.stream/mt/studio/683/hls/master/playlist.m3u8">683 IPTV_183</li>
+<li tabindex="0" data-src="https://linear-684.frequency.stream/mt/studio/684/hls/master/playlist.m3u8">684 IPTV_184</li>
+<li tabindex="0" data-src="https://linear-688.frequency.stream/mt/studio/688/hls/master/playlist.m3u8">688 IPTV_188</li>
+<li tabindex="0" data-src="https://linear-689.frequency.stream/mt/studio/689/hls/master/playlist.m3u8">689 IPTV_189</li>
+<li tabindex="0" data-src="https://linear-690.frequency.stream/mt/studio/690/hls/master/playlist.m3u8">690 IPTV_190</li>
+<li tabindex="0" data-src="https://linear-691.frequency.stream/mt/studio/691/hls/master/playlist.m3u8">691 IPTV_191</li>
+<li tabindex="0" data-src="https://linear-692.frequency.stream/mt/studio/692/hls/master/playlist.m3u8">692 IPTV_192</li>
+<li tabindex="0" data-src="https://linear-693.frequency.stream/mt/studio/693/hls/master/playlist.m3u8">693 IPTV_193</li>
+<li tabindex="0" data-src="https://linear-694.frequency.stream/mt/studio/694/hls/master/playlist.m3u8">694 IPTV_194</li>
+<li tabindex="0" data-src="https://linear-695.frequency.stream/mt/studio/695/hls/master/playlist.m3u8">695 IPTV_195</li>
+<li tabindex="0" data-src="https://linear-696.frequency.stream/mt/studio/696/hls/master/playlist.m3u8">696 IPTV_196</li>
+<li tabindex="0" data-src="https://linear-697.frequency.stream/mt/studio/697/hls/master/playlist.m3u8">697 IPTV_197</li>
+<li tabindex="0" data-src="https://linear-698.frequency.stream/mt/studio/698/hls/master/playlist.m3u8">698 IPTV_198</li>
+<li tabindex="0" data-src="https://linear-699.frequency.stream/mt/studio/699/hls/master/playlist.m3u8">699 IPTV_199</li>
+<li tabindex="0" data-src="https://linear-700.frequency.stream/mt/studio/700/hls/master/playlist.m3u8">700 IPTV_200</li>
+<li tabindex="0" data-src="https://linear-701.frequency.stream/mt/studio/701/hls/master/playlist.m3u8">701 IPTV_201</li>
+<li tabindex="0" data-src="https://linear-702.frequency.stream/mt/studio/702/hls/master/playlist.m3u8">702 IPTV_202</li>
+<li tabindex="0" data-src="https://linear-703.frequency.stream/mt/studio/703/hls/master/playlist.m3u8">703 IPTV_203</li>
+<li tabindex="0" data-src="https://linear-704.frequency.stream/mt/studio/704/hls/master/playlist.m3u8">704 IPTV_204</li>
+<li tabindex="0" data-src="https://linear-705.frequency.stream/mt/studio/705/hls/master/playlist.m3u8">705 IPTV_205</li>
+<li tabindex="0" data-src="https://linear-706.frequency.stream/mt/studio/706/hls/master/playlist.m3u8">706 IPTV_206</li>
+<li tabindex="0" data-src="https://linear-707.frequency.stream/mt/studio/707/hls/master/playlist.m3u8">707 IPTV_207</li>
+<li tabindex="0" data-src="https://linear-708.frequency.stream/mt/studio/708/hls/master/playlist.m3u8">708 IPTV_208</li>
+<li tabindex="0" data-src="https://linear-709.frequency.stream/mt/studio/709/hls/master/playlist.m3u8">709 IPTV_209</li>
+<li tabindex="0" data-src="https://linear-710.frequency.stream/mt/studio/710/hls/master/playlist.m3u8">710 IPTV_210</li>
+<li tabindex="0" data-src="https://linear-711.frequency.stream/mt/studio/711/hls/master/playlist.m3u8">711 IPTV_211</li>
+<li tabindex="0" data-src="https://linear-713.frequency.stream/mt/studio/713/hls/master/playlist.m3u8">713 IPTV_213</li>
+<li tabindex="0" data-src="https://linear-721.frequency.stream/mt/studio/721/hls/master/playlist.m3u8">721 IPTV_221</li>
+<li tabindex="0" data-src="https://linear-722.frequency.stream/mt/studio/722/hls/master/playlist.m3u8">722 IPTV_222</li>
+<li tabindex="0" data-src="https://linear-726.frequency.stream/mt/studio/726/hls/master/playlist.m3u8">726 IPTV_226</li>
+<li tabindex="0" data-src="https://linear-729.frequency.stream/mt/studio/729/hls/master/playlist.m3u8">729 IPTV_229</li>
+<li tabindex="0" data-src="https://linear-730.frequency.stream/mt/studio/730/hls/master/playlist.m3u8">730 IPTV_230</li>
+<li tabindex="0" data-src="https://linear-731.frequency.stream/mt/studio/731/hls/master/playlist.m3u8">731 IPTV_231</li>
+<li tabindex="0" data-src="https://linear-732.frequency.stream/mt/studio/732/hls/master/playlist.m3u8">732 IPTV_232</li>
+<li tabindex="0" data-src="https://linear-744.frequency.stream/mt/studio/744/hls/master/playlist.m3u8">744 IPTV_244</li>
+<li tabindex="0" data-src="https://linear-748.frequency.stream/mt/studio/748/hls/master/playlist.m3u8">748 IPTV_248</li>
+<li tabindex="0" data-src="https://linear-755.frequency.stream/mt/studio/755/hls/master/playlist.m3u8">755 IPTV_255</li>
+<li tabindex="0" data-src="https://linear-765.frequency.stream/mt/studio/765/hls/master/playlist.m3u8">765 IPTV_265</li>
+<li tabindex="0" data-src="https://linear-770.frequency.stream/mt/studio/770/hls/master/playlist.m3u8">770 IPTV_270</li>
+<li tabindex="0" data-src="https://linear-771.frequency.stream/mt/studio/771/hls/master/playlist.m3u8">771 IPTV_271</li>
+<li tabindex="0" data-src="https://linear-779.frequency.stream/mt/studio/779/hls/master/playlist.m3u8">779 IPTV_279</li>
+<li tabindex="0" data-src="https://linear-837.frequency.stream/mt/studio/837/hls/master/playlist.m3u8">837 IPTV_337</li>
+<li tabindex="0" data-src="https://linear-838.frequency.stream/mt/studio/838/hls/master/playlist.m3u8">838 IPTV_338</li>
+<li tabindex="0" data-src="https://linear-839.frequency.stream/mt/studio/839/hls/master/playlist.m3u8">839 IPTV_339</li>
+<li tabindex="0" data-src="https://linear-840.frequency.stream/mt/studio/840/hls/master/playlist.m3u8">840 IPTV_340</li>
+<li tabindex="0" data-src="https://linear-841.frequency.stream/mt/studio/841/hls/master/playlist.m3u8">841 IPTV_341</li>
+<li tabindex="0" data-src="https://linear-842.frequency.stream/mt/studio/842/hls/master/playlist.m3u8">842 IPTV_342</li>
+<li tabindex="0" data-src="https://linear-843.frequency.stream/mt/studio/843/hls/master/playlist.m3u8">843 IPTV_343</li>
+<li tabindex="0" data-src="https://linear-844.frequency.stream/mt/studio/844/hls/master/playlist.m3u8">844 IPTV_344</li>
+<li tabindex="0" data-src="https://linear-845.frequency.stream/mt/studio/845/hls/master/playlist.m3u8">845 IPTV_345</li>
+<li tabindex="0" data-src="https://linear-846.frequency.stream/mt/studio/846/hls/master/playlist.m3u8">846 IPTV_346</li>
+<li tabindex="0" data-src="https://linear-847.frequency.stream/mt/studio/847/hls/master/playlist.m3u8">847 IPTV_347</li>
+<li tabindex="0" data-src="https://linear-848.frequency.stream/mt/studio/848/hls/master/playlist.m3u8">848 IPTV_348</li>
+<li tabindex="0" data-src="https://linear-849.frequency.stream/mt/studio/849/hls/master/playlist.m3u8">849 IPTV_349</li>
+<li tabindex="0" data-src="https://linear-850.frequency.stream/mt/studio/850/hls/master/playlist.m3u8">850 IPTV_350</li>
+<li tabindex="0" data-src="https://linear-851.frequency.stream/mt/studio/851/hls/master/playlist.m3u8">851 IPTV_351</li>
+<li tabindex="0" data-src="https://linear-852.frequency.stream/mt/studio/852/hls/master/playlist.m3u8">852 IPTV_352</li>
+<li tabindex="0" data-src="https://linear-853.frequency.stream/mt/studio/853/hls/master/playlist.m3u8">853 IPTV_353</li>
+<li tabindex="0" data-src="https://linear-854.frequency.stream/mt/studio/854/hls/master/playlist.m3u8">854 IPTV_354</li>
+<li tabindex="0" data-src="https://linear-855.frequency.stream/mt/studio/855/hls/master/playlist.m3u8">855 IPTV_355</li>
+<li tabindex="0" data-src="https://linear-856.frequency.stream/mt/studio/856/hls/master/playlist.m3u8">856 IPTV_356</li>
+<li tabindex="0" data-src="https://linear-857.frequency.stream/mt/studio/857/hls/master/playlist.m3u8">857 IPTV_357</li>
+<li tabindex="0" data-src="https://linear-858.frequency.stream/mt/studio/858/hls/master/playlist.m3u8">858 IPTV_358</li>
+<li tabindex="0" data-src="https://linear-859.frequency.stream/mt/studio/859/hls/master/playlist.m3u8">859 IPTV_359</li>
+<li tabindex="0" data-src="https://linear-860.frequency.stream/mt/studio/860/hls/master/playlist.m3u8">860 IPTV_360</li>
+<li tabindex="0" data-src="https://linear-861.frequency.stream/mt/studio/861/hls/master/playlist.m3u8">861 IPTV_361</li>
+<li tabindex="0" data-src="https://linear-862.frequency.stream/mt/studio/862/hls/master/playlist.m3u8">862 IPTV_362</li>
+<li tabindex="0" data-src="https://linear-863.frequency.stream/mt/studio/863/hls/master/playlist.m3u8">863 IPTV_363</li>
+<li tabindex="0" data-src="https://linear-864.frequency.stream/mt/studio/864/hls/master/playlist.m3u8">864 IPTV_364</li>
+<li tabindex="0" data-src="https://linear-865.frequency.stream/mt/studio/865/hls/master/playlist.m3u8">865 IPTV_365</li>
+<li tabindex="0" data-src="https://linear-866.frequency.stream/mt/studio/866/hls/master/playlist.m3u8">866 IPTV_366</li>
+<li tabindex="0" data-src="https://linear-867.frequency.stream/mt/studio/867/hls/master/playlist.m3u8">867 IPTV_367</li>
+<li tabindex="0" data-src="https://linear-868.frequency.stream/mt/studio/868/hls/master/playlist.m3u8">868 IPTV_368</li>
+<li tabindex="0" data-src="https://linear-869.frequency.stream/mt/studio/869/hls/master/playlist.m3u8">869 IPTV_369</li>
+<li tabindex="0" data-src="https://linear-870.frequency.stream/mt/studio/870/hls/master/playlist.m3u8">870 IPTV_370</li>
+<li tabindex="0" data-src="https://linear-871.frequency.stream/mt/studio/871/hls/master/playlist.m3u8">871 IPTV_371</li>
+<li tabindex="0" data-src="https://linear-872.frequency.stream/mt/studio/872/hls/master/playlist.m3u8">872 IPTV_372</li>
+<li tabindex="0" data-src="https://linear-873.frequency.stream/mt/studio/873/hls/master/playlist.m3u8">873 IPTV_373</li>
+<li tabindex="0" data-src="https://linear-874.frequency.stream/mt/studio/874/hls/master/playlist.m3u8">874 IPTV_374</li>
+<li tabindex="0" data-src="https://linear-875.frequency.stream/mt/studio/875/hls/master/playlist.m3u8">875 IPTV_375</li>
+<li tabindex="0" data-src="https://linear-876.frequency.stream/mt/studio/876/hls/master/playlist.m3u8">876 IPTV_376</li>
+<li tabindex="0" data-src="https://linear-877.frequency.stream/mt/studio/877/hls/master/playlist.m3u8">877 IPTV_377</li>
+<li tabindex="0" data-src="https://linear-878.frequency.stream/mt/studio/878/hls/master/playlist.m3u8">878 IPTV_378</li>
+<li tabindex="0" data-src="https://linear-879.frequency.stream/mt/studio/879/hls/master/playlist.m3u8">879 IPTV_379</li>
+<li tabindex="0" data-src="https://linear-880.frequency.stream/mt/studio/880/hls/master/playlist.m3u8">880 IPTV_380</li>
+<li tabindex="0" data-src="https://linear-881.frequency.stream/mt/studio/881/hls/master/playlist.m3u8">881 IPTV_381</li>
+<li tabindex="0" data-src="https://linear-882.frequency.stream/mt/studio/882/hls/master/playlist.m3u8">882 IPTV_382</li>
+<li tabindex="0" data-src="https://linear-883.frequency.stream/mt/studio/883/hls/master/playlist.m3u8">883 IPTV_383</li>
+<li tabindex="0" data-src="https://linear-884.frequency.stream/mt/studio/884/hls/master/playlist.m3u8">884 IPTV_384</li>
+<li tabindex="0" data-src="https://linear-885.frequency.stream/mt/studio/885/hls/master/playlist.m3u8">885 IPTV_385</li>
+<li tabindex="0" data-src="https://linear-886.frequency.stream/mt/studio/886/hls/master/playlist.m3u8">886 IPTV_386</li>
+<li tabindex="0" data-src="https://linear-887.frequency.stream/mt/studio/887/hls/master/playlist.m3u8">887 IPTV_387</li>
+<li tabindex="0" data-src="https://linear-888.frequency.stream/mt/studio/888/hls/master/playlist.m3u8">888 IPTV_388</li>
+<li tabindex="0" data-src="https://linear-889.frequency.stream/mt/studio/889/hls/master/playlist.m3u8">889 IPTV_389</li>
+<li tabindex="0" data-src="https://linear-890.frequency.stream/mt/studio/890/hls/master/playlist.m3u8">890 IPTV_390</li>
+<li tabindex="0" data-src="https://linear-891.frequency.stream/mt/studio/891/hls/master/playlist.m3u8">891 IPTV_391</li>
+<li tabindex="0" data-src="https://linear-892.frequency.stream/mt/studio/892/hls/master/playlist.m3u8">892 IPTV_392</li>
+<li tabindex="0" data-src="https://linear-893.frequency.stream/mt/studio/893/hls/master/playlist.m3u8">893 IPTV_393</li>
+<li tabindex="0" data-src="https://linear-894.frequency.stream/mt/studio/894/hls/master/playlist.m3u8">894 IPTV_394</li>
+<li tabindex="0" data-src="https://linear-895.frequency.stream/mt/studio/895/hls/master/playlist.m3u8">895 IPTV_395</li>
+<li tabindex="0" data-src="https://linear-896.frequency.stream/mt/studio/896/hls/master/playlist.m3u8">896 IPTV_396</li>
+<li tabindex="0" data-src="https://linear-897.frequency.stream/mt/studio/897/hls/master/playlist.m3u8">897 IPTV_397</li>
+<li tabindex="0" data-src="https://linear-898.frequency.stream/mt/studio/898/hls/master/playlist.m3u8">898 IPTV_398</li>
+<li tabindex="0" data-src="https://linear-899.frequency.stream/mt/studio/899/hls/master/playlist.m3u8">899 IPTV_399</li>
 
 
 
-
-
+ -->
 
 
 
@@ -1253,21 +1413,21 @@ transition: opacity 2s;
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 const player = jwplayer("myElement").setup({
-related: { displayMode: "shelfWidget", },
+  related: { displayMode: "shelfWidget", },
+
 // ... Otras configuraciones ...
 //    preload: 'auto', 
 // activo :: #FF4500   #21abb5
 // inactivo :: #FFFFFF     #7a2350  #49c4b0
 // skin :: name :: six  roundster
 //    skin: {
-    preload: 'auto',
-
-    autostart: 'true',
 //    id : 'playerID',
-  mute: 'false',
+  repeat: 'true',
+  preload: 'auto',
+  autostart: 'true',
   sharing: 'false',
   cast: {}, // Habilitar la opción de casting
-    skin: {
+  skin: {
         name: "six",
         active: "#21abb5",
         inactive: "#d1d1e0",
@@ -1276,11 +1436,11 @@ related: { displayMode: "shelfWidget", },
 
     // ... Resto de tu configuración ...
 playlist: [{
-image: "https://selectra.com.ar/sites/selectra.com.ar/files/styles/large/public/tn-enlace-video-750.png",
-file: "https://live-01-01-tn.vodgc.net/TN24/index.m3u8",
-description: "Información en tiempo real",
-title: "TN Todo Noticias"
-}]
+        image: "https://selectra.com.ar/sites/selectra.com.ar/files/styles/large/public/tn-enlace-video-750.png",
+        file: "https://live-01-01-tn.vodgc.net/TN24/index.m3u8",
+        description: "Información en tiempo real",
+        title: "TN Todo Noticias"
+}],
 });
 
 const listaVideos = document.getElementById("listaVideos");
@@ -1351,11 +1511,11 @@ player.on('error', function(event) {
   console.log("Error reproduciendo el video");
   
   const nombreCanal = document.getElementById('nombreCanal');
-  nombreCanal.textContent = 'No hay señal cambiando al siguiente canal...';
+  nombreCanal.textContent = 'Sin señal cambiando al siguiente canal...';
 
   setTimeout(function() {
     loadNextVideo();
-  }, 2000); // Cambia de canal después de 3 segundos (ajusta el tiempo según tus preferencias)
+  }, 3000); // Cambia de canal después de 3 segundos se expresa en miliseg. (ajusta el tiempo según tus preferencias)
 });
 
 function loadNextVideo() {
@@ -1366,6 +1526,14 @@ function loadNextVideo() {
   }
 };
 
+player.on('end', function() {
+        console.log("Video completado");
+        // Pasar al siguiente video
+        if (currentVideoIndex < elementos.length - 1) {
+            loadVideo(currentVideoIndex + 1);
+        }
+    });
+
 player.on('complete', function() {
         console.log("Video completado");
         // Pasar al siguiente video
@@ -1374,7 +1542,11 @@ player.on('complete', function() {
         }
     });
 
+
 });
+
+
+
 
 </script>
 
@@ -1395,9 +1567,9 @@ player.on('complete', function() {
 
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var jwDefaults = {
-    "aspectratio": "16:9",
+    "aspectratio": "4:1",
     "autostart": true,
     "controls": true,
     "displaydescription": true,
@@ -1413,45 +1585,85 @@ player.on('complete', function() {
     "stretching": "uniform",
     "width": "100%"
 };
+</script> -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Establecer el enfoque inicial en el primer elemento de la lista de reproducción
+//    const firstPlaylistItem = document.querySelector('#listaVideos li');
+
+    const firstPlaylistItem = document.querySelector('#mute');    
+    firstPlaylistItem.focus();
+});
+
+// document.addEventListener('keydown', function(event) {
+//     let currentElement = document.activeElement;
+
+
+//     // Manejar las flechas del teclado
+//     switch (event.keyCode) {
+//         case 37: // Flecha izquierda
+//         case 38: // Flecha arriba
+//             if (currentElement.tagName.toLowerCase() === 'button') {
+//                 document.querySelector('.video-container div').focus();
+//             } else if (currentElement.previousElementSibling && currentElement.previousElementSibling.tabIndex !== -1) {
+//                 currentElement.previousElementSibling.focus();
+//             }
+//             break;
+//         case 39: // Flecha derecha
+//         case 40: // Flecha abajo
+//             if (currentElement.tagName.toLowerCase() === 'div') {
+//                 document.querySelector('.controls button').focus();
+//             } else if (currentElement.nextElementSibling && currentElement.nextElementSibling.tabIndex !== -1) {
+//                 currentElement.nextElementSibling.focus();
+//             }
+//             break;
+//         case 32: // Barra espaciadora (para reproducir/pausar el video)
+//             if (currentElement.tagName.toLowerCase() === 'video') {
+//                 jwplayer('myElement').play();
+//             }
+//             break;
+//     }
+// });
 </script>
 
+<!--  <script>   // Manejar las flechas del teclado
+    switch (event.keyCode) {
+        case 37: // Flecha izquierda
+        case 38: // Flecha arriba
+            if (currentElement.tagName.toLowerCase() === 'button') {
+                document.querySelector('#listaVideos li').focus();
+            } else if (currentElement.previousElementSibling && currentElement.previousElementSibling.tabIndex !== -1) {
+                currentElement.previousElementSibling.focus();
+            }
+            break;
+        case 39: // Flecha derecha
+        case 40: // Flecha abajo
+            if (currentElement.tagName.toLowerCase() === 'li') {
+                document.querySelector('.controls button').focus();
+            } else if (currentElement.nextElementSibling && currentElement.nextElementSibling.tabIndex !== -1) {
+                currentElement.nextElementSibling.focus();
+            }
+            break;
+        case 32: // Barra espaciadora (para reproducir/pausar el video)
+            if (currentElement.tagName.toLowerCase() === 'video') {
+                currentElement.paused ? currentElement.play() : currentElement.pause();
+            }
+            break;
+    }
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Control de reproducción de video al hacer clic en un elemento de la lista
+document.getElementById('listaVideos').addEventListener('click', function(event) {
+    const clickedItem = event.target;
+    const video = document.getElementById('myVideo');
+    const videoSrc = clickedItem.getAttribute('data-src');
+    video.src = videoSrc;
+    video.play();
+});
+</script> -->
 
 
 </body>
 
 </html>
-
